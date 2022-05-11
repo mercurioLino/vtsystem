@@ -2,10 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package objetos;
+package objetos.pessoas;
 
+import objetos.pessoas.PessoaFisica;
 import java.util.ArrayList;
 import java.util.List;
+import objetos.Endereco;
 
 /**
  *
@@ -17,7 +19,7 @@ public class Funcionario extends PessoaFisica{
     private double salario;
     private List<Ponto> pontos = new ArrayList<>();
 
-    public Funcionario(String cargo, String nome, String cpf, String telefone, String whatsapp, String email, String endereco) {
+    public Funcionario(String cargo, String nome, String cpf, String telefone, String whatsapp, String email, Endereco endereco) {
         super(nome, cpf, telefone, whatsapp, email, endereco);
         this.cargo = cargo;
     }

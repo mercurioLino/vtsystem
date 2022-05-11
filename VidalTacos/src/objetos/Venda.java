@@ -4,6 +4,7 @@
  */
 package objetos;
 
+import objetos.pessoas.Cliente;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,17 +13,18 @@ import java.util.List;
  *
  * @author leona
  */
-public class PedidoRecebido {
+public class Venda {
     
-    private List<ProdutoParaPedido> produtos = new ArrayList<>();
+    private List<ProdutoParaVenda> produtos = new ArrayList<>();
     private Cliente cliente;
-    private SimpleDateFormat dataPedido;
-    private SimpleDateFormat dataEntrega;
+    private SimpleDateFormat dataPedido = new SimpleDateFormat("dd/MM/yyyy");
+    private SimpleDateFormat dataEntrega = new SimpleDateFormat("dd/MM/yyyy");
     private String metodoDePagamento;
-    private SimpleDateFormat prazoPagamento;
+    private SimpleDateFormat prazoPagamento = new SimpleDateFormat("dd/MM/yyyy");
     private double valorTotal = 0;
+    public String teste;
 
-    public PedidoRecebido(Cliente cliente, SimpleDateFormat dataPedido, SimpleDateFormat dataEntrega, String metodoDePagamento, SimpleDateFormat prazoPagamento) {
+    public Venda(Cliente cliente, SimpleDateFormat dataPedido, SimpleDateFormat dataEntrega, String metodoDePagamento, SimpleDateFormat prazoPagamento) {
         this.cliente = cliente;
         this.dataPedido = dataPedido;
         this.dataEntrega = dataEntrega;
@@ -31,30 +33,30 @@ public class PedidoRecebido {
     }
     
     public void addProduto(Produto produto, int quantidade){
-        this.produtos.add(new ProdutoParaPedido(produto, quantidade));
+        this.produtos.add(new ProdutoParaVenda(produto, quantidade));
         this.attValorTotal();
     }
     
     public void removeProduto(Produto produto){
-        this.produtos.remove(new ProdutoParaPedido(produto));
+        this.produtos.remove(new ProdutoParaVenda(produto));
         this.attValorTotal();
     }
     
     public void attValorTotal(){
         double total = 0;
         
-        for(ProdutoParaPedido produto : this.produtos){
+        for(ProdutoParaVenda produto : this.produtos){
             total = produto.getValorTotal();
         }
         
         this.valorTotal = total;
     }
 
-    public List<ProdutoParaPedido> getProdutos() {
+    public List<ProdutoParaVenda> getProdutos() {
         return produtos;
     }
 
-    public void setProdutos(List<ProdutoParaPedido> produtos) {
+    public void setProdutos(List<ProdutoParaVenda> produtos) {
         this.produtos = produtos;
     }
 

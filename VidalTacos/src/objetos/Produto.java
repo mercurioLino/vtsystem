@@ -9,6 +9,7 @@ package objetos;
  * @author leona
  */
 public class Produto {
+    
     private String nome;
     private String codigo;
     private String descricao;

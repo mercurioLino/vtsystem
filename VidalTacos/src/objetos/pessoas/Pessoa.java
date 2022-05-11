@@ -2,7 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Other/File.java to edit this template
  */
-package objetos;
+package objetos.pessoas;
+
+import objetos.Endereco;
 
 /**
  *
@@ -13,9 +15,9 @@ public abstract class Pessoa {
     private String telefone;
     private String whatsapp;
     private String email;
-    private String endereco;
+    private Endereco endereco;
 
-    public Pessoa(String telefone, String whatsapp, String email, String endereco) {
+    public Pessoa(String telefone, String whatsapp, String email, Endereco endereco) {
         this.telefone = telefone;
         this.whatsapp = whatsapp;
         this.email = email;
@@ -46,11 +48,11 @@ public abstract class Pessoa {
         this.email = email;
     }
 
-    public String getEndereco() {
+    public Endereco getEndereco() {
         return endereco;
     }
 
-    public void setEndereco(String endereco) {
+    public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
     

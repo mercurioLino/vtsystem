@@ -2,26 +2,28 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package objetos;
+package objetos.pessoas;
+
+import objetos.Endereco;
 
 /**
  *
  * @author leona
  */
-public class PessoaJuridica extends Pessoa{
+public abstract class PessoaJuridica extends Pessoa{
     
     private String nomeFantasia;
     private String razaoSocial;
     private String cnpj;    
 
-    public PessoaJuridica(String razaoSocial, String nomeFantasia, String cnpj, String telefone, String whatsapp, String email, String endereco) {
+    public PessoaJuridica(String razaoSocial, String nomeFantasia, String cnpj, String telefone, String whatsapp, String email, Endereco endereco) {
         super(telefone, whatsapp, email, endereco);
         this.nomeFantasia = nomeFantasia;
         this.razaoSocial = razaoSocial;
         this.cnpj = cnpj;
     }
     
-    public PessoaJuridica(String razaoSocial, String cnpj, String telefone, String whatsapp, String email, String endereco) {
+    public PessoaJuridica(String razaoSocial, String cnpj, String telefone, String whatsapp, String email, Endereco endereco) {
         super(telefone, whatsapp, email, endereco);
         this.razaoSocial = razaoSocial;
         this.cnpj = cnpj;

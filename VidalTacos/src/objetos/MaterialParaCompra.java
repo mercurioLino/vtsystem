@@ -8,27 +8,28 @@ package objetos;
  *
  * @author leona
  */
-public class ProdutoParaPedido {
-    private Produto produto;
+public class MaterialParaCompra {
+    
+    private Material material;
     private int quantidade;
     private double valorTotal;
     
-    public ProdutoParaPedido(Produto produto, int quantidade) {
-        this.produto = produto;
+    public MaterialParaCompra(Material material, int quantidade) {
+        this.material = material;
         this.quantidade = quantidade;
-        this.valorTotal = produto.getValorUnitario() * quantidade;
+        this.valorTotal = material.getValorUnitario() * quantidade;
     }
 
-    public ProdutoParaPedido(Produto produto) {
-        this.produto = produto;
+    public MaterialParaCompra(Material material) {
+        this.material = material;
     }
     
-    public Produto getProduto() {
-        return produto;
+    public Material getMaterial() {
+        return this.material;
     }
 
-    public void setProduto(Produto produto) {
-        this.produto = produto;
+    public void setMaterial(Material material) {
+        this.material = material;
     }
 
     public int getQuantidade() {
@@ -46,5 +47,5 @@ public class ProdutoParaPedido {
     public void setValorTotal(double valorTotal) {
         this.valorTotal = valorTotal;
     }
-        
+    
 }
