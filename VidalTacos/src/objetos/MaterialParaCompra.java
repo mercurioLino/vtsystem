@@ -10,26 +10,22 @@ package objetos;
  */
 public class MaterialParaCompra {
     
-    private Material material;
+    private String produto;
     private int quantidade;
-    private double valorTotal;
-    
-    public MaterialParaCompra(Material material, int quantidade) {
-        this.material = material;
+    private double valorUnitario;
+
+    public MaterialParaCompra(String produto, int quantidade, double valorUnitario) {
+        this.produto = produto;
         this.quantidade = quantidade;
-        this.valorTotal = material.getValorUnitario() * quantidade;
-    }
-
-    public MaterialParaCompra(Material material) {
-        this.material = material;
+        this.valorUnitario = valorUnitario;
     }
     
-    public Material getMaterial() {
-        return this.material;
+    public String getProduto() {
+        return produto;
     }
 
-    public void setMaterial(Material material) {
-        this.material = material;
+    public void setProduto(String produto) {
+        this.produto = produto;
     }
 
     public int getQuantidade() {
@@ -40,12 +36,12 @@ public class MaterialParaCompra {
         this.quantidade = quantidade;
     }
 
-    public double getValorTotal() {
-        return valorTotal;
+    public double getValorUnitario() {
+        return valorUnitario;
     }
 
-    public void setValorTotal(double valorTotal) {
-        this.valorTotal = valorTotal;
+    public void setValorUnitario(double valorUnitario) {
+        this.valorUnitario = valorUnitario;
     }
     
 }

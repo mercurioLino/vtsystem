@@ -4,9 +4,9 @@
  */
 package objetos;
 
-import objetos.pessoas.Cliente;
 import java.text.SimpleDateFormat;
 import java.util.List;
+import objetos.pessoas.PessoaJuridica;
 
 /**
  *
@@ -16,16 +16,17 @@ public class Compra {
     
     List<MaterialParaCompra> materiais;
     private double valorTotal;
-    private Cliente fornecedor;
-    private SimpleDateFormat dataPedido = new SimpleDateFormat("dd/MM/yyyy");
-    private SimpleDateFormat dataEntrega = new SimpleDateFormat("dd/MM/yyyy");
+    private PessoaJuridica fornecedor;
+    private String dataPedido;
+    private String previsaoEntrega;
+    private String dataDeEntrega;
 
-    public Compra(List<MaterialParaCompra> materiais, double valorTotal, Cliente fornecedor, SimpleDateFormat dataPedido, SimpleDateFormat dataEntrega) {
+    public Compra(List<MaterialParaCompra> materiais, double valorTotal, PessoaJuridica fornecedor, String dataPedido, String previsaoEntrega) {
         this.materiais = materiais;
         this.valorTotal = valorTotal;
         this.fornecedor = fornecedor;
         this.dataPedido = dataPedido;
-        this.dataEntrega = dataEntrega;
+        this.previsaoEntrega = previsaoEntrega;
     }
 
     public List<MaterialParaCompra> getMateriais() {
@@ -44,30 +45,37 @@ public class Compra {
         this.valorTotal = valorTotal;
     }
 
-    public Cliente getFornecedor() {
+    public PessoaJuridica getFornecedor() {
         return fornecedor;
     }
 
-    public void setFornecedor(Cliente fornecedor) {
+    public void setFornecedor(PessoaJuridica fornecedor) {
         this.fornecedor = fornecedor;
     }
 
-    public SimpleDateFormat getDataPedido() {
+    public String getDataPedido() {
         return dataPedido;
     }
 
-    public void setDataPedido(SimpleDateFormat dataPedido) {
+    public void setDataPedido(String dataPedido) {
         this.dataPedido = dataPedido;
     }
 
-    public SimpleDateFormat getDataEntrega() {
-        return dataEntrega;
+    public String getPrevisaoEntrega() {
+        return previsaoEntrega;
     }
 
-    public void setDataEntrega(SimpleDateFormat dataEntrega) {
-        this.dataEntrega = dataEntrega;
+    public void setPrevisaoEntrega(String previsaoEntrega) {
+        this.previsaoEntrega = previsaoEntrega;
     }
-    
+
+    public String getDataDeEntrega() {
+        return dataDeEntrega;
+    }
+
+    public void setDataDeEntrega(String dataDeEntrega) {
+        this.dataDeEntrega = dataDeEntrega;
+    }
     
     
 }

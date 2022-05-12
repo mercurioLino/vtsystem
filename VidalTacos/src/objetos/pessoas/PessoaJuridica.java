@@ -10,25 +10,23 @@ import objetos.Endereco;
  *
  * @author leona
  */
-public abstract class PessoaJuridica extends Pessoa{
+public class PessoaJuridica extends Pessoa{
     
     private String nomeFantasia;
     private String razaoSocial;
     private String cnpj;    
+    private boolean cliente;
+    private boolean fornecedor;
 
-    public PessoaJuridica(String razaoSocial, String nomeFantasia, String cnpj, String telefone, String whatsapp, String email, Endereco endereco) {
+    public PessoaJuridica(String nomeFantasia, String razaoSocial, String cnpj, boolean cliente, boolean fornecedor, String telefone, String whatsapp, String email, Endereco endereco) {
         super(telefone, whatsapp, email, endereco);
         this.nomeFantasia = nomeFantasia;
         this.razaoSocial = razaoSocial;
         this.cnpj = cnpj;
+        this.cliente = cliente;
+        this.fornecedor = fornecedor;
     }
     
-    public PessoaJuridica(String razaoSocial, String cnpj, String telefone, String whatsapp, String email, Endereco endereco) {
-        super(telefone, whatsapp, email, endereco);
-        this.razaoSocial = razaoSocial;
-        this.cnpj = cnpj;
-    }
-
     public String getNomeFantasia() {
         return nomeFantasia;
     }
@@ -52,6 +50,21 @@ public abstract class PessoaJuridica extends Pessoa{
     public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
     }
-    
+
+    public boolean isCliente() {
+        return cliente;
+    }
+
+    public void setCliente(boolean cliente) {
+        this.cliente = cliente;
+    }
+
+    public boolean isFornecedor() {
+        return fornecedor;
+    }
+
+    public void setFornecedor(boolean fornecedor) {
+        this.fornecedor = fornecedor;
+    }
     
 }

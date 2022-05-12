@@ -4,7 +4,8 @@
  */
 package objetos.pessoas;
 
-import objetos.pessoas.PessoaFisica;
+import extras.Ponto;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import objetos.Endereco;
@@ -13,19 +14,37 @@ import objetos.Endereco;
  *
  * @author leona
  */
-public class Funcionario extends PessoaFisica{
+public class Funcionario extends Pessoa{
     
+    private String nome;
+    private String cpf;
     private String cargo;
-    private double salario;
-    private List<Ponto> pontos = new ArrayList<>();
+    private String dataDeAdmissao;
+    private String dataDeDesligamento;
+    // private List<Ponto> pontos = new ArrayList<>();
 
-    public Funcionario(String cargo, String nome, String cpf, String telefone, String whatsapp, String email, Endereco endereco) {
-        super(nome, cpf, telefone, whatsapp, email, endereco);
+    public Funcionario(String nome, String cpf, String cargo, String dataDeAdmissao, String telefone, String whatsapp, String email, Endereco endereco) {
+        super(telefone, whatsapp, email, endereco);
+        this.nome = nome;
+        this.cpf = cpf;
         this.cargo = cargo;
+        this.dataDeAdmissao = dataDeAdmissao;
     }
-    
-    public void addPonto(Ponto ponto){
-        this.pontos.add(ponto);
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
     public String getCargo() {
@@ -35,15 +54,24 @@ public class Funcionario extends PessoaFisica{
     public void setCargo(String cargo) {
         this.cargo = cargo;
     }
-    
-    public double getSalario() {
-        return salario;
+
+    public String getDataDeAdmissao() {
+        return dataDeAdmissao;
     }
 
-    public void setSalario(double salario) {
-        this.salario = salario;
+    public void setDataDeAdmissao(String dataDeAdmissao) {
+        this.dataDeAdmissao = dataDeAdmissao;
     }
 
+    public String getDataDeDesligamento() {
+        return dataDeDesligamento;
+    }
+
+    public void setDataDeDesligamento(String dataDeDesligamento) {
+        this.dataDeDesligamento = dataDeDesligamento;
+    }
+
+    /*
     public List<Ponto> getPontos() {
         return pontos;
     }
@@ -51,5 +79,9 @@ public class Funcionario extends PessoaFisica{
     public void setPontos(List<Ponto> pontos) {
         this.pontos = pontos;
     }
-
+    
+    public void addPonto(Ponto ponto) {
+        this.pontos.add(ponto);
+    }
+    */
 }

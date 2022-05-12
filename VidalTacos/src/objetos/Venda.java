@@ -4,10 +4,9 @@
  */
 package objetos;
 
-import objetos.pessoas.Cliente;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import objetos.pessoas.PessoaJuridica;
 
 /**
  *
@@ -16,20 +15,23 @@ import java.util.List;
 public class Venda {
     
     private List<ProdutoParaVenda> produtos = new ArrayList<>();
-    private Cliente cliente;
-    private SimpleDateFormat dataPedido = new SimpleDateFormat("dd/MM/yyyy");
-    private SimpleDateFormat dataEntrega = new SimpleDateFormat("dd/MM/yyyy");
+    private PessoaJuridica cliente;
+    private String dataPedido;
+    private String previsaoDeEntrega;
+    private String dataDeEntrega;
     private String metodoDePagamento;
-    private SimpleDateFormat prazoPagamento = new SimpleDateFormat("dd/MM/yyyy");
+    private String prazoPagamento;
+    private String codigo;
     private double valorTotal = 0;
-    public String teste;
+    private boolean concluido;
 
-    public Venda(Cliente cliente, SimpleDateFormat dataPedido, SimpleDateFormat dataEntrega, String metodoDePagamento, SimpleDateFormat prazoPagamento) {
+    public Venda(PessoaJuridica cliente, String codigo, String dataPedido, String previsaoDeEntrega, String metodoDePagamento, String prazoPagamento) {
         this.cliente = cliente;
         this.dataPedido = dataPedido;
-        this.dataEntrega = dataEntrega;
+        this.previsaoDeEntrega = previsaoDeEntrega;
         this.metodoDePagamento = metodoDePagamento;
         this.prazoPagamento = prazoPagamento;
+        this.codigo = codigo;
     }
     
     public void addProduto(Produto produto, int quantidade){
@@ -60,28 +62,44 @@ public class Venda {
         this.produtos = produtos;
     }
 
-    public Cliente getCliente() {
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public PessoaJuridica getCliente() {
         return cliente;
     }
 
-    public void setCliente(Cliente cliente) {
+    public void setCliente(PessoaJuridica cliente) {
         this.cliente = cliente;
     }
 
-    public SimpleDateFormat getDataPedido() {
+    public String getDataPedido() {
         return dataPedido;
     }
 
-    public void setDataPedido(SimpleDateFormat dataPedido) {
+    public void setDataPedido(String dataPedido) {
         this.dataPedido = dataPedido;
     }
 
-    public SimpleDateFormat getDataEntrega() {
-        return dataEntrega;
+    public String getPrevisaoDeEntrega() {
+        return previsaoDeEntrega;
     }
 
-    public void setDataEntrega(SimpleDateFormat dataEntrega) {
-        this.dataEntrega = dataEntrega;
+    public void setPrevisaoDeEntrega(String previsaoDeEntrega) {
+        this.previsaoDeEntrega = previsaoDeEntrega;
+    }
+
+    public String getDataDeEntrega() {
+        return dataDeEntrega;
+    }
+
+    public void setDataDeEntrega(String dataDeEntrega) {
+        this.dataDeEntrega = dataDeEntrega;
     }
 
     public String getMetodoDePagamento() {
@@ -92,11 +110,11 @@ public class Venda {
         this.metodoDePagamento = metodoDePagamento;
     }
 
-    public SimpleDateFormat getPrazoPagamento() {
+    public String getPrazoPagamento() {
         return prazoPagamento;
     }
 
-    public void setPrazoPagamento(SimpleDateFormat prazoPagamento) {
+    public void setPrazoPagamento(String prazoPagamento) {
         this.prazoPagamento = prazoPagamento;
     }
 
@@ -106,6 +124,14 @@ public class Venda {
 
     public void setValorTotal(double valorTotal) {
         this.valorTotal = valorTotal;
+    }
+
+    public boolean isConcluido() {
+        return concluido;
+    }
+
+    public void setConcluido(boolean concluido) {
+        this.concluido = concluido;
     }
     
     

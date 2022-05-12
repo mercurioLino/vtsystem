@@ -16,6 +16,7 @@ public class Produto {
     private String modelo;
     private String cor;
     private double valorUnitario;
+    private boolean foraDeLinha;
 
     public Produto(String nome, String codigo, String descricao, String modelo, String cor, double valorUnitario) {
         this.nome = nome;
@@ -79,7 +80,13 @@ public class Produto {
     public void setValorUnitario(double valorUnitario) {
         this.valorUnitario = valorUnitario;
     }
-    
-    
-    
+
+    public boolean isForaDeLinha() {
+        return foraDeLinha;
+    }
+
+    public void setForaDeLinha(boolean foraDeLinha) {
+        this.foraDeLinha = foraDeLinha;
+    }
+     
 }

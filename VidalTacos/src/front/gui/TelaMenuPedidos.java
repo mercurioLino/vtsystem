@@ -38,6 +38,11 @@ public class TelaMenuPedidos extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         bAlterarPedido.setText("Alterar Pedido");
+        bAlterarPedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bAlterarPedidoActionPerformed(evt);
+            }
+        });
 
         bCadastrarPedido.setText("Cadastrar Pedido");
         bCadastrarPedido.addActionListener(new java.awt.event.ActionListener() {
@@ -112,6 +117,10 @@ public class TelaMenuPedidos extends javax.swing.JFrame {
     private void bCadastrarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCadastrarPedidoActionPerformed
         new TelaCadastrarPedido();
     }//GEN-LAST:event_bCadastrarPedidoActionPerformed
+
+    private void bAlterarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAlterarPedidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bAlterarPedidoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bAlterarPedido;
