@@ -110,7 +110,7 @@ public class TelaMenuCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_bVoltarActionPerformed
 
     private void bCadastrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCadastrarClienteActionPerformed
-        new TelaCadastrarCliente();
+        new TelaCadastrarPessoaJuridica();
     }//GEN-LAST:event_bCadastrarClienteActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

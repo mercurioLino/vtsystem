@@ -136,7 +136,7 @@ public class TelaRelatorioPedidos extends javax.swing.JFrame {
         lMes1.setText("Mês");
 
         bBuscar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        bBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/search.png"))); // NOI18N
+        bBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/front/imgs/search.png"))); // NOI18N
         bBuscar.setText("Buscar");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
