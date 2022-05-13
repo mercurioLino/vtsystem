@@ -221,6 +221,7 @@ public class LoginGui extends javax.swing.JFrame {
 
     private void bEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEntrarActionPerformed
         new TelaInicial();
+        this.setVisible(false);
     }//GEN-LAST:event_bEntrarActionPerformed
 
     /**

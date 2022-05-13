@@ -12,12 +12,12 @@ import front.gui.TelaCadastrarEndereco;
  *
  * @author MIGUELCESARPENHAGOME
  */
-public class TelaCadastrarPessoaJuridica extends javax.swing.JFrame {
+public class TelaAlterarPessoaJuridica extends javax.swing.JFrame {
 
     /**
      * Creates new form TelaCadastrarPedido
      */
-    public TelaCadastrarPessoaJuridica() {
+    public TelaAlterarPessoaJuridica() {
         initComponents();
         this.setVisible(true);
     }
@@ -50,7 +50,7 @@ public class TelaCadastrarPessoaJuridica extends javax.swing.JFrame {
         bRazaoSocial1 = new javax.swing.JTextField();
         jCheckBox1 = new javax.swing.JCheckBox();
         jCheckBox2 = new javax.swing.JCheckBox();
-        bCadastrarPedido1 = new javax.swing.JButton();
+        bAlterarPedido = new javax.swing.JButton();
         bWhatsapp1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -62,7 +62,7 @@ public class TelaCadastrarPessoaJuridica extends javax.swing.JFrame {
         lCadastrarPedido.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lCadastrarPedido.setForeground(new java.awt.Color(255, 255, 255));
         lCadastrarPedido.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lCadastrarPedido.setText("Cadastro Pessoa Jurídica");
+        lCadastrarPedido.setText("Alterar Pessoa Jurídica");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -178,24 +178,24 @@ public class TelaCadastrarPessoaJuridica extends javax.swing.JFrame {
 
         jCheckBox2.setText("Fornecedor");
 
-        bCadastrarPedido1.setBackground(new java.awt.Color(0, 204, 0));
-        bCadastrarPedido1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        bCadastrarPedido1.setForeground(new java.awt.Color(255, 255, 255));
-        bCadastrarPedido1.setText("Cadastrar");
-        bCadastrarPedido1.setBorderPainted(false);
-        bCadastrarPedido1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        bCadastrarPedido1.setFocusPainted(false);
-        bCadastrarPedido1.addMouseListener(new java.awt.event.MouseAdapter() {
+        bAlterarPedido.setBackground(new java.awt.Color(0, 204, 0));
+        bAlterarPedido.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        bAlterarPedido.setForeground(new java.awt.Color(255, 255, 255));
+        bAlterarPedido.setText("Alterar");
+        bAlterarPedido.setBorderPainted(false);
+        bAlterarPedido.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bAlterarPedido.setFocusPainted(false);
+        bAlterarPedido.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                bCadastrarPedido1MouseEntered(evt);
+                bAlterarPedidoMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                bCadastrarPedido1MouseExited(evt);
+                bAlterarPedidoMouseExited(evt);
             }
         });
-        bCadastrarPedido1.addActionListener(new java.awt.event.ActionListener() {
+        bAlterarPedido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bCadastrarPedido1ActionPerformed(evt);
+                bAlterarPedidoActionPerformed(evt);
             }
         });
 
@@ -213,7 +213,7 @@ public class TelaCadastrarPessoaJuridica extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(bCadastrarPedido1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(bAlterarPedido, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(bVoltar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addGap(0, 0, Short.MAX_VALUE)
@@ -284,7 +284,7 @@ public class TelaCadastrarPessoaJuridica extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jCheckBox2)))))
                 .addGap(36, 36, 36)
-                .addComponent(bCadastrarPedido1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bAlterarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(bVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(41, Short.MAX_VALUE))
@@ -359,20 +359,20 @@ public class TelaCadastrarPessoaJuridica extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_bRazaoSocial1ActionPerformed
 
-    private void bCadastrarPedido1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bCadastrarPedido1MouseEntered
+    private void bAlterarPedidoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bAlterarPedidoMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_bCadastrarPedido1MouseEntered
+    }//GEN-LAST:event_bAlterarPedidoMouseEntered
 
-    private void bCadastrarPedido1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bCadastrarPedido1MouseExited
+    private void bAlterarPedidoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bAlterarPedidoMouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_bCadastrarPedido1MouseExited
+    }//GEN-LAST:event_bAlterarPedidoMouseExited
 
-    private void bCadastrarPedido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCadastrarPedido1ActionPerformed
+    private void bAlterarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAlterarPedidoActionPerformed
         new TelaConfirmacao();
-    }//GEN-LAST:event_bCadastrarPedido1ActionPerformed
+    }//GEN-LAST:event_bAlterarPedidoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bCadastrarPedido1;
+    private javax.swing.JButton bAlterarPedido;
     private javax.swing.JButton bEndereço;
     private javax.swing.JTextField bNomeFantasia;
     private javax.swing.JTextField bRazaoSocial1;

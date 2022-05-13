@@ -342,7 +342,7 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
     }//GEN-LAST:event_tCodigoActionPerformed
 
     private void bEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEntrarActionPerformed
-        new TelaInicial();
+        
     }//GEN-LAST:event_bEntrarActionPerformed
 
     private void bEntrarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bEntrarMouseExited
