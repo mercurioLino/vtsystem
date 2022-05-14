@@ -9,12 +9,12 @@ package front.gui;
  *
  * @author MIGUELCESARPENHAGOME
  */
-public class TelaMenuPedidos extends javax.swing.JFrame {
+public class TelaMenuVendas extends javax.swing.JFrame {
 
     /**
      * Creates new form TelaMenuPedidos
      */
-    public TelaMenuPedidos() {
+    public TelaMenuVendas() {
         initComponents();
         this.setVisible(true);
     }
@@ -72,7 +72,7 @@ public class TelaMenuPedidos extends javax.swing.JFrame {
         lCadastrarPedido1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lCadastrarPedido1.setForeground(new java.awt.Color(255, 255, 255));
         lCadastrarPedido1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lCadastrarPedido1.setText("Menu Pedidos");
+        lCadastrarPedido1.setText("Menu Vendas");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -207,14 +207,14 @@ public class TelaMenuPedidos extends javax.swing.JFrame {
     }//GEN-LAST:event_bVoltarActionPerformed
 
     private void bCadastrarPessoaJuridicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCadastrarPessoaJuridicaActionPerformed
-        new TelaCadastrarPedido();
+        new TelaCadastrarVenda();
     }//GEN-LAST:event_bCadastrarPessoaJuridicaActionPerformed
 
     private void bAlterarPessoaJuridicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAlterarPessoaJuridicaActionPerformed
     }//GEN-LAST:event_bAlterarPessoaJuridicaActionPerformed
 
     private void bBuscarPessoaJuridicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBuscarPessoaJuridicaActionPerformed
-        new TelaRelatorioPedidos();
+        new TelaRelatorioVendas();
     }//GEN-LAST:event_bBuscarPessoaJuridicaActionPerformed
 
     private void bExcluirPessoaJuridicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bExcluirPessoaJuridicaActionPerformed

@@ -382,7 +382,7 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_bRelatoriosMouseExited
 
     private void bRelatoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRelatoriosActionPerformed
-        // TODO add your handling code here:
+        new TelaMenuRelatorios();
     }//GEN-LAST:event_bRelatoriosActionPerformed
 
     private void bPessoaJuridicaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bPessoaJuridicaMouseEntered
@@ -406,7 +406,7 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_bPedidosMouseExited
 
     private void bPedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPedidosActionPerformed
-        // TODO add your handling code here:
+        new TelaMenuPedidos();
     }//GEN-LAST:event_bPedidosActionPerformed
 
     private void bProdutosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bProdutosMouseEntered
@@ -418,7 +418,7 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_bProdutosMouseExited
 
     private void bProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bProdutosActionPerformed
-        // TODO add your handling code here:
+        new TelaMenuProdutos();
     }//GEN-LAST:event_bProdutosActionPerformed
 
     private void bVendasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bVendasMouseEntered
@@ -430,7 +430,7 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_bVendasMouseExited
 
     private void bVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVendasActionPerformed
-        // TODO add your handling code here:
+        new TelaMenuVendas();
     }//GEN-LAST:event_bVendasActionPerformed
 
     private void bFuncionarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bFuncionarioMouseEntered
@@ -442,7 +442,7 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_bFuncionarioMouseExited
 
     private void bFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bFuncionarioActionPerformed
-        // TODO add your handling code here:
+        new TelaMenuFuncionario();
     }//GEN-LAST:event_bFuncionarioActionPerformed
 
 

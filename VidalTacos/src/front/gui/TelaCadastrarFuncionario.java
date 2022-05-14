@@ -18,6 +18,7 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
      */
     public TelaCadastrarFuncionario() {
         initComponents();
+        this.setVisible(true);
     }
 
     /**
