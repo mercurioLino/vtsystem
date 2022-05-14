@@ -16,6 +16,7 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
      */
     public TelaCadastrarProduto() {
         initComponents();
+        this.setVisible(true);
     }
 
     /**
@@ -170,7 +171,7 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        bEntrar.setBackground(new java.awt.Color(58, 65, 64));
+        bEntrar.setBackground(new java.awt.Color(0, 0, 0));
         bEntrar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         bEntrar.setForeground(new java.awt.Color(255, 255, 255));
         bEntrar.setText("Salvar");
@@ -372,14 +373,10 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bCancelar;
-    private javax.swing.JButton bCarregarTacoImg;
-    private javax.swing.JButton bCarregarTacoImg1;
     private javax.swing.JButton bCarregarTacoImg2;
     private javax.swing.JButton bEntrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JLabel lCor;
     private javax.swing.JLabel lDescricao;
@@ -388,8 +385,6 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
     private javax.swing.JLabel lNome4;
     private javax.swing.JLabel lNome5;
     private javax.swing.JLabel lProduto;
-    private javax.swing.JLabel lTacoImg;
-    private javax.swing.JLabel lTacoImg1;
     private javax.swing.JLabel lTacoImg2;
     private javax.swing.JTextField tCodigo;
     private javax.swing.JTextField tCor;

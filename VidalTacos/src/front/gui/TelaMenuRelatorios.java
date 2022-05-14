@@ -9,12 +9,12 @@ package front.gui;
  *
  * @author MIGUELCESARPENHAGOME
  */
-public class TelaMenuPedidos extends javax.swing.JFrame {
+public class TelaMenuRelatorios extends javax.swing.JFrame {
 
     /**
      * Creates new form TelaMenuPedidos
      */
-    public TelaMenuPedidos() {
+    public TelaMenuRelatorios() {
         initComponents();
         this.setVisible(true);
     }
@@ -33,11 +33,15 @@ public class TelaMenuPedidos extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         lCadastrarPedido1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        bCadastrarPessoaJuridica = new javax.swing.JButton();
-        bAlterarPessoaJuridica = new javax.swing.JButton();
-        bBuscarPessoaJuridica = new javax.swing.JButton();
-        bExcluirPessoaJuridica = new javax.swing.JButton();
+        bClientes = new javax.swing.JButton();
+        bCompras = new javax.swing.JButton();
+        bDespesas = new javax.swing.JButton();
+        bVendas = new javax.swing.JButton();
         bVoltar = new javax.swing.JButton();
+        bFuncionarios = new javax.swing.JButton();
+        bPedidos = new javax.swing.JButton();
+        bFornecedores = new javax.swing.JButton();
+        bProdutos = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -72,14 +76,14 @@ public class TelaMenuPedidos extends javax.swing.JFrame {
         lCadastrarPedido1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lCadastrarPedido1.setForeground(new java.awt.Color(255, 255, 255));
         lCadastrarPedido1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lCadastrarPedido1.setText("Menu Pedidos");
+        lCadastrarPedido1.setText("Menu Relatórios");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addComponent(lCadastrarPedido1, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
+                .addComponent(lCadastrarPedido1, javax.swing.GroupLayout.DEFAULT_SIZE, 565, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -92,31 +96,31 @@ public class TelaMenuPedidos extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        bCadastrarPessoaJuridica.setText("Cadastrar");
-        bCadastrarPessoaJuridica.addActionListener(new java.awt.event.ActionListener() {
+        bClientes.setText("Clientes");
+        bClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bCadastrarPessoaJuridicaActionPerformed(evt);
+                bClientesActionPerformed(evt);
             }
         });
 
-        bAlterarPessoaJuridica.setText("Alterar");
-        bAlterarPessoaJuridica.addActionListener(new java.awt.event.ActionListener() {
+        bCompras.setText("Compras");
+        bCompras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bAlterarPessoaJuridicaActionPerformed(evt);
+                bComprasActionPerformed(evt);
             }
         });
 
-        bBuscarPessoaJuridica.setText("Buscar");
-        bBuscarPessoaJuridica.addActionListener(new java.awt.event.ActionListener() {
+        bDespesas.setText("Despesas");
+        bDespesas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bBuscarPessoaJuridicaActionPerformed(evt);
+                bDespesasActionPerformed(evt);
             }
         });
 
-        bExcluirPessoaJuridica.setText("Excluir");
-        bExcluirPessoaJuridica.addActionListener(new java.awt.event.ActionListener() {
+        bVendas.setText("Vendas");
+        bVendas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bExcluirPessoaJuridicaActionPerformed(evt);
+                bVendasActionPerformed(evt);
             }
         });
 
@@ -142,6 +146,34 @@ public class TelaMenuPedidos extends javax.swing.JFrame {
             }
         });
 
+        bFuncionarios.setText("Funcionarios");
+        bFuncionarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bFuncionariosActionPerformed(evt);
+            }
+        });
+
+        bPedidos.setText("Pedidos");
+        bPedidos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bPedidosActionPerformed(evt);
+            }
+        });
+
+        bFornecedores.setText("Fornecedores");
+        bFornecedores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bFornecedoresActionPerformed(evt);
+            }
+        });
+
+        bProdutos.setText("Produtos");
+        bProdutos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bProdutosActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -149,27 +181,44 @@ public class TelaMenuPedidos extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(bBuscarPessoaJuridica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(bCadastrarPessoaJuridica, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(bAlterarPessoaJuridica, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
-                    .addComponent(bExcluirPessoaJuridica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addComponent(bDespesas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(bClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(bCompras, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(bPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(bProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bFornecedores, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(bVendas, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(bVoltar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bCadastrarPessoaJuridica, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bAlterarPessoaJuridica, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bExcluirPessoaJuridica, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bBuscarPessoaJuridica, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(bClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bCompras, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bFornecedores, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(bPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bVendas, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bDespesas, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(bFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19)
                 .addComponent(bVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -190,7 +239,7 @@ public class TelaMenuPedidos extends javax.swing.JFrame {
                 .addGap(46, 46, 46))
         );
 
-        setSize(new java.awt.Dimension(309, 265));
+        setSize(new java.awt.Dimension(591, 265));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -206,25 +255,47 @@ public class TelaMenuPedidos extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_bVoltarActionPerformed
 
-    private void bCadastrarPessoaJuridicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCadastrarPessoaJuridicaActionPerformed
-        new TelaCadastrarPedido();
-    }//GEN-LAST:event_bCadastrarPessoaJuridicaActionPerformed
+    private void bClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bClientesActionPerformed
+        new TelaRelatorioClientes();
+    }//GEN-LAST:event_bClientesActionPerformed
 
-    private void bAlterarPessoaJuridicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAlterarPessoaJuridicaActionPerformed
-    }//GEN-LAST:event_bAlterarPessoaJuridicaActionPerformed
+    private void bComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bComprasActionPerformed
+        new TelaRelatorioCompras();
+    }//GEN-LAST:event_bComprasActionPerformed
 
-    private void bBuscarPessoaJuridicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBuscarPessoaJuridicaActionPerformed
+    private void bDespesasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDespesasActionPerformed
+        new TelaRelatorioDespesas();
+    }//GEN-LAST:event_bDespesasActionPerformed
+
+    private void bVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVendasActionPerformed
+        new TelaRelatorioVendas();
+    }//GEN-LAST:event_bVendasActionPerformed
+
+    private void bFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bFuncionariosActionPerformed
+        new TelaRelatorioFuncionarios();
+    }//GEN-LAST:event_bFuncionariosActionPerformed
+
+    private void bPedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPedidosActionPerformed
         new TelaRelatorioPedidos();
-    }//GEN-LAST:event_bBuscarPessoaJuridicaActionPerformed
+    }//GEN-LAST:event_bPedidosActionPerformed
 
-    private void bExcluirPessoaJuridicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bExcluirPessoaJuridicaActionPerformed
-    }//GEN-LAST:event_bExcluirPessoaJuridicaActionPerformed
+    private void bFornecedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bFornecedoresActionPerformed
+        new TelaRelatorioFornecedores();
+    }//GEN-LAST:event_bFornecedoresActionPerformed
+
+    private void bProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bProdutosActionPerformed
+        new TelaRelatorioProdutos();
+    }//GEN-LAST:event_bProdutosActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bAlterarPessoaJuridica;
-    private javax.swing.JButton bBuscarPessoaJuridica;
-    private javax.swing.JButton bCadastrarPessoaJuridica;
-    private javax.swing.JButton bExcluirPessoaJuridica;
+    private javax.swing.JButton bClientes;
+    private javax.swing.JButton bCompras;
+    private javax.swing.JButton bDespesas;
+    private javax.swing.JButton bFornecedores;
+    private javax.swing.JButton bFuncionarios;
+    private javax.swing.JButton bPedidos;
+    private javax.swing.JButton bProdutos;
+    private javax.swing.JButton bVendas;
     private javax.swing.JButton bVoltar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
