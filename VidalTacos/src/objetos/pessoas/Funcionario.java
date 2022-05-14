@@ -19,16 +19,19 @@ public class Funcionario extends Pessoa{
     private String nome;
     private String cpf;
     private String cargo;
+    private String dataDeNascimento;
     private String dataDeAdmissao;
     private String dataDeDesligamento;
     // private List<Ponto> pontos = new ArrayList<>();
 
-    public Funcionario(String nome, String cpf, String cargo, String dataDeAdmissao, String telefone, String whatsapp, String email, Endereco endereco) {
+    public Funcionario(String nome, String cpf, String cargo, String dataDeNascimento, String dataDeAdmissao, String dataDeDesligamento, String telefone, String whatsapp, String email, Endereco endereco) {
         super(telefone, whatsapp, email, endereco);
         this.nome = nome;
         this.cpf = cpf;
         this.cargo = cargo;
+        this.dataDeNascimento = dataDeNascimento;
         this.dataDeAdmissao = dataDeAdmissao;
+        this.dataDeDesligamento = dataDeDesligamento;
     }
 
     public String getNome() {
@@ -55,6 +58,14 @@ public class Funcionario extends Pessoa{
         this.cargo = cargo;
     }
 
+    public String getDataDeNascimento() {
+        return dataDeNascimento;
+    }
+
+    public void setDataDeNascimento(String dataDeNascimento) {
+        this.dataDeNascimento = dataDeNascimento;
+    }
+    
     public String getDataDeAdmissao() {
         return dataDeAdmissao;
     }
