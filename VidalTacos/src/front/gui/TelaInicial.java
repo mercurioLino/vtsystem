@@ -5,6 +5,12 @@
  */
 package front.gui;
 
+import front.gui.venda.TelaMenuVendas;
+import front.gui.produtos.TelaMenuProdutos;
+import front.gui.pedido.TelaMenuPedidos;
+import front.gui.funcionario.TelaMenuFuncionario;
+import front.gui.pj.TelaMenuPessoaJuridica;
+
 /**
  *
  * @author MIGUELCESARPENHAGOME
