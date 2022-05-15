@@ -19,6 +19,7 @@ public class TelaExcluirPessoaJuridica extends javax.swing.JFrame {
     public TelaExcluirPessoaJuridica() {
         initComponents();
         this.setVisible(true);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -39,7 +40,7 @@ public class TelaExcluirPessoaJuridica extends javax.swing.JFrame {
         bVoltar = new javax.swing.JButton();
         bExcluirPessoaJuridica = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 

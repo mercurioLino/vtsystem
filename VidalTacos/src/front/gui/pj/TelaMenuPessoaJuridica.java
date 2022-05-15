@@ -19,6 +19,7 @@ public class TelaMenuPessoaJuridica extends javax.swing.JFrame {
     public TelaMenuPessoaJuridica() {
         initComponents();
         this.setVisible(true);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -66,7 +67,7 @@ public class TelaMenuPessoaJuridica extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 

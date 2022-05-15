@@ -18,6 +18,7 @@ public class TelaCadastrarCompra extends javax.swing.JFrame {
     public TelaCadastrarCompra() {
         initComponents();
         this.setVisible(true);
+        this.setLocationRelativeTo(null);
     }
 
     /** This method is called from within the constructor to
@@ -52,7 +53,7 @@ public class TelaCadastrarCompra extends javax.swing.JFrame {
         bCadastrarCompra = new javax.swing.JButton();
         bVoltar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));

@@ -17,6 +17,7 @@ public class TelaConfirmacao extends javax.swing.JFrame {
     public TelaConfirmacao() {
         initComponents();
         this.setVisible(true);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -35,7 +36,7 @@ public class TelaConfirmacao extends javax.swing.JFrame {
         bNao = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -69,7 +70,7 @@ public class TelaConfirmacao extends javax.swing.JFrame {
         bSim.setText("Sim");
         bSim.setBorder(null);
         bSim.setBorderPainted(false);
-        bSim.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bSim.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bSim.setFocusPainted(false);
         bSim.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -91,7 +92,7 @@ public class TelaConfirmacao extends javax.swing.JFrame {
         bNao.setText("Não");
         bNao.setBorder(null);
         bNao.setBorderPainted(false);
-        bNao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bNao.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bNao.setFocusPainted(false);
         bNao.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {

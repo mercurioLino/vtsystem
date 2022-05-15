@@ -17,6 +17,7 @@ public class TelaRelatorioCompras extends javax.swing.JFrame {
     public TelaRelatorioCompras() {
         initComponents();
         this.setVisible(true);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -47,7 +48,7 @@ public class TelaRelatorioCompras extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         bGerarPDF = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));

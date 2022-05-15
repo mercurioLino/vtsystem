@@ -53,7 +53,7 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/front/imgs/taco-icon.png"))); // NOI18N
         jLabel1.setText("jLabel1");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -126,7 +126,7 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
             }
         });
 
-        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(null));
 
         lTacoImg2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/front/imgs/taco-icon.png"))); // NOI18N
 

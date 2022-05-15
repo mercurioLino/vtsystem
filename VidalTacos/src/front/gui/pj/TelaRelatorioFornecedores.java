@@ -17,6 +17,7 @@ public class TelaRelatorioFornecedores extends javax.swing.JFrame {
     public TelaRelatorioFornecedores() {
         initComponents();
         this.setVisible(true);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -37,7 +38,7 @@ public class TelaRelatorioFornecedores extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tFornecedores = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));

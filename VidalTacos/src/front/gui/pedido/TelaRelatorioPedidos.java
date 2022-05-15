@@ -17,6 +17,7 @@ public class TelaRelatorioPedidos extends javax.swing.JFrame {
     public TelaRelatorioPedidos() {
         initComponents();
         this.setVisible(true);
+        this.setLocationRelativeTo(null);
     }
 
     /**

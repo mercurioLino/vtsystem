@@ -19,6 +19,7 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
     public TelaCadastrarFuncionario() {
         initComponents();
         this.setVisible(true);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -53,7 +54,7 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
         lCliente5 = new javax.swing.JLabel();
         tEmail1 = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));

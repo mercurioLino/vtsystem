@@ -23,6 +23,7 @@ public class TelaInicial extends javax.swing.JFrame {
     public TelaInicial() {
         initComponents();
         this.setVisible(true);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -54,7 +55,7 @@ public class TelaInicial extends javax.swing.JFrame {
 
         jLabel2.setText("jLabel2");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
@@ -134,7 +135,7 @@ public class TelaInicial extends javax.swing.JFrame {
         bVoltar.setText("Sair");
         bVoltar.setBorder(null);
         bVoltar.setBorderPainted(false);
-        bVoltar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bVoltar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bVoltar.setFocusPainted(false);
         bVoltar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -151,7 +152,7 @@ public class TelaInicial extends javax.swing.JFrame {
         });
 
         jPanel10.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel10.setBorder(javax.swing.BorderFactory.createLineBorder(null));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setText("?");
@@ -177,7 +178,7 @@ public class TelaInicial extends javax.swing.JFrame {
         bRelatorios.setForeground(new java.awt.Color(255, 255, 255));
         bRelatorios.setText("Relatórios");
         bRelatorios.setBorderPainted(false);
-        bRelatorios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bRelatorios.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bRelatorios.setFocusPainted(false);
         bRelatorios.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -198,7 +199,7 @@ public class TelaInicial extends javax.swing.JFrame {
         bPessoaJuridica.setForeground(new java.awt.Color(255, 255, 255));
         bPessoaJuridica.setText("Pessoa Jur.");
         bPessoaJuridica.setBorderPainted(false);
-        bPessoaJuridica.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bPessoaJuridica.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bPessoaJuridica.setFocusPainted(false);
         bPessoaJuridica.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -219,7 +220,7 @@ public class TelaInicial extends javax.swing.JFrame {
         bPedidos.setForeground(new java.awt.Color(255, 255, 255));
         bPedidos.setText("Pedidos");
         bPedidos.setBorderPainted(false);
-        bPedidos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bPedidos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bPedidos.setFocusPainted(false);
         bPedidos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -240,7 +241,7 @@ public class TelaInicial extends javax.swing.JFrame {
         bProdutos.setForeground(new java.awt.Color(255, 255, 255));
         bProdutos.setText("Produtos");
         bProdutos.setBorderPainted(false);
-        bProdutos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bProdutos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bProdutos.setFocusPainted(false);
         bProdutos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -261,7 +262,7 @@ public class TelaInicial extends javax.swing.JFrame {
         bVendas.setForeground(new java.awt.Color(255, 255, 255));
         bVendas.setText("Vendas");
         bVendas.setBorderPainted(false);
-        bVendas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bVendas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bVendas.setFocusPainted(false);
         bVendas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -282,7 +283,7 @@ public class TelaInicial extends javax.swing.JFrame {
         bFuncionario.setForeground(new java.awt.Color(255, 255, 255));
         bFuncionario.setText("Funcionario");
         bFuncionario.setBorderPainted(false);
-        bFuncionario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bFuncionario.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bFuncionario.setFocusPainted(false);
         bFuncionario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -309,7 +310,7 @@ public class TelaInicial extends javax.swing.JFrame {
                     .addComponent(bFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 360, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(bVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)

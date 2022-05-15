@@ -21,6 +21,7 @@ public class TelaCadastrarPessoaJuridica extends javax.swing.JFrame {
     public TelaCadastrarPessoaJuridica() {
         initComponents();
         this.setVisible(true);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -54,7 +55,7 @@ public class TelaCadastrarPessoaJuridica extends javax.swing.JFrame {
         bCadastrarPedido1 = new javax.swing.JButton();
         bWhatsapp1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));

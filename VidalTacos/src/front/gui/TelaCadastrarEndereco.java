@@ -17,6 +17,7 @@ public class TelaCadastrarEndereco extends javax.swing.JFrame {
     public TelaCadastrarEndereco() {
         initComponents();
         this.setVisible(true);
+        this.setLocationRelativeTo(null);
     }
 
     /**
