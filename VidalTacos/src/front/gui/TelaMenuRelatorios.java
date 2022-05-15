@@ -11,7 +11,7 @@ import front.gui.produtos.TelaRelatorioProdutos;
 import front.gui.pedido.TelaRelatorioPedidos;
 import front.gui.despesa.TelaRelatorioDespesas;
 import front.gui.funcionario.TelaRelatorioFuncionarios;
-import front.gui.pj.TelaRelatorioClientes;
+import front.gui.pj.TelaPJ;
 import front.gui.pj.TelaRelatorioFornecedores;
 
 /**
@@ -266,7 +266,7 @@ public class TelaMenuRelatorios extends javax.swing.JFrame {
     }//GEN-LAST:event_bVoltarActionPerformed
 
     private void bClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bClientesActionPerformed
-        new TelaRelatorioClientes();
+        //new TelaRelatorioClientes();
     }//GEN-LAST:event_bClientesActionPerformed
 
     private void bComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bComprasActionPerformed

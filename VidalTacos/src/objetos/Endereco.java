@@ -11,14 +11,14 @@ package objetos;
 public class Endereco {
     
     private String logradouro;
-    private int numero;
+    private String numero;
     private String complemento;
     private String bairro;
     private String cidade;
     private String uf;
     private String cep; 
 
-    public Endereco(String logradouro, int numero, String complemento, String bairro, String cidade, String uf, String cep) {
+    public Endereco(String logradouro, String numero, String complemento, String bairro, String cidade, String uf, String cep) {
         this.logradouro = logradouro;
         this.numero = numero;
         this.complemento = complemento;
@@ -28,7 +28,7 @@ public class Endereco {
         this.cep = cep;
     }
 
-    public Endereco(String logradouro, int numero, String bairro, String cidade, String uf, String cep) {
+    public Endereco(String logradouro, String numero, String bairro, String cidade, String uf, String cep) {
         this.logradouro = logradouro;
         this.numero = numero;
         this.bairro = bairro;
@@ -45,11 +45,11 @@ public class Endereco {
         this.logradouro = logradouro;
     }
 
-    public int getNumero() {
+    public String getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
 

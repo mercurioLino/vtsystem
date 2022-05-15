@@ -7,6 +7,7 @@
 package front.gui.compra;
 
 import front.gui.TelaConfirmacao;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -403,7 +404,7 @@ public class TelaCadastrarCompra extends javax.swing.JFrame {
     }//GEN-LAST:event_bCadastrarCompraMouseExited
 
     private void bCadastrarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCadastrarCompraActionPerformed
-        new TelaConfirmacao();
+       // TODO add your handling code here:
     }//GEN-LAST:event_bCadastrarCompraActionPerformed
 
     private void bVoltarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bVoltarMouseEntered

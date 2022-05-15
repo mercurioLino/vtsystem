@@ -5,25 +5,34 @@
  */
 package front.gui.pj;
 
-import front.gui.LoginGui;
 import front.gui.TelaConfirmacao;
-import front.gui.TelaCadastrarEndereco;
+import objetos.Endereco;
+import objetos.VidalTacos;
 
 /**
  *
  * @author MIGUELCESARPENHAGOME
  */
-public class TelaAlterarPessoaJuridica extends javax.swing.JFrame {
+public class TelaAlterarPessoaJuridica extends javax.swing.JFrame{
 
-    /**
-     * Creates new form TelaCadastrarPedido
-     */
-    public TelaAlterarPessoaJuridica() {
+    private Endereco endereco;
+    private VidalTacos vidalTacos;
+            
+    public TelaAlterarPessoaJuridica(VidalTacos vidalTacos) {
         initComponents();
+        this.vidalTacos = vidalTacos;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
     }
-
+    
+    public void setEndereco(Endereco endereco){
+        this.endereco = endereco;
+    }
+    
+    public Endereco getEndereco(){
+        return this.endereco;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -330,7 +339,7 @@ public class TelaAlterarPessoaJuridica extends javax.swing.JFrame {
     }//GEN-LAST:event_bEndereçoMouseExited
 
     private void bEndereçoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEndereçoActionPerformed
-        new TelaCadastrarEndereco();
+        new TelaCadastrarEnderecoPJ(this);
     }//GEN-LAST:event_bEndereçoActionPerformed
 
     private void bVoltarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bVoltarMouseEntered

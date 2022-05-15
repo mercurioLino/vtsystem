@@ -210,7 +210,7 @@ public class TelaCadastrarDespesa extends javax.swing.JFrame {
     }//GEN-LAST:event_bCadastrarPedido1MouseExited
 
     private void bCadastrarPedido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCadastrarPedido1ActionPerformed
-        new TelaConfirmacao();
+
     }//GEN-LAST:event_bCadastrarPedido1ActionPerformed
 
     private void bVoltarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bVoltarMouseEntered

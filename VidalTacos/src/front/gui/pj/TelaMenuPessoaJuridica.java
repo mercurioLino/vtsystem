@@ -5,7 +5,7 @@
  */
 package front.gui.pj;
 
-import front.gui.pj.TelaCadastrarPessoaJuridica;
+import objetos.VidalTacos;
 
 /**
  *
@@ -13,11 +13,11 @@ import front.gui.pj.TelaCadastrarPessoaJuridica;
  */
 public class TelaMenuPessoaJuridica extends javax.swing.JFrame {
 
-    /**
-     * Creates new form TelaMenuPedidos
-     */
-    public TelaMenuPessoaJuridica() {
+    private VidalTacos vidalTacos;
+    
+    public TelaMenuPessoaJuridica(VidalTacos vidalTacos) {
         initComponents();
+        this.vidalTacos = vidalTacos;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
     }
@@ -210,15 +210,15 @@ public class TelaMenuPessoaJuridica extends javax.swing.JFrame {
     }//GEN-LAST:event_bVoltarActionPerformed
 
     private void bCadastrarPessoaJuridicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCadastrarPessoaJuridicaActionPerformed
-        new TelaCadastrarPessoaJuridica();
+        new TelaCadastrarPessoaJuridica(this.vidalTacos);
     }//GEN-LAST:event_bCadastrarPessoaJuridicaActionPerformed
 
     private void bAlterarPessoaJuridicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAlterarPessoaJuridicaActionPerformed
-        new TelaAlterarPessoaJuridica();
+        new TelaAlterarPessoaJuridica(this.vidalTacos);
     }//GEN-LAST:event_bAlterarPessoaJuridicaActionPerformed
 
     private void bBuscarPessoaJuridicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBuscarPessoaJuridicaActionPerformed
-        new TelaBuscarPessoaJuridica();
+        new TelaBuscarPessoaJuridica(this.vidalTacos);
     }//GEN-LAST:event_bBuscarPessoaJuridicaActionPerformed
 
     private void bExcluirPessoaJuridicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bExcluirPessoaJuridicaActionPerformed

@@ -1,7 +1,6 @@
 
 import front.gui.LoginGui;
-import java.util.ArrayList;
-import java.util.List;
+import objetos.VidalTacos;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -13,11 +12,9 @@ import java.util.List;
  * @author leonardolino
  */
 public class Main {
-
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String args[]) {
-        new LoginGui().setVisible(true);
+        VidalTacos vidalTacos = new VidalTacos();
+        LoginGui telaAcesso = new LoginGui(vidalTacos);
     }
 }

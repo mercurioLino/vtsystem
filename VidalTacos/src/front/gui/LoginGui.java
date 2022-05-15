@@ -5,8 +5,7 @@
  */
 package front.gui;
 
-import java.awt.Color;
-import javax.swing.ImageIcon;
+import objetos.VidalTacos;
 
 /**
  *
@@ -14,11 +13,13 @@ import javax.swing.ImageIcon;
  */
 public class LoginGui extends javax.swing.JFrame {
 
-    /**
-     * Creates new form LoginGui
-     */
-    public LoginGui() {
+    private VidalTacos vidalTacos;
+    
+    public LoginGui(VidalTacos vidalTacos) {
         initComponents();
+        this.vidalTacos = vidalTacos;
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -209,7 +210,7 @@ public class LoginGui extends javax.swing.JFrame {
     }//GEN-LAST:event_bSairMouseExited
 
     private void bEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEntrarActionPerformed
-        new TelaInicial();
+        new TelaInicial(vidalTacos);
         this.setVisible(false);
     }//GEN-LAST:event_bEntrarActionPerformed
 

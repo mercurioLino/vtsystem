@@ -5,8 +5,6 @@
  */
 package front.gui.funcionario;
 
-import front.gui.TelaCadastrarEndereco;
-
 /**
  *
  * @author MIGUELCESARPENHAGOME
@@ -337,7 +335,7 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_bEndereçoMouseExited
 
     private void bEndereçoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEndereçoActionPerformed
-        new TelaCadastrarEndereco();
+        new TelaCadastrarEnderecoFuncionario();
     }//GEN-LAST:event_bEndereçoActionPerformed
 
     private void bVoltarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bVoltarMouseEntered

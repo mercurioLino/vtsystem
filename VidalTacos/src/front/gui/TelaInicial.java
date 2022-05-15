@@ -9,7 +9,8 @@ import front.gui.venda.TelaMenuVendas;
 import front.gui.produtos.TelaMenuProdutos;
 import front.gui.pedido.TelaMenuPedidos;
 import front.gui.funcionario.TelaMenuFuncionario;
-import front.gui.pj.TelaMenuPessoaJuridica;
+import front.gui.pj.TelaPJ;
+import objetos.VidalTacos;
 
 /**
  *
@@ -17,11 +18,11 @@ import front.gui.pj.TelaMenuPessoaJuridica;
  */
 public class TelaInicial extends javax.swing.JFrame {
 
-    /**
-     * Creates new form TelaInicial
-     */
-    public TelaInicial() {
+    private VidalTacos vidalTacos;
+    
+    public TelaInicial(VidalTacos vidalTacos) {
         initComponents();
+        this.vidalTacos= vidalTacos;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
     }
@@ -401,7 +402,7 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_bPessoaJuridicaMouseExited
 
     private void bPessoaJuridicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPessoaJuridicaActionPerformed
-        new TelaMenuPessoaJuridica();
+        new TelaPJ(vidalTacos);
     }//GEN-LAST:event_bPessoaJuridicaActionPerformed
 
     private void bPedidosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bPedidosMouseEntered

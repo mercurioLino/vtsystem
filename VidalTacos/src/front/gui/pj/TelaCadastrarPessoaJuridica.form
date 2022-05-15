@@ -134,7 +134,7 @@
                               <Group type="102" attributes="0">
                                   <Component id="lRazaoSocial" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="bRazaoSocial1" min="-2" pref="93" max="-2" attributes="0"/>
+                                  <Component id="tRazaoSocial" min="-2" pref="93" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -147,9 +147,9 @@
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="tWhatsapp" min="-2" pref="93" max="-2" attributes="0"/>
-                              <Component id="bNomeFantasia" alignment="1" min="-2" pref="93" max="-2" attributes="0"/>
-                              <Component id="jCheckBox1" alignment="0" min="-2" pref="93" max="-2" attributes="0"/>
-                              <Component id="jCheckBox2" alignment="0" min="-2" pref="93" max="-2" attributes="0"/>
+                              <Component id="tNomeFantasia" alignment="1" min="-2" pref="93" max="-2" attributes="0"/>
+                              <Component id="bCliente" alignment="0" min="-2" pref="93" max="-2" attributes="0"/>
+                              <Component id="bFornecedor" alignment="0" min="-2" pref="93" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -163,14 +163,14 @@
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lRazaoSocial" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="bRazaoSocial1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tRazaoSocial" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lCNPJ" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="tCNPJ" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lNomeFantasia" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="bNomeFantasia" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tNomeFantasia" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lCliente8" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="tTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -191,9 +191,9 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="bEndereço" min="-2" pref="49" max="-2" attributes="0"/>
                               <Group type="102" attributes="0">
-                                  <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="bCliente" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jCheckBox2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="bFornecedor" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -299,9 +299,9 @@
             <Property name="text" type="java.lang.String" value="Nome Fantasia"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="bNomeFantasia">
+        <Component class="javax.swing.JTextField" name="tNomeFantasia">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bNomeFantasiaActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tNomeFantasiaActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="bWhatsapp">
@@ -314,17 +314,17 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tWhatsappActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="bRazaoSocial1">
+        <Component class="javax.swing.JTextField" name="tRazaoSocial">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bRazaoSocial1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tRazaoSocialActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox1">
+        <Component class="javax.swing.JCheckBox" name="bCliente">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cliente"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox2">
+        <Component class="javax.swing.JCheckBox" name="bFornecedor">
           <Properties>
             <Property name="text" type="java.lang.String" value="Fornecedor"/>
           </Properties>

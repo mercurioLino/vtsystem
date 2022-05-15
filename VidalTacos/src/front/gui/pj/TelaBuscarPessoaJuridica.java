@@ -5,17 +5,20 @@
  */
 package front.gui.pj;
 
+import objetos.VidalTacos;
+import objetos.pessoas.PessoaJuridica;
+
 /**
  *
  * @author MIGUELCESARPENHAGOME
  */
 public class TelaBuscarPessoaJuridica extends javax.swing.JFrame {
 
-    /**
-     * Creates new form TelaBuscarPessoaJuridica
-     */
-    public TelaBuscarPessoaJuridica() {
+    private VidalTacos vidalTacos;
+    
+    public TelaBuscarPessoaJuridica(VidalTacos vidalTacos) {
         initComponents();
+        this.vidalTacos = vidalTacos;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
     }
@@ -109,6 +112,11 @@ public class TelaBuscarPessoaJuridica extends javax.swing.JFrame {
 
         bBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/front/imgs/search.png"))); // NOI18N
         bBuscar.setPreferredSize(new java.awt.Dimension(91, 20));
+        bBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bBuscarActionPerformed(evt);
+            }
+        });
 
         lCNPJ.setText("CNPJ");
 
@@ -214,6 +222,14 @@ public class TelaBuscarPessoaJuridica extends javax.swing.JFrame {
     private void bVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVoltarActionPerformed
         this.dispose();
     }//GEN-LAST:event_bVoltarActionPerformed
+
+    private void bBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBuscarActionPerformed
+        int i = 0;
+        for(PessoaJuridica pj: vidalTacos.getPessoasJuridicas()){
+            System.out.println(i + pj.getCnpj()+ pj.getRazaoSocial() + pj.isCliente() + pj.isFornecedor() + pj.getEndereco().getCep());
+            i++;
+        }
+    }//GEN-LAST:event_bBuscarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

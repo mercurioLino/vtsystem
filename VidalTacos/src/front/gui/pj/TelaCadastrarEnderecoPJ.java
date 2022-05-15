@@ -3,21 +3,44 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package front.gui;
+package front.gui.pj;
+
+import front.gui.pj.TelaCadastrarPessoaJuridica;
+import objetos.Endereco;
 
 /**
  *
  * @author MIGUELCESARPENHAGOME
  */
-public class TelaCadastrarEndereco extends javax.swing.JFrame {
+public class TelaCadastrarEnderecoPJ extends javax.swing.JFrame{
 
-    /**
-     * Creates new form TelaCadastrarEnderecoPessoaJuridica
-     */
-    public TelaCadastrarEndereco() {
+    private String cep;
+    private String cidade;
+    private String uf;
+    private String logradouro;
+    private String bairro;
+    private String numero;
+    private String complemento;
+    private Endereco endereco;
+    private TelaCadastrarPessoaJuridica telaCadPJ = null;
+    private TelaAlterarPessoaJuridica telaAltPJ = null;
+            
+    public TelaCadastrarEnderecoPJ(TelaCadastrarPessoaJuridica telaCadPJ) {
         initComponents();
+        this.telaCadPJ = telaCadPJ;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
+    }
+    
+    public TelaCadastrarEnderecoPJ(TelaAlterarPessoaJuridica telaAltPJ) {
+        initComponents();
+        this.telaAltPJ = telaAltPJ;
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);
+    }
+    
+    public Endereco getEndereco(){
+        return this.endereco;
     }
 
     /**
@@ -33,20 +56,20 @@ public class TelaCadastrarEndereco extends javax.swing.JFrame {
         lCadastrarPedido = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         lCEP = new javax.swing.JLabel();
-        bCEP = new javax.swing.JTextField();
+        tCEP = new javax.swing.JTextField();
         bBuscar = new javax.swing.JButton();
         lCidade = new javax.swing.JLabel();
-        bCidade = new javax.swing.JTextField();
+        tCidade = new javax.swing.JTextField();
         lCEP2 = new javax.swing.JLabel();
-        bEstado = new javax.swing.JTextField();
+        tUF = new javax.swing.JTextField();
         lCEP3 = new javax.swing.JLabel();
-        bLogradouro = new javax.swing.JTextField();
+        tLogradouro = new javax.swing.JTextField();
         lBairro = new javax.swing.JLabel();
-        bBairro = new javax.swing.JTextField();
+        tBairro = new javax.swing.JTextField();
         lCEP5 = new javax.swing.JLabel();
-        bNumero = new javax.swing.JTextField();
+        tNumero = new javax.swing.JTextField();
         lCEP6 = new javax.swing.JLabel();
-        bCEP6 = new javax.swing.JTextField();
+        tComplemento = new javax.swing.JTextField();
         bSalvar = new javax.swing.JButton();
         bVoltar = new javax.swing.JButton();
 
@@ -82,9 +105,9 @@ public class TelaCadastrarEndereco extends javax.swing.JFrame {
 
         lCEP.setText("CEP");
 
-        bCEP.addActionListener(new java.awt.event.ActionListener() {
+        tCEP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bCEPActionPerformed(evt);
+                tCEPActionPerformed(evt);
             }
         });
 
@@ -93,50 +116,50 @@ public class TelaCadastrarEndereco extends javax.swing.JFrame {
 
         lCidade.setText("Cidade");
 
-        bCidade.addActionListener(new java.awt.event.ActionListener() {
+        tCidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bCidadeActionPerformed(evt);
+                tCidadeActionPerformed(evt);
             }
         });
 
-        lCEP2.setText("Estado");
+        lCEP2.setText("UF");
 
-        bEstado.addActionListener(new java.awt.event.ActionListener() {
+        tUF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bEstadoActionPerformed(evt);
+                tUFActionPerformed(evt);
             }
         });
 
         lCEP3.setText("Logradouro");
 
-        bLogradouro.addActionListener(new java.awt.event.ActionListener() {
+        tLogradouro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bLogradouroActionPerformed(evt);
+                tLogradouroActionPerformed(evt);
             }
         });
 
         lBairro.setText("Bairro");
 
-        bBairro.addActionListener(new java.awt.event.ActionListener() {
+        tBairro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bBairroActionPerformed(evt);
+                tBairroActionPerformed(evt);
             }
         });
 
         lCEP5.setText("Numero");
 
-        bNumero.addActionListener(new java.awt.event.ActionListener() {
+        tNumero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bNumeroActionPerformed(evt);
+                tNumeroActionPerformed(evt);
             }
         });
 
         lCEP6.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         lCEP6.setText("Complemento");
 
-        bCEP6.addActionListener(new java.awt.event.ActionListener() {
+        tComplemento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bCEP6ActionPerformed(evt);
+                tComplementoActionPerformed(evt);
             }
         });
 
@@ -187,42 +210,43 @@ public class TelaCadastrarEndereco extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(bSalvar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(bVoltar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(lCidade)
-                                .addComponent(lCEP))
-                            .addComponent(lCEP2)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(bSalvar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(bVoltar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(lBairro)
-                                .addComponent(lCEP3)
-                                .addComponent(lCEP5))
-                            .addComponent(lCEP6))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bLogradouro, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bCEP6, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(bCEP, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(32, 32, 32)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lCidade)
+                                    .addComponent(lCEP)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(lBairro)
+                                        .addComponent(lCEP3)
+                                        .addComponent(lCEP5))
+                                    .addComponent(lCEP6)
+                                    .addComponent(lCEP2, javax.swing.GroupLayout.Alignment.TRAILING))
                                 .addGap(18, 18, 18)
-                                .addComponent(bBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(tLogradouro, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tComplemento, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tUF, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(tCEP, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(bBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(0, 12, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -231,31 +255,31 @@ public class TelaCadastrarEndereco extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(lCEP)
-                        .addComponent(bCEP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(tCEP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(bBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lCidade)
-                    .addComponent(bCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lCEP2)
-                    .addComponent(bEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tUF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lCEP3)
-                    .addComponent(bLogradouro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tLogradouro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lBairro)
-                    .addComponent(bBairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tBairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lCEP5)
-                    .addComponent(bNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bCEP6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tComplemento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lCEP6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(bSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -283,33 +307,33 @@ public class TelaCadastrarEndereco extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void bCEPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCEPActionPerformed
+    private void tCEPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tCEPActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_bCEPActionPerformed
+    }//GEN-LAST:event_tCEPActionPerformed
 
-    private void bCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCidadeActionPerformed
+    private void tCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tCidadeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_bCidadeActionPerformed
+    }//GEN-LAST:event_tCidadeActionPerformed
 
-    private void bEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEstadoActionPerformed
+    private void tUFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tUFActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_bEstadoActionPerformed
+    }//GEN-LAST:event_tUFActionPerformed
 
-    private void bLogradouroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bLogradouroActionPerformed
+    private void tLogradouroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tLogradouroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_bLogradouroActionPerformed
+    }//GEN-LAST:event_tLogradouroActionPerformed
 
-    private void bBairroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBairroActionPerformed
+    private void tBairroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tBairroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_bBairroActionPerformed
+    }//GEN-LAST:event_tBairroActionPerformed
 
-    private void bNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bNumeroActionPerformed
+    private void tNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tNumeroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_bNumeroActionPerformed
+    }//GEN-LAST:event_tNumeroActionPerformed
 
-    private void bCEP6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCEP6ActionPerformed
+    private void tComplementoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tComplementoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_bCEP6ActionPerformed
+    }//GEN-LAST:event_tComplementoActionPerformed
 
     private void bSalvarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bSalvarMouseEntered
         // TODO add your handling code here:
@@ -320,7 +344,20 @@ public class TelaCadastrarEndereco extends javax.swing.JFrame {
     }//GEN-LAST:event_bSalvarMouseExited
 
     private void bSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSalvarActionPerformed
-        // TODO add your handling code here:
+        this.cep = this.tCEP.getText();
+        this.cidade = this.tCidade.getText();
+        this.uf = this.tUF.getText();
+        this.logradouro = this.tLogradouro.getText();
+        this.bairro = this.tBairro.getText();
+        this.numero = this.tNumero.getText();
+        this.complemento = this.tComplemento.getText();
+        this.endereco = new Endereco(logradouro, numero, complemento, bairro, cidade, uf, cep);
+        if(this.telaCadPJ != null){
+            telaCadPJ.setEndereco(this.endereco);
+        } else if(this.telaAltPJ != null){
+            telaAltPJ.setEndereco(this.endereco);
+        }
+        this.dispose();
     }//GEN-LAST:event_bSalvarActionPerformed
 
     private void bVoltarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bVoltarMouseEntered
@@ -337,14 +374,7 @@ public class TelaCadastrarEndereco extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField bBairro;
     private javax.swing.JButton bBuscar;
-    private javax.swing.JTextField bCEP;
-    private javax.swing.JTextField bCEP6;
-    private javax.swing.JTextField bCidade;
-    private javax.swing.JTextField bEstado;
-    private javax.swing.JTextField bLogradouro;
-    private javax.swing.JTextField bNumero;
     private javax.swing.JButton bSalvar;
     private javax.swing.JButton bVoltar;
     private javax.swing.JPanel jPanel1;
@@ -357,5 +387,12 @@ public class TelaCadastrarEndereco extends javax.swing.JFrame {
     private javax.swing.JLabel lCEP6;
     private javax.swing.JLabel lCadastrarPedido;
     private javax.swing.JLabel lCidade;
+    private javax.swing.JTextField tBairro;
+    private javax.swing.JTextField tCEP;
+    private javax.swing.JTextField tCidade;
+    private javax.swing.JTextField tComplemento;
+    private javax.swing.JTextField tLogradouro;
+    private javax.swing.JTextField tNumero;
+    private javax.swing.JTextField tUF;
     // End of variables declaration//GEN-END:variables
 }
