@@ -18,6 +18,7 @@ public class TelaProdutos extends javax.swing.JFrame {
         initComponents();
         this.setVisible(true);
         this.setLocationRelativeTo(null);
+        this.setAlwaysOnTop(true);
     }
 
     /**
@@ -98,16 +99,29 @@ public class TelaProdutos extends javax.swing.JFrame {
 
         tProdutos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
                 "Codigo", "Nome", "Descrição", "Modelo", "Cor", "Valor Unit."
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(tProdutos);
+        if (tProdutos.getColumnModel().getColumnCount() > 0) {
+            tProdutos.getColumnModel().getColumn(0).setResizable(false);
+            tProdutos.getColumnModel().getColumn(1).setResizable(false);
+            tProdutos.getColumnModel().getColumn(2).setResizable(false);
+            tProdutos.getColumnModel().getColumn(3).setResizable(false);
+            tProdutos.getColumnModel().getColumn(4).setResizable(false);
+            tProdutos.getColumnModel().getColumn(5).setResizable(false);
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

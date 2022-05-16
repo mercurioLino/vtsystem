@@ -18,6 +18,7 @@ public class TelaFuncionarios extends javax.swing.JFrame {
         initComponents();
         this.setVisible(true);
         this.setLocationRelativeTo(null);
+        this.setAlwaysOnTop(true);
     }
 
     /**
@@ -98,16 +99,29 @@ public class TelaFuncionarios extends javax.swing.JFrame {
 
         tFuncionarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
                 "CNPJ", "Razão Social", "Telefone", "E-mail", "WhatsApp", "Endereço"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(tFuncionarios);
+        if (tFuncionarios.getColumnModel().getColumnCount() > 0) {
+            tFuncionarios.getColumnModel().getColumn(0).setResizable(false);
+            tFuncionarios.getColumnModel().getColumn(1).setResizable(false);
+            tFuncionarios.getColumnModel().getColumn(2).setResizable(false);
+            tFuncionarios.getColumnModel().getColumn(3).setResizable(false);
+            tFuncionarios.getColumnModel().getColumn(4).setResizable(false);
+            tFuncionarios.getColumnModel().getColumn(5).setResizable(false);
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

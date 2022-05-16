@@ -5,19 +5,21 @@
  */
 package front.gui.venda;
 
+import front.gui.TelaInicial;
+
 /**
  *
  * @author MIGUELCESARPENHAGOME
  */
 public class TelaVendas extends javax.swing.JFrame {
 
-    /**
-     * Creates new form TelaRelatorioVendas
-     */
+    
     public TelaVendas() {
         initComponents();
         this.setVisible(true);
         this.setLocationRelativeTo(null);
+        this.setFocusableWindowState(true);
+        this.setAlwaysOnTop(true);
     }
 
     /**
@@ -105,20 +107,38 @@ public class TelaVendas extends javax.swing.JFrame {
 
         lCliente.setText("Cliente");
 
-        cCliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Leonardo", "Eduardo", "Anelise", "Miguel", " " }));
+        cCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cClienteActionPerformed(evt);
+            }
+        });
 
         tVendas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "Codigo", "Produto", "Cliente", "Data", "Valor", "Método", "Status"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(tVendas);
+        if (tVendas.getColumnModel().getColumnCount() > 0) {
+            tVendas.getColumnModel().getColumn(0).setResizable(false);
+            tVendas.getColumnModel().getColumn(1).setResizable(false);
+            tVendas.getColumnModel().getColumn(2).setResizable(false);
+            tVendas.getColumnModel().getColumn(3).setResizable(false);
+            tVendas.getColumnModel().getColumn(4).setResizable(false);
+            tVendas.getColumnModel().getColumn(5).setResizable(false);
+            tVendas.getColumnModel().getColumn(6).setResizable(false);
+        }
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -129,16 +149,16 @@ public class TelaVendas extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(lPeriodo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(tPeriodo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lAte)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(tAte, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(lCliente)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(cCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(53, 53, 53)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(rPedidosEncerrados)
@@ -241,8 +261,12 @@ public class TelaVendas extends javax.swing.JFrame {
     }//GEN-LAST:event_tAteActionPerformed
 
     private void bInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInserirActionPerformed
-        // TODO add your handling code here:
+        new TelaCadastrarVenda();
     }//GEN-LAST:event_bInserirActionPerformed
+
+    private void cClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cClienteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

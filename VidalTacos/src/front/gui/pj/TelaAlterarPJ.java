@@ -37,6 +37,7 @@ public class TelaAlterarPJ extends javax.swing.JFrame{
         this.pj = pj; 
         this.setVisible(true);
         this.setLocationRelativeTo(null);
+        this.setAlwaysOnTop(rootPaneCheckingEnabled);
     }
     
     public void setEndereco(Endereco endereco){
@@ -422,8 +423,8 @@ public class TelaAlterarPJ extends javax.swing.JFrame{
             RetornaTextoTextField.retornaTextoTextField(this.tNomeFantasia),
             RetornaTextoTextField.retornaTextoTextField(this.tRazaoSocial),
             RetornaTextoTextField.retornaTextoTextField(this.tCNPJ),
-            RetornaBoxSelected.retornaBoxSelected(this.cbCliente),
-            RetornaBoxSelected.retornaBoxSelected(this.cbFornecedor),
+            this.cbCliente.isSelected(),
+            this.cbFornecedor.isSelected(),
             RetornaTextoTextField.retornaTextoTextField(this.tTelefone),
             RetornaTextoTextField.retornaTextoTextField(this.tWhatsapp),
             RetornaTextoTextField.retornaTextoTextField(this.tEmail),

@@ -17,6 +17,7 @@ public class TelaDespesas extends javax.swing.JFrame {
     public TelaDespesas() {
         initComponents();
         this.setVisible(true);
+        this.setAlwaysOnTop(true);
     }
 
     /**
@@ -96,16 +97,26 @@ public class TelaDespesas extends javax.swing.JFrame {
 
         tVendas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
                 "Data", "Descrição", "Valor"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(tVendas);
+        if (tVendas.getColumnModel().getColumnCount() > 0) {
+            tVendas.getColumnModel().getColumn(0).setResizable(false);
+            tVendas.getColumnModel().getColumn(1).setResizable(false);
+            tVendas.getColumnModel().getColumn(2).setResizable(false);
+        }
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);

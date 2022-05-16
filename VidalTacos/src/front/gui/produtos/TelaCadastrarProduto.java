@@ -18,6 +18,7 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
         initComponents();
         this.setVisible(true);
         this.setLocationRelativeTo(null);
+        this.setAlwaysOnTop(rootPaneCheckingEnabled);
     }
 
     /**

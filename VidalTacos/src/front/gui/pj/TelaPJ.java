@@ -6,6 +6,7 @@
 package front.gui.pj;
 
 import static acoes.buscarCNPJ.buscarCNPJ;
+import front.gui.TelaInicial;
 import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -25,7 +26,9 @@ public class TelaPJ extends javax.swing.JFrame {
         this.vidalTacos = vidalTacos;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
+        this.setAlwaysOnTop(true);
         atualizaTabela();
+        this.setAlwaysOnTop(rootPaneCheckingEnabled);
     }
    
     public void atualizaTabela(){

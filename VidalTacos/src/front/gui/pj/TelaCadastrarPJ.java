@@ -34,6 +34,7 @@ public class TelaCadastrarPJ extends javax.swing.JFrame {
         this.telapj = telapj;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
+        this.setAlwaysOnTop(rootPaneCheckingEnabled);
     }
 
     public void setEndereco(Endereco endereco){

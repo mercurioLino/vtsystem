@@ -7,6 +7,7 @@
 package front.gui.venda;
 
 import front.gui.TelaConfirmacao;
+import front.gui.produtos.TelaProdutos;
 
 /**
  *
@@ -19,6 +20,8 @@ public class TelaCadastrarVenda extends javax.swing.JFrame {
         initComponents();
         this.setVisible(true);
         this.setLocationRelativeTo(null);
+        this.setAlwaysOnTop(rootPaneCheckingEnabled);
+        this.setAutoRequestFocus(rootPaneCheckingEnabled);
     }
 
     /** This method is called from within the constructor to
@@ -266,11 +269,12 @@ public class TelaCadastrarVenda extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(lCodigo)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(tCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
                         .addComponent(lPrevisaoEntrega)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(bPrevisaoEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lData6)
@@ -399,7 +403,7 @@ public class TelaCadastrarVenda extends javax.swing.JFrame {
     }//GEN-LAST:event_bEndereço3MouseExited
 
     private void bEndereço3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEndereço3ActionPerformed
-        // TODO add your handling code here:
+        new TelaProdutos();
     }//GEN-LAST:event_bEndereço3ActionPerformed
 
     private void bCadastrarCompraMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bCadastrarCompraMouseEntered

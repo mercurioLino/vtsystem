@@ -31,6 +31,7 @@ public class TelaEnderecoPJ extends javax.swing.JFrame{
         this.bSalvar.setText("Cadastrar");
         this.setVisible(true);
         this.setLocationRelativeTo(null);
+        this.setAlwaysOnTop(rootPaneCheckingEnabled);
     }
     
     public TelaEnderecoPJ(TelaAlterarPJ telaAltPJ, Endereco endereco) {
