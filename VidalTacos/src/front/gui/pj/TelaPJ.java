@@ -5,8 +5,10 @@
  */
 package front.gui.pj;
 
+import static acoes.buscarCNPJ.buscarCNPJ;
 import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 import objetos.VidalTacos;
 import objetos.pessoas.PessoaJuridica;
 
@@ -23,10 +25,11 @@ public class TelaPJ extends javax.swing.JFrame {
         this.vidalTacos = vidalTacos;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
+        atualizaTabela();
     }
    
     public void atualizaTabela(){
-        DefaultTableModel model = (DefaultTableModel)this.tClientes.getModel();;
+        DefaultTableModel model = (DefaultTableModel)this.tClientes.getModel();
         model.setRowCount(0);
         for(PessoaJuridica pj: vidalTacos.getPessoasJuridicas()){
             Vector row = new Vector();
@@ -141,7 +144,6 @@ public class TelaPJ extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tClientes.setEnabled(false);
         tClientes.getTableHeader().setReorderingAllowed(false);
         tClientes.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
@@ -177,12 +179,10 @@ public class TelaPJ extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(bAtualizar)))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(bAtualizar)
                 .addContainerGap())
+            .addComponent(jScrollPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -202,7 +202,7 @@ public class TelaPJ extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInserirActionPerformed
-        new TelaCadastrarPessoaJuridica(vidalTacos, this);
+        new TelaCadastrarPJ(vidalTacos, this);
         
         atualizaTabela();
     }//GEN-LAST:event_bInserirActionPerformed
@@ -216,7 +216,11 @@ public class TelaPJ extends javax.swing.JFrame {
     }//GEN-LAST:event_bAtualizarActionPerformed
 
     private void tClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tClientesMouseClicked
-        
+        int index = this.tClientes.getSelectedRow();
+        TableModel model = this.tClientes.getModel();
+        String cnpj = model.getValueAt(index, 0).toString();
+        PessoaJuridica pj = buscarCNPJ(vidalTacos, cnpj);
+        new TelaAlterarPJ(vidalTacos, pj, this);
     }//GEN-LAST:event_tClientesMouseClicked
 
 

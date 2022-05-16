@@ -1,5 +1,5 @@
 
-import front.gui.LoginGui;
+import front.gui.TelaAcesso;
 import objetos.VidalTacos;
 
 /*
@@ -15,6 +15,6 @@ public class Main {
     
     public static void main(String args[]) {
         VidalTacos vidalTacos = new VidalTacos();
-        LoginGui telaAcesso = new LoginGui(vidalTacos);
+        TelaAcesso telaAcesso = new TelaAcesso(vidalTacos);
     }
 }

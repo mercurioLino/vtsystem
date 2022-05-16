@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package front.gui.pj;
+package excluidos;
 
 import objetos.VidalTacos;
 import objetos.pessoas.PessoaJuridica;

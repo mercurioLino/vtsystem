@@ -11,11 +11,11 @@ import objetos.VidalTacos;
  *
  * @author MIGUELCESARPENHAGOME
  */
-public class LoginGui extends javax.swing.JFrame {
+public class TelaAcesso extends javax.swing.JFrame {
 
     private VidalTacos vidalTacos;
     
-    public LoginGui(VidalTacos vidalTacos) {
+    public TelaAcesso(VidalTacos vidalTacos) {
         initComponents();
         this.vidalTacos = vidalTacos;
         this.setVisible(true);
@@ -76,7 +76,7 @@ public class LoginGui extends javax.swing.JFrame {
         bEntrar.setForeground(new java.awt.Color(255, 255, 255));
         bEntrar.setText("Entrar");
         bEntrar.setBorderPainted(false);
-        bEntrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bEntrar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bEntrar.setFocusPainted(false);
         bEntrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -97,7 +97,7 @@ public class LoginGui extends javax.swing.JFrame {
         bSair.setForeground(new java.awt.Color(255, 255, 255));
         bSair.setText("Sair");
         bSair.setBorderPainted(false);
-        bSair.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bSair.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bSair.setFocusPainted(false);
         bSair.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {

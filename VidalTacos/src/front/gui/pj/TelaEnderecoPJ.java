@@ -5,14 +5,14 @@
  */
 package front.gui.pj;
 
-import front.gui.pj.TelaCadastrarPessoaJuridica;
+import acoes.RetornaTextoTextField;
 import objetos.Endereco;
 
 /**
  *
  * @author MIGUELCESARPENHAGOME
  */
-public class TelaCadastrarEnderecoPJ extends javax.swing.JFrame{
+public class TelaEnderecoPJ extends javax.swing.JFrame{
 
     private String cep;
     private String cidade;
@@ -22,19 +22,28 @@ public class TelaCadastrarEnderecoPJ extends javax.swing.JFrame{
     private String numero;
     private String complemento;
     private Endereco endereco;
-    private TelaCadastrarPessoaJuridica telaCadPJ = null;
-    private TelaAlterarPessoaJuridica telaAltPJ = null;
+    private TelaCadastrarPJ telaCadPJ = null;
+    private TelaAlterarPJ telaAltPJ = null;
             
-    public TelaCadastrarEnderecoPJ(TelaCadastrarPessoaJuridica telaCadPJ) {
+    public TelaEnderecoPJ(TelaCadastrarPJ telaCadPJ) {
         initComponents();
         this.telaCadPJ = telaCadPJ;
+        this.bSalvar.setText("Cadastrar");
         this.setVisible(true);
         this.setLocationRelativeTo(null);
     }
     
-    public TelaCadastrarEnderecoPJ(TelaAlterarPessoaJuridica telaAltPJ) {
+    public TelaEnderecoPJ(TelaAlterarPJ telaAltPJ, Endereco endereco) {
         initComponents();
         this.telaAltPJ = telaAltPJ;
+        this.bSalvar.setText("Alterar");
+        this.tCEP.setText(endereco.getCep());
+        this.tUF.setText(endereco.getUf());
+        this.tCidade.setText(endereco.getCidade());
+        this.tBairro.setText(endereco.getBairro());
+        this.tComplemento.setText(endereco.getComplemento());
+        this.tNumero.setText(endereco.getNumero());
+        this.tLogradouro.setText(endereco.getLogradouro());
         this.setVisible(true);
         this.setLocationRelativeTo(null);
     }
@@ -90,7 +99,7 @@ public class TelaCadastrarEnderecoPJ extends javax.swing.JFrame{
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lCadastrarPedido, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE)
+                .addComponent(lCadastrarPedido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -154,7 +163,6 @@ public class TelaCadastrarEnderecoPJ extends javax.swing.JFrame{
             }
         });
 
-        lCEP6.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         lCEP6.setText("Complemento");
 
         tComplemento.addActionListener(new java.awt.event.ActionListener() {
@@ -166,7 +174,6 @@ public class TelaCadastrarEnderecoPJ extends javax.swing.JFrame{
         bSalvar.setBackground(new java.awt.Color(0, 204, 0));
         bSalvar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         bSalvar.setForeground(new java.awt.Color(255, 255, 255));
-        bSalvar.setText("Salvar");
         bSalvar.setBorderPainted(false);
         bSalvar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bSalvar.setFocusPainted(false);
@@ -211,41 +218,33 @@ public class TelaCadastrarEnderecoPJ extends javax.swing.JFrame{
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(bSalvar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(bVoltar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(bSalvar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(bVoltar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lCEP6)
+                                .addComponent(lCEP2, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(lCEP5)
+                            .addComponent(lBairro)
+                            .addComponent(lCEP3)
+                            .addComponent(lCidade)
+                            .addComponent(lCEP))
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tLogradouro, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tComplemento, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tUF, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(32, 32, 32)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lCidade)
-                                    .addComponent(lCEP)))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(lBairro)
-                                        .addComponent(lCEP3)
-                                        .addComponent(lCEP5))
-                                    .addComponent(lCEP6)
-                                    .addComponent(lCEP2, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addComponent(tCEP, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(tLogradouro, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tComplemento, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tUF, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(tCEP, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(bBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(0, 12, Short.MAX_VALUE)))
+                                .addComponent(bBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -344,13 +343,13 @@ public class TelaCadastrarEnderecoPJ extends javax.swing.JFrame{
     }//GEN-LAST:event_bSalvarMouseExited
 
     private void bSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSalvarActionPerformed
-        this.cep = this.tCEP.getText();
-        this.cidade = this.tCidade.getText();
-        this.uf = this.tUF.getText();
-        this.logradouro = this.tLogradouro.getText();
-        this.bairro = this.tBairro.getText();
-        this.numero = this.tNumero.getText();
-        this.complemento = this.tComplemento.getText();
+        this.cep = RetornaTextoTextField.retornaTextoTextField(this.tCEP);
+        this.cidade = RetornaTextoTextField.retornaTextoTextField(this.tCidade);
+        this.uf = RetornaTextoTextField.retornaTextoTextField(this.tUF);
+        this.logradouro = RetornaTextoTextField.retornaTextoTextField(this.tLogradouro);
+        this.bairro = RetornaTextoTextField.retornaTextoTextField(this.tBairro);
+        this.numero = RetornaTextoTextField.retornaTextoTextField(this.tNumero);
+        this.complemento = RetornaTextoTextField.retornaTextoTextField(this.tComplemento);
         this.endereco = new Endereco(logradouro, numero, complemento, bairro, cidade, uf, cep);
         if(this.telaCadPJ != null){
             telaCadPJ.setEndereco(this.endereco);

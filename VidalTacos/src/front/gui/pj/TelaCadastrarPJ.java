@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package front.gui.pj;
-
+import acoes.*;
 import objetos.Endereco;
 import objetos.VidalTacos;
 import objetos.pessoas.PessoaJuridica;
@@ -13,7 +13,7 @@ import objetos.pessoas.PessoaJuridica;
  *
  * @author MIGUELCESARPENHAGOME
  */
-public class TelaCadastrarPessoaJuridica extends javax.swing.JFrame {
+public class TelaCadastrarPJ extends javax.swing.JFrame {
     
     private String razaoSocial;
     private String nomeFantasia;
@@ -28,7 +28,7 @@ public class TelaCadastrarPessoaJuridica extends javax.swing.JFrame {
     private VidalTacos vidalTacos;
     private TelaPJ telapj;
     
-    public TelaCadastrarPessoaJuridica(VidalTacos vidalTacos, TelaPJ telapj) {
+    public TelaCadastrarPJ(VidalTacos vidalTacos, TelaPJ telapj) {
         initComponents();
         this.vidalTacos = vidalTacos;
         this.telapj = telapj;
@@ -349,7 +349,7 @@ public class TelaCadastrarPessoaJuridica extends javax.swing.JFrame {
     }//GEN-LAST:event_bEndereçoMouseExited
 
     private void bEndereçoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEndereçoActionPerformed
-        new TelaCadastrarEnderecoPJ(this);
+        new TelaEnderecoPJ(this);
     }//GEN-LAST:event_bEndereçoActionPerformed
 
     private void bVoltarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bVoltarMouseEntered
@@ -390,16 +390,16 @@ public class TelaCadastrarPessoaJuridica extends javax.swing.JFrame {
 
     private void bCadastrarPedido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCadastrarPedido1ActionPerformed
         this.dispose();
-        this.razaoSocial = this.tRazaoSocial.getText();
-        this.nomeFantasia = this.tNomeFantasia.getText();
-        this.cnpj = this.tCNPJ.getText();
-        this.whatsapp = this.tWhatsapp.getText();
-        this.telefone =  this.tTelefone.getText();
-        this.email = this.tEmail.getText();
-        this.cliente = this.bCliente.isSelected();
-        this.fornecedor = this.bFornecedor.isSelected();
+        this.razaoSocial = RetornaTextoTextField.retornaTextoTextField(this.tRazaoSocial);
+        this.nomeFantasia = RetornaTextoTextField.retornaTextoTextField(this.tNomeFantasia);
+        this.cnpj = RetornaTextoTextField.retornaTextoTextField(this.tCNPJ);
+        this.whatsapp = RetornaTextoTextField.retornaTextoTextField(this.tWhatsapp);
+        this.telefone =  RetornaTextoTextField.retornaTextoTextField(this.tTelefone);
+        this.email = RetornaTextoTextField.retornaTextoTextField(this.tEmail);
+        this.cliente = RetornaBoxSelected.retornaBoxSelected(this.bCliente);
+        this.fornecedor = RetornaBoxSelected.retornaBoxSelected(this.bFornecedor);
         this.pj = new PessoaJuridica(nomeFantasia, razaoSocial, cnpj, cliente, fornecedor, telefone, whatsapp, email, endereco);
-        new TelaConfirmacaoCadPJ(this.vidalTacos, this.pj, this.telapj);
+        new TelaConfirmacaoPJ(this, this.vidalTacos, this.pj, this.telapj);
     }//GEN-LAST:event_bCadastrarPedido1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

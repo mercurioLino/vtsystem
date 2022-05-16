@@ -5,22 +5,36 @@
  */
 package front.gui.pj;
 
-import front.gui.TelaConfirmacao;
+import acoes.RetornaBoxSelected;
+import acoes.RetornaTextoTextField;
 import objetos.Endereco;
 import objetos.VidalTacos;
+import objetos.pessoas.PessoaJuridica;
 
 /**
  *
  * @author MIGUELCESARPENHAGOME
  */
-public class TelaAlterarPessoaJuridica extends javax.swing.JFrame{
+public class TelaAlterarPJ extends javax.swing.JFrame{
 
     private Endereco endereco;
     private VidalTacos vidalTacos;
-            
-    public TelaAlterarPessoaJuridica(VidalTacos vidalTacos) {
+    private PessoaJuridica pj;
+    TelaPJ telapj;
+    
+    public TelaAlterarPJ(VidalTacos vidalTacos, PessoaJuridica pj, TelaPJ telapj) {
         initComponents();
+        this.telapj = telapj;
+        this.tCNPJ.setText(pj.getCnpj());
+        this.tRazaoSocial.setText(pj.getRazaoSocial());
+        this.tNomeFantasia.setText(pj.getNomeFantasia());
+        this.tTelefone.setText(pj.getTelefone());
+        this.tWhatsapp.setText(pj.getWhatsapp());
+        this.tEmail.setText(pj.getEmail());
+        this.cbCliente.setSelected(pj.isCliente());
+        this.cbFornecedor.setSelected(pj.isFornecedor());
         this.vidalTacos = vidalTacos;
+        this.pj = pj; 
         this.setVisible(true);
         this.setLocationRelativeTo(null);
     }
@@ -55,14 +69,15 @@ public class TelaAlterarPessoaJuridica extends javax.swing.JFrame{
         tCNPJ = new javax.swing.JTextField();
         lCliente8 = new javax.swing.JLabel();
         lNomeFantasia = new javax.swing.JLabel();
-        bNomeFantasia = new javax.swing.JTextField();
+        tNomeFantasia = new javax.swing.JTextField();
         bWhatsapp = new javax.swing.JLabel();
         tWhatsapp = new javax.swing.JTextField();
-        bRazaoSocial1 = new javax.swing.JTextField();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
+        tRazaoSocial = new javax.swing.JTextField();
+        cbCliente = new javax.swing.JCheckBox();
+        cbFornecedor = new javax.swing.JCheckBox();
         bAlterarPedido = new javax.swing.JButton();
         bWhatsapp1 = new javax.swing.JLabel();
+        bExcluir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -81,7 +96,7 @@ public class TelaAlterarPessoaJuridica extends javax.swing.JFrame{
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lCadastrarPedido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lCadastrarPedido, javax.swing.GroupLayout.DEFAULT_SIZE, 386, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -165,9 +180,9 @@ public class TelaAlterarPessoaJuridica extends javax.swing.JFrame{
 
         lNomeFantasia.setText("Nome Fantasia");
 
-        bNomeFantasia.addActionListener(new java.awt.event.ActionListener() {
+        tNomeFantasia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bNomeFantasiaActionPerformed(evt);
+                tNomeFantasiaActionPerformed(evt);
             }
         });
 
@@ -179,15 +194,15 @@ public class TelaAlterarPessoaJuridica extends javax.swing.JFrame{
             }
         });
 
-        bRazaoSocial1.addActionListener(new java.awt.event.ActionListener() {
+        tRazaoSocial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bRazaoSocial1ActionPerformed(evt);
+                tRazaoSocialActionPerformed(evt);
             }
         });
 
-        jCheckBox1.setText("Cliente");
+        cbCliente.setText("Cliente");
 
-        jCheckBox2.setText("Fornecedor");
+        cbFornecedor.setText("Fornecedor");
 
         bAlterarPedido.setBackground(new java.awt.Color(0, 204, 0));
         bAlterarPedido.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -211,6 +226,27 @@ public class TelaAlterarPessoaJuridica extends javax.swing.JFrame{
         });
 
         bWhatsapp1.setText("Tipo Pessoa");
+
+        bExcluir.setBackground(new java.awt.Color(255, 0, 0));
+        bExcluir.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        bExcluir.setForeground(new java.awt.Color(255, 255, 255));
+        bExcluir.setText("Excluir");
+        bExcluir.setBorderPainted(false);
+        bExcluir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        bExcluir.setFocusPainted(false);
+        bExcluir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                bExcluirMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                bExcluirMouseExited(evt);
+            }
+        });
+        bExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bExcluirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -239,15 +275,16 @@ public class TelaAlterarPessoaJuridica extends javax.swing.JFrame{
                                                 .addComponent(tTelefone, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addComponent(tEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 2, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(bWhatsapp1)
                                         .addGap(142, 142, 142)
-                                        .addComponent(bEndereço, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(bEndereço, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(bExcluir, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(30, 30, 30))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(lRazaoSocial)
                                 .addGap(18, 18, 18)
-                                .addComponent(bRazaoSocial1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tRazaoSocial, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -256,9 +293,9 @@ public class TelaAlterarPessoaJuridica extends javax.swing.JFrame{
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(tWhatsapp, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bNomeFantasia, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCheckBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tNomeFantasia, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
@@ -267,13 +304,13 @@ public class TelaAlterarPessoaJuridica extends javax.swing.JFrame{
                 .addGap(20, 20, 20)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lRazaoSocial)
-                    .addComponent(bRazaoSocial1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tRazaoSocial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lCNPJ)
                     .addComponent(tCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lNomeFantasia)
-                    .addComponent(bNomeFantasia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tNomeFantasia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lCliente8)
                     .addComponent(tTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -291,14 +328,16 @@ public class TelaAlterarPessoaJuridica extends javax.swing.JFrame{
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(bEndereço, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jCheckBox1)
+                                .addComponent(cbCliente)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jCheckBox2)))))
-                .addGap(36, 36, 36)
+                                .addComponent(cbFornecedor)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addComponent(bAlterarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(bExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
                 .addComponent(bVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addGap(15, 15, 15))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -313,10 +352,10 @@ public class TelaAlterarPessoaJuridica extends javax.swing.JFrame{
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(407, 412));
+        setSize(new java.awt.Dimension(414, 434));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -339,7 +378,7 @@ public class TelaAlterarPessoaJuridica extends javax.swing.JFrame{
     }//GEN-LAST:event_bEndereçoMouseExited
 
     private void bEndereçoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEndereçoActionPerformed
-        new TelaCadastrarEnderecoPJ(this);
+        new TelaEnderecoPJ(this, pj.getEndereco());
     }//GEN-LAST:event_bEndereçoActionPerformed
 
     private void bVoltarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bVoltarMouseEntered
@@ -358,17 +397,17 @@ public class TelaAlterarPessoaJuridica extends javax.swing.JFrame{
         // TODO add your handling code here:
     }//GEN-LAST:event_tCNPJActionPerformed
 
-    private void bNomeFantasiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bNomeFantasiaActionPerformed
+    private void tNomeFantasiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tNomeFantasiaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_bNomeFantasiaActionPerformed
+    }//GEN-LAST:event_tNomeFantasiaActionPerformed
 
     private void tWhatsappActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tWhatsappActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tWhatsappActionPerformed
 
-    private void bRazaoSocial1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRazaoSocial1ActionPerformed
+    private void tRazaoSocialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tRazaoSocialActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_bRazaoSocial1ActionPerformed
+    }//GEN-LAST:event_tRazaoSocialActionPerformed
 
     private void bAlterarPedidoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bAlterarPedidoMouseEntered
         // TODO add your handling code here:
@@ -379,19 +418,42 @@ public class TelaAlterarPessoaJuridica extends javax.swing.JFrame{
     }//GEN-LAST:event_bAlterarPedidoMouseExited
 
     private void bAlterarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAlterarPedidoActionPerformed
-        new TelaConfirmacao();
+        PessoaJuridica pjNovo = new PessoaJuridica(
+            RetornaTextoTextField.retornaTextoTextField(this.tNomeFantasia),
+            RetornaTextoTextField.retornaTextoTextField(this.tRazaoSocial),
+            RetornaTextoTextField.retornaTextoTextField(this.tCNPJ),
+            RetornaBoxSelected.retornaBoxSelected(this.cbCliente),
+            RetornaBoxSelected.retornaBoxSelected(this.cbFornecedor),
+            RetornaTextoTextField.retornaTextoTextField(this.tTelefone),
+            RetornaTextoTextField.retornaTextoTextField(this.tWhatsapp),
+            RetornaTextoTextField.retornaTextoTextField(this.tEmail),
+            this.endereco
+        );
+        new TelaConfirmacaoPJ(this, vidalTacos, pj, pjNovo, telapj);
+        this.dispose();
     }//GEN-LAST:event_bAlterarPedidoActionPerformed
+
+    private void bExcluirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bExcluirMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bExcluirMouseEntered
+
+    private void bExcluirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bExcluirMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bExcluirMouseExited
+
+    private void bExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bExcluirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bExcluirActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bAlterarPedido;
     private javax.swing.JButton bEndereço;
-    private javax.swing.JTextField bNomeFantasia;
-    private javax.swing.JTextField bRazaoSocial1;
+    private javax.swing.JButton bExcluir;
     private javax.swing.JButton bVoltar;
     private javax.swing.JLabel bWhatsapp;
     private javax.swing.JLabel bWhatsapp1;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JCheckBox cbCliente;
+    private javax.swing.JCheckBox cbFornecedor;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lCNPJ;
@@ -402,6 +464,8 @@ public class TelaAlterarPessoaJuridica extends javax.swing.JFrame{
     private javax.swing.JLabel lRazaoSocial;
     private javax.swing.JTextField tCNPJ;
     private javax.swing.JTextField tEmail;
+    private javax.swing.JTextField tNomeFantasia;
+    private javax.swing.JTextField tRazaoSocial;
     private javax.swing.JTextField tTelefone;
     private javax.swing.JTextField tWhatsapp;
     // End of variables declaration//GEN-END:variables

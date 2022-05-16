@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package front.gui.funcionario;
+package excluidos;
 
-import front.gui.*;
+import front.gui.pj.TelaAlterarPJ;
+import front.gui.pj.TelaCadastrarPJ;
 import front.gui.pj.TelaCadastrarPJ;
 import objetos.Endereco;
 
@@ -13,7 +14,7 @@ import objetos.Endereco;
  *
  * @author MIGUELCESARPENHAGOME
  */
-public class TelaCadastrarEnderecoFuncionario extends javax.swing.JFrame {
+public class TelaCadastrarEnderecoPJ extends javax.swing.JFrame{
 
     private String cep;
     private String cidade;
@@ -23,9 +24,19 @@ public class TelaCadastrarEnderecoFuncionario extends javax.swing.JFrame {
     private String numero;
     private String complemento;
     private Endereco endereco;
+    private TelaCadastrarPJ telaCadPJ = null;
+    private TelaAlterarPJ telaAltPJ = null;
             
-    public TelaCadastrarEnderecoFuncionario() {
+    public TelaCadastrarEnderecoPJ(TelaCadastrarPJ telaCadPJ) {
         initComponents();
+        this.telaCadPJ = telaCadPJ;
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);
+    }
+    
+    public TelaCadastrarEnderecoPJ(TelaAlterarPJ telaAltPJ) {
+        initComponents();
+        this.telaAltPJ = telaAltPJ;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
     }
@@ -343,6 +354,12 @@ public class TelaCadastrarEnderecoFuncionario extends javax.swing.JFrame {
         this.numero = this.tNumero.getText();
         this.complemento = this.tComplemento.getText();
         this.endereco = new Endereco(logradouro, numero, complemento, bairro, cidade, uf, cep);
+        if(this.telaCadPJ != null){
+            telaCadPJ.setEndereco(this.endereco);
+        } else if(this.telaAltPJ != null){
+            telaAltPJ.setEndereco(this.endereco);
+        }
+        this.dispose();
     }//GEN-LAST:event_bSalvarActionPerformed
 
     private void bVoltarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bVoltarMouseEntered

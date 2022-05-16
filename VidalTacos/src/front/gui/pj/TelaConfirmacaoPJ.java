@@ -12,17 +12,32 @@ import objetos.pessoas.PessoaJuridica;
  *
  * @author MIGUELCESARPENHAGOME
  */
-public class TelaConfirmacaoCadPJ extends javax.swing.JFrame {
+public class TelaConfirmacaoPJ extends javax.swing.JFrame {
 
     VidalTacos vidalTacos;
     PessoaJuridica pj;
+    PessoaJuridica pjAnterior, pjNovo;
+    TelaCadastrarPJ telaCadPJ = null;
+    TelaAlterarPJ telaAltPJ = null;
     TelaPJ telapj;
     
-    public TelaConfirmacaoCadPJ(VidalTacos vidalTacos, PessoaJuridica pj, TelaPJ telapj) {
+    public TelaConfirmacaoPJ(TelaCadastrarPJ telaCadPJ, VidalTacos vidalTacos, PessoaJuridica pj, TelaPJ telapj) {
         initComponents();
         this.vidalTacos = vidalTacos;
         this.pj = pj;
         this.telapj = telapj;
+        this.telaCadPJ = telaCadPJ;
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);
+    }
+    
+    public TelaConfirmacaoPJ(TelaAlterarPJ telaAltPJ, VidalTacos vidalTacos, PessoaJuridica pjAnterior, PessoaJuridica pjNovo, TelaPJ telapj) {
+        initComponents();
+        this.vidalTacos = vidalTacos;
+        this.pjAnterior = pjAnterior;
+        this.pjNovo = pjNovo;
+        this.telapj = telapj;
+        this.telaAltPJ = telaAltPJ;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
     }
@@ -180,8 +195,21 @@ public class TelaConfirmacaoCadPJ extends javax.swing.JFrame {
     }//GEN-LAST:event_bSimMouseExited
 
     private void bSimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSimActionPerformed
-        vidalTacos.addPessoaJuridica(pj);
-        telapj.atualizaTabela();
+        if(telaCadPJ != null){
+            vidalTacos.addPessoaJuridica(pj);
+            telapj.atualizaTabela();
+        } else if(telaAltPJ != null){
+            pjAnterior.setCnpj(pjNovo.getCnpj());
+            pjAnterior.setCliente(pjNovo.isCliente());
+            pjAnterior.setEmail(pjNovo.getEmail());
+            pjAnterior.setEndereco(pjNovo.getEndereco());
+            pjAnterior.setFornecedor(pjNovo.isFornecedor());
+            pjAnterior.setNomeFantasia(pjNovo.getNomeFantasia());
+            pjAnterior.setRazaoSocial(pjNovo.getRazaoSocial());
+            pjAnterior.setTelefone(pjNovo.getTelefone());
+            pjAnterior.setWhatsapp(pjNovo.getWhatsapp());
+            telapj.atualizaTabela();
+        }
         this.dispose();
     }//GEN-LAST:event_bSimActionPerformed
 

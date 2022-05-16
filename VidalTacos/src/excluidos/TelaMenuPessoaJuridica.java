@@ -5,9 +5,8 @@
  */
 package excluidos;
 
-import front.gui.pj.TelaAlterarPessoaJuridica;
-import front.gui.pj.TelaBuscarPessoaJuridica;
-import front.gui.pj.TelaCadastrarPessoaJuridica;
+import front.gui.pj.TelaAlterarPJ;
+import front.gui.pj.TelaCadastrarPJ;
 import objetos.VidalTacos;
 
 /**
@@ -217,7 +216,7 @@ public class TelaMenuPessoaJuridica extends javax.swing.JFrame {
     }//GEN-LAST:event_bCadastrarPessoaJuridicaActionPerformed
 
     private void bAlterarPessoaJuridicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAlterarPessoaJuridicaActionPerformed
-        new TelaAlterarPessoaJuridica(this.vidalTacos);
+        // new TelaAlterarPessoaJuridica(this.vidalTacos);
     }//GEN-LAST:event_bAlterarPessoaJuridicaActionPerformed
 
     private void bBuscarPessoaJuridicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBuscarPessoaJuridicaActionPerformed
