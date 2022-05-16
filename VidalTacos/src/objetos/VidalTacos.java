@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import objetos.pessoas.Funcionario;
 import objetos.pessoas.PessoaJuridica;
-import extras.Ponto;
+import java.io.Serializable;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -15,7 +15,7 @@ import extras.Ponto;
  *
  * @author leona
  */
-public class VidalTacos {
+public class VidalTacos implements Serializable{
     
     private List<Produto> produtos = new ArrayList<>();
     private List<Compra> compras = new ArrayList<>();

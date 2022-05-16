@@ -4,11 +4,13 @@
  */
 package objetos;
 
+import java.io.Serializable;
+
 /**
  *
  * @author leona
  */
-public class Despesa {
+public class Despesa implements Serializable{
     
     private String data;
     private String descricao;

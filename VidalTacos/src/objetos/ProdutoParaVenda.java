@@ -4,11 +4,13 @@
  */
 package objetos;
 
+import java.io.Serializable;
+
 /**
  *
  * @author leona
  */
-public class ProdutoParaVenda {
+public class ProdutoParaVenda implements Serializable{
     private Produto produto;
     private int quantidade;
     private double valorTotal;

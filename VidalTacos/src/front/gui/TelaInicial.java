@@ -5,6 +5,7 @@
  */
 package front.gui;
 
+import acoes.Sair;
 import static extras.DataHoraAtual.mostraTempo;
 import front.gui.compra.TelaCompras;
 import front.gui.despesa.TelaDespesas;
@@ -12,6 +13,9 @@ import front.gui.funcionario.TelaFuncionarios;
 import front.gui.pj.TelaPJ;
 import front.gui.produtos.TelaProdutos;
 import front.gui.venda.TelaVendas;
+import io.excecoes.ErroDeGravacaoException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import objetos.VidalTacos;
 
 /**
@@ -377,7 +381,11 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_bVoltarMouseExited
 
     private void bVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVoltarActionPerformed
-        System.exit(0);
+        try {
+            new Sair().encerraPrograma(vidalTacos);
+        } catch (ErroDeGravacaoException ex) {
+            Logger.getLogger(TelaInicial.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_bVoltarActionPerformed
 
     private void bFuncionariosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bFuncionariosMouseEntered

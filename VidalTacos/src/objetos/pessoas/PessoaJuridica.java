@@ -4,13 +4,14 @@
  */
 package objetos.pessoas;
 
+import java.io.Serializable;
 import objetos.Endereco;
 
 /**
  *
  * @author leona
  */
-public class PessoaJuridica extends Pessoa{
+public class PessoaJuridica extends Pessoa implements Serializable{
     
     private String nomeFantasia;
     private String razaoSocial;

@@ -4,6 +4,7 @@
  */
 package objetos;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import objetos.pessoas.PessoaJuridica;
@@ -12,7 +13,7 @@ import objetos.pessoas.PessoaJuridica;
  *
  * @author leona
  */
-public class Venda {
+public class Venda implements Serializable{
     
     private List<ProdutoParaVenda> produtos = new ArrayList<>();
     private PessoaJuridica cliente;

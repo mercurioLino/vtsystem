@@ -4,7 +4,7 @@
  */
 package objetos;
 
-import java.text.SimpleDateFormat;
+import java.io.Serializable;
 import java.util.List;
 import objetos.pessoas.PessoaJuridica;
 
@@ -12,7 +12,7 @@ import objetos.pessoas.PessoaJuridica;
  *
  * @author leona
  */
-public class Compra {
+public class Compra implements Serializable{
     
     List<MaterialParaCompra> materiais;
     private double valorTotal;

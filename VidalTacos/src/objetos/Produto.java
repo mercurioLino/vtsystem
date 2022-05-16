@@ -4,11 +4,13 @@
  */
 package objetos;
 
+import java.io.Serializable;
+
 /**
  *
  * @author leona
  */
-public class Produto {
+public class Produto implements Serializable{
     
     private String nome;
     private String codigo;

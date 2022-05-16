@@ -4,11 +4,13 @@
  */
 package objetos;
 
+import java.io.Serializable;
+
 /**
  *
  * @author leona
  */
-public class Endereco {
+public class Endereco implements Serializable{
     
     private String logradouro;
     private String numero;

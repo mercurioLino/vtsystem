@@ -4,13 +4,14 @@
  */
 package objetos.pessoas;
 
+import java.io.Serializable;
 import objetos.Endereco;
 
 /**
  *
  * @author leona
  */
-public abstract class Pessoa {
+public abstract class Pessoa implements Serializable{
     
     private String telefone;
     private String whatsapp;

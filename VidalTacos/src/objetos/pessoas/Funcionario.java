@@ -4,17 +4,14 @@
  */
 package objetos.pessoas;
 
-import extras.Ponto;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.Serializable;
 import objetos.Endereco;
 
 /**
  *
  * @author leona
  */
-public class Funcionario extends Pessoa{
+public class Funcionario extends Pessoa implements Serializable{
     
     private String nome;
     private String cpf;
