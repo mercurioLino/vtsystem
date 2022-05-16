@@ -3,16 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package front.gui;
+package excluidos;
 
-import front.gui.venda.TelaRelatorioVendas;
-import front.gui.compra.TelaRelatorioCompras;
-import front.gui.produtos.TelaRelatorioProdutos;
-import front.gui.pedido.TelaRelatorioPedidos;
-import front.gui.despesa.TelaRelatorioDespesas;
-import front.gui.funcionario.TelaRelatorioFuncionarios;
+import front.gui.venda.TelaVendas;
+import front.gui.compra.TelaCompras;
+import front.gui.produtos.TelaProdutos;
+import excluidos.TelaRelatorioPedidos;
+import front.gui.despesa.TelaDespesas;
+import front.gui.funcionario.TelaFuncionarios;
 import front.gui.pj.TelaPJ;
-import front.gui.pj.TelaRelatorioFornecedores;
+import excluidos.TelaRelatorioFornecedores;
 
 /**
  *
@@ -270,19 +270,19 @@ public class TelaMenuRelatorios extends javax.swing.JFrame {
     }//GEN-LAST:event_bClientesActionPerformed
 
     private void bComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bComprasActionPerformed
-        new TelaRelatorioCompras();
+        new TelaCompras();
     }//GEN-LAST:event_bComprasActionPerformed
 
     private void bDespesasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDespesasActionPerformed
-        new TelaRelatorioDespesas();
+        new TelaDespesas();
     }//GEN-LAST:event_bDespesasActionPerformed
 
     private void bVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVendasActionPerformed
-        new TelaRelatorioVendas();
+        new TelaVendas();
     }//GEN-LAST:event_bVendasActionPerformed
 
     private void bFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bFuncionariosActionPerformed
-        new TelaRelatorioFuncionarios();
+        new TelaFuncionarios();
     }//GEN-LAST:event_bFuncionariosActionPerformed
 
     private void bPedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPedidosActionPerformed
@@ -294,7 +294,7 @@ public class TelaMenuRelatorios extends javax.swing.JFrame {
     }//GEN-LAST:event_bFornecedoresActionPerformed
 
     private void bProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bProdutosActionPerformed
-        new TelaRelatorioProdutos();
+        new TelaProdutos();
     }//GEN-LAST:event_bProdutosActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

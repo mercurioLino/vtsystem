@@ -3,10 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package front.gui.produtos;
+package excluidos;
 
-import front.gui.produtos.TelaRelatorioProdutos;
+import front.gui.produtos.TelaProdutos;
 import front.gui.produtos.TelaCadastrarProduto;
+import front.gui.produtos.TelaCadastrarProduto;
+import front.gui.produtos.TelaProdutos;
 
 /**
  *
@@ -218,7 +220,7 @@ public class TelaMenuProdutos extends javax.swing.JFrame {
     }//GEN-LAST:event_bAlterarPessoaJuridicaActionPerformed
 
     private void bBuscarPessoaJuridicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBuscarPessoaJuridicaActionPerformed
-        new TelaRelatorioProdutos();
+        new TelaProdutos();
     }//GEN-LAST:event_bBuscarPessoaJuridicaActionPerformed
 
     private void bExcluirPessoaJuridicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bExcluirPessoaJuridicaActionPerformed

@@ -3,10 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package front.gui.funcionario;
+package excluidos;
 
-import front.gui.funcionario.TelaRelatorioFuncionarios;
+import front.gui.funcionario.TelaFuncionarios;
 import front.gui.funcionario.TelaCadastrarFuncionario;
+import front.gui.funcionario.TelaCadastrarFuncionario;
+import front.gui.funcionario.TelaFuncionarios;
 
 /**
  *
@@ -218,7 +220,7 @@ public class TelaMenuFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_bAlterarPessoaJuridicaActionPerformed
 
     private void bBuscarPessoaJuridicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBuscarPessoaJuridicaActionPerformed
-        new TelaRelatorioFuncionarios();
+        new TelaFuncionarios();
     }//GEN-LAST:event_bBuscarPessoaJuridicaActionPerformed
 
     private void bExcluirPessoaJuridicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bExcluirPessoaJuridicaActionPerformed

@@ -24,6 +24,22 @@ public class TelaPJ extends javax.swing.JFrame {
         this.setVisible(true);
         this.setLocationRelativeTo(null);
     }
+   
+    public void atualizaTabela(){
+        DefaultTableModel model = (DefaultTableModel)this.tClientes.getModel();;
+        model.setRowCount(0);
+        for(PessoaJuridica pj: vidalTacos.getPessoasJuridicas()){
+            Vector row = new Vector();
+            row.add(pj.getCnpj());
+            row.add(pj.getRazaoSocial());
+            row.add(pj.getTelefone());
+            row.add(pj.getEmail());
+            row.add(pj.getWhatsapp());
+            row.add(pj.isCliente());
+            row.add(pj.isFornecedor());
+            model.addRow(row);
+        }
+    }
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -104,17 +120,17 @@ public class TelaPJ extends javax.swing.JFrame {
         tClientes.setAutoCreateRowSorter(true);
         tClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null}
+
             },
             new String [] {
-                "CNPJ", "Razão Social", "Telefone", "E-mail", "WhatsApp", "Endereço", "Cliente", "Fornecedor"
+                "CNPJ", "Razão Social", "Telefone", "Whatsapp", "E-Mail", "Cliente", "Fornecedor"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class, java.lang.Boolean.class
+                java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class, java.lang.Boolean.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -125,8 +141,8 @@ public class TelaPJ extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tClientes.setCellSelectionEnabled(true);
         tClientes.setEnabled(false);
+        tClientes.getTableHeader().setReorderingAllowed(false);
         tClientes.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 tClientesAncestorAdded(evt);
@@ -136,8 +152,16 @@ public class TelaPJ extends javax.swing.JFrame {
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
+        tClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tClientesMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tClientes);
-        tClientes.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+        if (tClientes.getColumnModel().getColumnCount() > 0) {
+            tClientes.getColumnModel().getColumn(2).setResizable(false);
+            tClientes.getColumnModel().getColumn(3).setResizable(false);
+        }
 
         bAtualizar.setText("Atualizar");
         bAtualizar.addActionListener(new java.awt.event.ActionListener() {
@@ -178,7 +202,9 @@ public class TelaPJ extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInserirActionPerformed
-        TelaCadastrarPessoaJuridica telaCad = new TelaCadastrarPessoaJuridica(vidalTacos);
+        new TelaCadastrarPessoaJuridica(vidalTacos, this);
+        
+        atualizaTabela();
     }//GEN-LAST:event_bInserirActionPerformed
 
     private void tClientesAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tClientesAncestorAdded
@@ -186,21 +212,12 @@ public class TelaPJ extends javax.swing.JFrame {
     }//GEN-LAST:event_tClientesAncestorAdded
 
     private void bAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAtualizarActionPerformed
-        DefaultTableModel model = (DefaultTableModel)this.tClientes.getModel();;
-        model.setRowCount(0);
-        for(PessoaJuridica pj: vidalTacos.getPessoasJuridicas()){
-            Vector row = new Vector();
-            row.add(pj.getCnpj());
-            row.add(pj.getRazaoSocial());
-            row.add(pj.getTelefone());
-            row.add(pj.getEmail());
-            row.add(pj.getWhatsapp());
-            row.add(pj.getEndereco().getCep());
-            row.add(pj.isCliente());
-            row.add(pj.isFornecedor());
-            model.addRow(row);
-        }
+        atualizaTabela();
     }//GEN-LAST:event_bAtualizarActionPerformed
+
+    private void tClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tClientesMouseClicked
+        
+    }//GEN-LAST:event_tClientesMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

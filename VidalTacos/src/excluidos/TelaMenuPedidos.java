@@ -3,21 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package front.gui.pj;
+package excluidos;
 
-import objetos.VidalTacos;
+import excluidos.TelaRelatorioPedidos;
+import excluidos.TelaCadastrarPedido;
 
 /**
  *
  * @author MIGUELCESARPENHAGOME
  */
-public class TelaMenuPessoaJuridica extends javax.swing.JFrame {
+public class TelaMenuPedidos extends javax.swing.JFrame {
 
-    private VidalTacos vidalTacos;
-    
-    public TelaMenuPessoaJuridica(VidalTacos vidalTacos) {
+    /**
+     * Creates new form TelaMenuPedidos
+     */
+    public TelaMenuPedidos() {
         initComponents();
-        this.vidalTacos = vidalTacos;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
     }
@@ -75,7 +76,7 @@ public class TelaMenuPessoaJuridica extends javax.swing.JFrame {
         lCadastrarPedido1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lCadastrarPedido1.setForeground(new java.awt.Color(255, 255, 255));
         lCadastrarPedido1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lCadastrarPedido1.setText("Menu Pessoa Jurídica");
+        lCadastrarPedido1.setText("Menu Pedidos");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -210,19 +211,17 @@ public class TelaMenuPessoaJuridica extends javax.swing.JFrame {
     }//GEN-LAST:event_bVoltarActionPerformed
 
     private void bCadastrarPessoaJuridicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCadastrarPessoaJuridicaActionPerformed
-        new TelaCadastrarPessoaJuridica(this.vidalTacos);
+        new TelaCadastrarPedido();
     }//GEN-LAST:event_bCadastrarPessoaJuridicaActionPerformed
 
     private void bAlterarPessoaJuridicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAlterarPessoaJuridicaActionPerformed
-        new TelaAlterarPessoaJuridica(this.vidalTacos);
     }//GEN-LAST:event_bAlterarPessoaJuridicaActionPerformed
 
     private void bBuscarPessoaJuridicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBuscarPessoaJuridicaActionPerformed
-        new TelaBuscarPessoaJuridica(this.vidalTacos);
+        new TelaRelatorioPedidos();
     }//GEN-LAST:event_bBuscarPessoaJuridicaActionPerformed
 
     private void bExcluirPessoaJuridicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bExcluirPessoaJuridicaActionPerformed
-        new TelaExcluirPessoaJuridica();
     }//GEN-LAST:event_bExcluirPessoaJuridicaActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

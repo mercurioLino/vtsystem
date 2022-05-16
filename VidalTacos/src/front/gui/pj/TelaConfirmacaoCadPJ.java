@@ -16,11 +16,13 @@ public class TelaConfirmacaoCadPJ extends javax.swing.JFrame {
 
     VidalTacos vidalTacos;
     PessoaJuridica pj;
+    TelaPJ telapj;
     
-    public TelaConfirmacaoCadPJ(VidalTacos vidalTacos, PessoaJuridica pj) {
+    public TelaConfirmacaoCadPJ(VidalTacos vidalTacos, PessoaJuridica pj, TelaPJ telapj) {
         initComponents();
         this.vidalTacos = vidalTacos;
         this.pj = pj;
+        this.telapj = telapj;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
     }
@@ -179,6 +181,7 @@ public class TelaConfirmacaoCadPJ extends javax.swing.JFrame {
 
     private void bSimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSimActionPerformed
         vidalTacos.addPessoaJuridica(pj);
+        telapj.atualizaTabela();
         this.dispose();
     }//GEN-LAST:event_bSimActionPerformed
 

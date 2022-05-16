@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package front.gui.venda;
+package front.gui.compra;
 
 /**
  *
  * @author MIGUELCESARPENHAGOME
  */
-public class TelaRelatorioVendas extends javax.swing.JFrame {
+public class TelaCompras extends javax.swing.JFrame {
 
     /**
      * Creates new form TelaRelatorioVendas
      */
-    public TelaRelatorioVendas() {
+    public TelaCompras() {
         initComponents();
         this.setVisible(true);
         this.setLocationRelativeTo(null);
@@ -32,19 +32,19 @@ public class TelaRelatorioVendas extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        lCadastrarPedido = new javax.swing.JLabel();
+        lRelatorioCompras = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         lPeriodo = new javax.swing.JLabel();
         tPeriodo = new javax.swing.JTextField();
         lAte = new javax.swing.JLabel();
         tAte = new javax.swing.JTextField();
-        rPedidosEmAberto = new javax.swing.JRadioButton();
-        rPedidosEncerrados = new javax.swing.JRadioButton();
+        rPedidosEmEspera = new javax.swing.JRadioButton();
+        rPedidosRecebidos = new javax.swing.JRadioButton();
         bBuscar = new javax.swing.JButton();
-        lCliente = new javax.swing.JLabel();
-        cCliente = new javax.swing.JComboBox<>();
+        lFornecedor = new javax.swing.JLabel();
+        cFornecedor = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tVendas = new javax.swing.JTable();
+        jTable1 = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         bGerarPDF = new javax.swing.JButton();
 
@@ -53,27 +53,27 @@ public class TelaRelatorioVendas extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
-        lCadastrarPedido.setBackground(new java.awt.Color(255, 255, 255));
-        lCadastrarPedido.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lCadastrarPedido.setForeground(new java.awt.Color(255, 255, 255));
-        lCadastrarPedido.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lCadastrarPedido.setText("Relatório de Vendas");
+        lRelatorioCompras.setBackground(new java.awt.Color(255, 255, 255));
+        lRelatorioCompras.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lRelatorioCompras.setForeground(new java.awt.Color(255, 255, 255));
+        lRelatorioCompras.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lRelatorioCompras.setText("Relatório de Compras");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(159, 159, 159)
-                .addComponent(lCadastrarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(136, 136, 136)
+                .addComponent(lRelatorioCompras, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lCadastrarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lRelatorioCompras, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -94,58 +94,62 @@ public class TelaRelatorioVendas extends javax.swing.JFrame {
             }
         });
 
-        rPedidosEmAberto.setText("Pedidos em aberto");
+        rPedidosEmEspera.setText("Pedidos em espera");
+        rPedidosEmEspera.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rPedidosEmEsperaActionPerformed(evt);
+            }
+        });
 
-        rPedidosEncerrados.setText("Pedidos encerrados");
+        rPedidosRecebidos.setText("Pedidos recebidos");
 
         bBuscar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         bBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/front/imgs/search.png"))); // NOI18N
         bBuscar.setText("Buscar");
 
-        lCliente.setText("Cliente");
+        lFornecedor.setText("Fornecedor");
 
-        cCliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Leonardo", "Eduardo", "Anelise", "Miguel", " " }));
+        cFornecedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Leonardo", "Eduardo", "Anelise", "Miguel", " " }));
 
-        tVendas.setModel(new javax.swing.table.DefaultTableModel(
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Codigo", "Produto", "Cliente", "Data", "Valor", "Método", "Status"
+                "Data", "Fornecedor", "Valor", "Status"
             }
         ));
-        jScrollPane1.setViewportView(tVendas);
+        jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
+                .addGap(15, 15, 15)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lPeriodo)
+                    .addComponent(lFornecedor))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(lPeriodo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(tPeriodo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(lAte)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(tAte, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(lCliente)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(53, 53, 53)
+                    .addComponent(cFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rPedidosEncerrados)
-                    .addComponent(rPedidosEmAberto))
+                    .addComponent(rPedidosRecebidos)
+                    .addComponent(rPedidosEmEspera))
                 .addGap(18, 18, 18)
                 .addComponent(bBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
-            .addComponent(jScrollPane1)
+                .addGap(19, 19, 19))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,12 +163,12 @@ public class TelaRelatorioVendas extends javax.swing.JFrame {
                             .addComponent(tPeriodo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lAte)
                             .addComponent(tAte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(rPedidosEmAberto))
+                            .addComponent(rPedidosEmEspera))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(rPedidosEncerrados)
-                            .addComponent(lCliente)
-                            .addComponent(cCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(rPedidosRecebidos)
+                            .addComponent(lFornecedor)
+                            .addComponent(cFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -221,25 +225,29 @@ public class TelaRelatorioVendas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tAteActionPerformed
 
+    private void rPedidosEmEsperaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rPedidosEmEsperaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rPedidosEmEsperaActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bBuscar;
     private javax.swing.JButton bGerarPDF;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
-    private javax.swing.JComboBox<String> cCliente;
+    private javax.swing.JComboBox<String> cFornecedor;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lAte;
-    private javax.swing.JLabel lCadastrarPedido;
-    private javax.swing.JLabel lCliente;
+    private javax.swing.JLabel lFornecedor;
     private javax.swing.JLabel lPeriodo;
-    private javax.swing.JRadioButton rPedidosEmAberto;
-    private javax.swing.JRadioButton rPedidosEncerrados;
+    private javax.swing.JLabel lRelatorioCompras;
+    private javax.swing.JRadioButton rPedidosEmEspera;
+    private javax.swing.JRadioButton rPedidosRecebidos;
     private javax.swing.JTextField tAte;
     private javax.swing.JTextField tPeriodo;
-    private javax.swing.JTable tVendas;
     // End of variables declaration//GEN-END:variables
 }

@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package front.gui.pj;
+package front.gui.funcionario;
 
 /**
  *
  * @author MIGUELCESARPENHAGOME
  */
-public class TelaRelatorioFornecedores extends javax.swing.JFrame {
+public class TelaFuncionarios extends javax.swing.JFrame {
 
     /**
      * Creates new form TelaRelatorioVendas
      */
-    public TelaRelatorioFornecedores() {
+    public TelaFuncionarios() {
         initComponents();
         this.setVisible(true);
         this.setLocationRelativeTo(null);
@@ -36,7 +36,7 @@ public class TelaRelatorioFornecedores extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         bGerarPDF = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tFornecedores = new javax.swing.JTable();
+        tFuncionarios = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -47,7 +47,7 @@ public class TelaRelatorioFornecedores extends javax.swing.JFrame {
         lCadastrarPedido.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lCadastrarPedido.setForeground(new java.awt.Color(255, 255, 255));
         lCadastrarPedido.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lCadastrarPedido.setText("Consulta de Fornecedores");
+        lCadastrarPedido.setText("Consulta de Funcionarios");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -88,7 +88,7 @@ public class TelaRelatorioFornecedores extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        tFornecedores.setModel(new javax.swing.table.DefaultTableModel(
+        tFuncionarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -99,7 +99,7 @@ public class TelaRelatorioFornecedores extends javax.swing.JFrame {
                 "CNPJ", "Razão Social", "Telefone", "E-mail", "WhatsApp", "Endereço"
             }
         ));
-        jScrollPane1.setViewportView(tFornecedores);
+        jScrollPane1.setViewportView(tFuncionarios);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -133,6 +133,6 @@ public class TelaRelatorioFornecedores extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lCadastrarPedido;
-    private javax.swing.JTable tFornecedores;
+    private javax.swing.JTable tFuncionarios;
     // End of variables declaration//GEN-END:variables
 }

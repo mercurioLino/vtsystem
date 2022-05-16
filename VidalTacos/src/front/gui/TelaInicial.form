@@ -106,11 +106,11 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                  <Component id="lCadastrarPedido1" min="-2" max="-2" attributes="0"/>
+                  <Component id="lData" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="256" max="-2" attributes="0"/>
                   <Component id="lCadastrarPedido3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="lCadastrarPedido2" min="-2" pref="68" max="-2" attributes="0"/>
+                  <Component id="lHora" min="-2" pref="68" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -120,8 +120,8 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lCadastrarPedido1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lCadastrarPedido2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lData" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lHora" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lCadastrarPedido3" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
@@ -130,7 +130,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="lCadastrarPedido1">
+        <Component class="javax.swing.JLabel" name="lData">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -145,7 +145,7 @@
             <Property name="text" type="java.lang.String" value="29/02/2022"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lCadastrarPedido2">
+        <Component class="javax.swing.JLabel" name="lHora">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -191,7 +191,7 @@
                   <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="bVendas" alignment="1" min="-2" pref="106" max="-2" attributes="0"/>
-                      <Component id="bFuncionario" alignment="1" min="-2" pref="106" max="-2" attributes="0"/>
+                      <Component id="bProdutos" alignment="1" min="-2" pref="106" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
@@ -204,12 +204,12 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="bPedidos" alignment="0" min="-2" pref="106" max="-2" attributes="0"/>
-                              <Component id="bProdutos" alignment="0" min="-2" pref="106" max="-2" attributes="0"/>
+                              <Component id="bCompras" alignment="0" min="-2" pref="106" max="-2" attributes="0"/>
+                              <Component id="bDespesas" alignment="0" min="-2" pref="106" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="bRelatorios" alignment="0" min="-2" pref="106" max="-2" attributes="0"/>
+                              <Component id="bFuncionarios" alignment="0" min="-2" pref="106" max="-2" attributes="0"/>
                               <Component id="bPessoaJuridica" alignment="0" min="-2" pref="106" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
@@ -224,14 +224,14 @@
                   <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="bVendas" alignment="3" min="-2" pref="106" max="-2" attributes="0"/>
-                      <Component id="bPedidos" alignment="3" min="-2" pref="106" max="-2" attributes="0"/>
+                      <Component id="bCompras" alignment="3" min="-2" pref="106" max="-2" attributes="0"/>
                       <Component id="bPessoaJuridica" alignment="3" min="-2" pref="106" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="bFuncionario" alignment="3" min="-2" pref="106" max="-2" attributes="0"/>
                       <Component id="bProdutos" alignment="3" min="-2" pref="106" max="-2" attributes="0"/>
-                      <Component id="bRelatorios" alignment="3" min="-2" pref="106" max="-2" attributes="0"/>
+                      <Component id="bDespesas" alignment="3" min="-2" pref="106" max="-2" attributes="0"/>
+                      <Component id="bFuncionarios" alignment="3" min="-2" pref="106" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
@@ -313,7 +313,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="bRelatorios">
+        <Component class="javax.swing.JButton" name="bFuncionarios">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="cc" red="0" type="rgb"/>
@@ -324,17 +324,16 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Relat&#xf3;rios"/>
-            <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="text" type="java.lang.String" value="Funcion&#xe1;rios"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Default Cursor"/>
             </Property>
             <Property name="focusPainted" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bRelatoriosMouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bRelatoriosMouseExited"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bRelatoriosActionPerformed"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bFuncionariosMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bFuncionariosMouseExited"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bFuncionariosActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="bPessoaJuridica">
@@ -348,8 +347,8 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Pessoa Jur."/>
-            <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="text" type="java.lang.String" value="Pessoas Jur&#xed;dicas"/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Default Cursor"/>
             </Property>
@@ -361,7 +360,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bPessoaJuridicaActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="bPedidos">
+        <Component class="javax.swing.JButton" name="bCompras">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="cc" red="0" type="rgb"/>
@@ -372,20 +371,19 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Pedidos"/>
-            <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="text" type="java.lang.String" value="Compras"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Default Cursor"/>
             </Property>
             <Property name="focusPainted" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bPedidosMouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bPedidosMouseExited"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bPedidosActionPerformed"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bComprasMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bComprasMouseExited"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bComprasActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="bProdutos">
+        <Component class="javax.swing.JButton" name="bDespesas">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="cc" red="0" type="rgb"/>
@@ -396,17 +394,16 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Produtos"/>
-            <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="text" type="java.lang.String" value="Despesas"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Default Cursor"/>
             </Property>
             <Property name="focusPainted" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bProdutosMouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bProdutosMouseExited"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bProdutosActionPerformed"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bDespesasMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bDespesasMouseExited"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bDespesasActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="bVendas">
@@ -421,7 +418,6 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Vendas"/>
-            <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Default Cursor"/>
             </Property>
@@ -433,7 +429,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bVendasActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="bFuncionario">
+        <Component class="javax.swing.JButton" name="bProdutos">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="cc" red="0" type="rgb"/>
@@ -444,17 +440,21 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Funcionario"/>
-            <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="text" type="java.lang.String" value="Produtos"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                <BevelBorder/>
+              </Border>
+            </Property>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Default Cursor"/>
             </Property>
             <Property name="focusPainted" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bFuncionarioMouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bFuncionarioMouseExited"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bFuncionarioActionPerformed"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bProdutosMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bProdutosMouseExited"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bProdutosActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

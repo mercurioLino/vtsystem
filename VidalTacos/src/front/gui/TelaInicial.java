@@ -5,11 +5,13 @@
  */
 package front.gui;
 
-import front.gui.venda.TelaMenuVendas;
-import front.gui.produtos.TelaMenuProdutos;
-import front.gui.pedido.TelaMenuPedidos;
-import front.gui.funcionario.TelaMenuFuncionario;
+import static extras.DataHoraAtual.mostraTempo;
+import front.gui.compra.TelaCompras;
+import front.gui.despesa.TelaDespesas;
+import front.gui.funcionario.TelaFuncionarios;
 import front.gui.pj.TelaPJ;
+import front.gui.produtos.TelaProdutos;
+import front.gui.venda.TelaVendas;
 import objetos.VidalTacos;
 
 /**
@@ -25,6 +27,7 @@ public class TelaInicial extends javax.swing.JFrame {
         this.vidalTacos= vidalTacos;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
+        mostraTempo(this.lHora, this.lData);
     }
 
     /**
@@ -40,19 +43,19 @@ public class TelaInicial extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         lCadastrarPedido = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        lCadastrarPedido1 = new javax.swing.JLabel();
-        lCadastrarPedido2 = new javax.swing.JLabel();
+        lData = new javax.swing.JLabel();
+        lHora = new javax.swing.JLabel();
         lCadastrarPedido3 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         bVoltar = new javax.swing.JButton();
         jPanel10 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        bRelatorios = new javax.swing.JButton();
+        bFuncionarios = new javax.swing.JButton();
         bPessoaJuridica = new javax.swing.JButton();
-        bPedidos = new javax.swing.JButton();
-        bProdutos = new javax.swing.JButton();
+        bCompras = new javax.swing.JButton();
+        bDespesas = new javax.swing.JButton();
         bVendas = new javax.swing.JButton();
-        bFuncionario = new javax.swing.JButton();
+        bProdutos = new javax.swing.JButton();
 
         jLabel2.setText("jLabel2");
 
@@ -86,17 +89,17 @@ public class TelaInicial extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
-        lCadastrarPedido1.setBackground(new java.awt.Color(255, 255, 255));
-        lCadastrarPedido1.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
-        lCadastrarPedido1.setForeground(new java.awt.Color(255, 255, 255));
-        lCadastrarPedido1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lCadastrarPedido1.setText("29/02/2022");
+        lData.setBackground(new java.awt.Color(255, 255, 255));
+        lData.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        lData.setForeground(new java.awt.Color(255, 255, 255));
+        lData.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lData.setText("29/02/2022");
 
-        lCadastrarPedido2.setBackground(new java.awt.Color(255, 255, 255));
-        lCadastrarPedido2.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
-        lCadastrarPedido2.setForeground(new java.awt.Color(255, 255, 255));
-        lCadastrarPedido2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lCadastrarPedido2.setText("00:00");
+        lHora.setBackground(new java.awt.Color(255, 255, 255));
+        lHora.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        lHora.setForeground(new java.awt.Color(255, 255, 255));
+        lHora.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lHora.setText("00:00");
 
         lCadastrarPedido3.setBackground(new java.awt.Color(255, 255, 255));
         lCadastrarPedido3.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
@@ -110,11 +113,11 @@ public class TelaInicial extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addComponent(lCadastrarPedido1)
+                .addComponent(lData)
                 .addGap(256, 256, 256)
                 .addComponent(lCadastrarPedido3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lCadastrarPedido2, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lHora, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -122,8 +125,8 @@ public class TelaInicial extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lCadastrarPedido1)
-                    .addComponent(lCadastrarPedido2)
+                    .addComponent(lData)
+                    .addComponent(lHora)
                     .addComponent(lCadastrarPedido3))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -153,7 +156,7 @@ public class TelaInicial extends javax.swing.JFrame {
         });
 
         jPanel10.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel10.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        jPanel10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setText("?");
@@ -174,32 +177,31 @@ public class TelaInicial extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        bRelatorios.setBackground(new java.awt.Color(0, 204, 0));
-        bRelatorios.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        bRelatorios.setForeground(new java.awt.Color(255, 255, 255));
-        bRelatorios.setText("Relatórios");
-        bRelatorios.setBorderPainted(false);
-        bRelatorios.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        bRelatorios.setFocusPainted(false);
-        bRelatorios.addMouseListener(new java.awt.event.MouseAdapter() {
+        bFuncionarios.setBackground(new java.awt.Color(0, 204, 0));
+        bFuncionarios.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        bFuncionarios.setForeground(new java.awt.Color(255, 255, 255));
+        bFuncionarios.setText("Funcionários");
+        bFuncionarios.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        bFuncionarios.setFocusPainted(false);
+        bFuncionarios.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                bRelatoriosMouseEntered(evt);
+                bFuncionariosMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                bRelatoriosMouseExited(evt);
+                bFuncionariosMouseExited(evt);
             }
         });
-        bRelatorios.addActionListener(new java.awt.event.ActionListener() {
+        bFuncionarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bRelatoriosActionPerformed(evt);
+                bFuncionariosActionPerformed(evt);
             }
         });
 
         bPessoaJuridica.setBackground(new java.awt.Color(0, 204, 0));
         bPessoaJuridica.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         bPessoaJuridica.setForeground(new java.awt.Color(255, 255, 255));
-        bPessoaJuridica.setText("Pessoa Jur.");
-        bPessoaJuridica.setBorderPainted(false);
+        bPessoaJuridica.setText("Pessoas Jurídicas");
+        bPessoaJuridica.setToolTipText("");
         bPessoaJuridica.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bPessoaJuridica.setFocusPainted(false);
         bPessoaJuridica.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -216,45 +218,43 @@ public class TelaInicial extends javax.swing.JFrame {
             }
         });
 
-        bPedidos.setBackground(new java.awt.Color(0, 204, 0));
-        bPedidos.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        bPedidos.setForeground(new java.awt.Color(255, 255, 255));
-        bPedidos.setText("Pedidos");
-        bPedidos.setBorderPainted(false);
-        bPedidos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        bPedidos.setFocusPainted(false);
-        bPedidos.addMouseListener(new java.awt.event.MouseAdapter() {
+        bCompras.setBackground(new java.awt.Color(0, 204, 0));
+        bCompras.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        bCompras.setForeground(new java.awt.Color(255, 255, 255));
+        bCompras.setText("Compras");
+        bCompras.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        bCompras.setFocusPainted(false);
+        bCompras.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                bPedidosMouseEntered(evt);
+                bComprasMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                bPedidosMouseExited(evt);
+                bComprasMouseExited(evt);
             }
         });
-        bPedidos.addActionListener(new java.awt.event.ActionListener() {
+        bCompras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bPedidosActionPerformed(evt);
+                bComprasActionPerformed(evt);
             }
         });
 
-        bProdutos.setBackground(new java.awt.Color(0, 204, 0));
-        bProdutos.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        bProdutos.setForeground(new java.awt.Color(255, 255, 255));
-        bProdutos.setText("Produtos");
-        bProdutos.setBorderPainted(false);
-        bProdutos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        bProdutos.setFocusPainted(false);
-        bProdutos.addMouseListener(new java.awt.event.MouseAdapter() {
+        bDespesas.setBackground(new java.awt.Color(0, 204, 0));
+        bDespesas.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        bDespesas.setForeground(new java.awt.Color(255, 255, 255));
+        bDespesas.setText("Despesas");
+        bDespesas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        bDespesas.setFocusPainted(false);
+        bDespesas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                bProdutosMouseEntered(evt);
+                bDespesasMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                bProdutosMouseExited(evt);
+                bDespesasMouseExited(evt);
             }
         });
-        bProdutos.addActionListener(new java.awt.event.ActionListener() {
+        bDespesas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bProdutosActionPerformed(evt);
+                bDespesasActionPerformed(evt);
             }
         });
 
@@ -262,7 +262,6 @@ public class TelaInicial extends javax.swing.JFrame {
         bVendas.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         bVendas.setForeground(new java.awt.Color(255, 255, 255));
         bVendas.setText("Vendas");
-        bVendas.setBorderPainted(false);
         bVendas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bVendas.setFocusPainted(false);
         bVendas.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -279,24 +278,24 @@ public class TelaInicial extends javax.swing.JFrame {
             }
         });
 
-        bFuncionario.setBackground(new java.awt.Color(0, 204, 0));
-        bFuncionario.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        bFuncionario.setForeground(new java.awt.Color(255, 255, 255));
-        bFuncionario.setText("Funcionario");
-        bFuncionario.setBorderPainted(false);
-        bFuncionario.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        bFuncionario.setFocusPainted(false);
-        bFuncionario.addMouseListener(new java.awt.event.MouseAdapter() {
+        bProdutos.setBackground(new java.awt.Color(0, 204, 0));
+        bProdutos.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        bProdutos.setForeground(new java.awt.Color(255, 255, 255));
+        bProdutos.setText("Produtos");
+        bProdutos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        bProdutos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        bProdutos.setFocusPainted(false);
+        bProdutos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                bFuncionarioMouseEntered(evt);
+                bProdutosMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                bFuncionarioMouseExited(evt);
+                bProdutosMouseExited(evt);
             }
         });
-        bFuncionario.addActionListener(new java.awt.event.ActionListener() {
+        bProdutos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bFuncionarioActionPerformed(evt);
+                bProdutosActionPerformed(evt);
             }
         });
 
@@ -308,7 +307,7 @@ public class TelaInicial extends javax.swing.JFrame {
                 .addGap(85, 85, 85)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(bVendas, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(bProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -319,11 +318,11 @@ public class TelaInicial extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(98, 98, 98)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(bCompras, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bDespesas, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(101, 101, 101)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bRelatorios, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(bPessoaJuridica, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(123, 123, 123))))
         );
@@ -333,13 +332,13 @@ public class TelaInicial extends javax.swing.JFrame {
                 .addGap(51, 51, 51)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bVendas, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bCompras, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bPessoaJuridica, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(73, 73, 73)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bRelatorios, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(bDespesas, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(bVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -381,17 +380,17 @@ public class TelaInicial extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_bVoltarActionPerformed
 
-    private void bRelatoriosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bRelatoriosMouseEntered
+    private void bFuncionariosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bFuncionariosMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_bRelatoriosMouseEntered
+    }//GEN-LAST:event_bFuncionariosMouseEntered
 
-    private void bRelatoriosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bRelatoriosMouseExited
+    private void bFuncionariosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bFuncionariosMouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_bRelatoriosMouseExited
+    }//GEN-LAST:event_bFuncionariosMouseExited
 
-    private void bRelatoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRelatoriosActionPerformed
-        new TelaMenuRelatorios();
-    }//GEN-LAST:event_bRelatoriosActionPerformed
+    private void bFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bFuncionariosActionPerformed
+        new TelaFuncionarios();
+    }//GEN-LAST:event_bFuncionariosActionPerformed
 
     private void bPessoaJuridicaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bPessoaJuridicaMouseEntered
         // TODO add your handling code here:
@@ -405,29 +404,29 @@ public class TelaInicial extends javax.swing.JFrame {
         new TelaPJ(vidalTacos);
     }//GEN-LAST:event_bPessoaJuridicaActionPerformed
 
-    private void bPedidosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bPedidosMouseEntered
+    private void bComprasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bComprasMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_bPedidosMouseEntered
+    }//GEN-LAST:event_bComprasMouseEntered
 
-    private void bPedidosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bPedidosMouseExited
+    private void bComprasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bComprasMouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_bPedidosMouseExited
+    }//GEN-LAST:event_bComprasMouseExited
 
-    private void bPedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPedidosActionPerformed
-        new TelaMenuPedidos();
-    }//GEN-LAST:event_bPedidosActionPerformed
+    private void bComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bComprasActionPerformed
+        new TelaCompras();
+    }//GEN-LAST:event_bComprasActionPerformed
 
-    private void bProdutosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bProdutosMouseEntered
+    private void bDespesasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bDespesasMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_bProdutosMouseEntered
+    }//GEN-LAST:event_bDespesasMouseEntered
 
-    private void bProdutosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bProdutosMouseExited
+    private void bDespesasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bDespesasMouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_bProdutosMouseExited
+    }//GEN-LAST:event_bDespesasMouseExited
 
-    private void bProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bProdutosActionPerformed
-        new TelaMenuProdutos();
-    }//GEN-LAST:event_bProdutosActionPerformed
+    private void bDespesasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDespesasActionPerformed
+        new TelaDespesas();
+    }//GEN-LAST:event_bDespesasActionPerformed
 
     private void bVendasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bVendasMouseEntered
         // TODO add your handling code here:
@@ -438,28 +437,28 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_bVendasMouseExited
 
     private void bVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVendasActionPerformed
-        new TelaMenuVendas();
+        new TelaVendas();
     }//GEN-LAST:event_bVendasActionPerformed
 
-    private void bFuncionarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bFuncionarioMouseEntered
+    private void bProdutosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bProdutosMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_bFuncionarioMouseEntered
+    }//GEN-LAST:event_bProdutosMouseEntered
 
-    private void bFuncionarioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bFuncionarioMouseExited
+    private void bProdutosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bProdutosMouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_bFuncionarioMouseExited
+    }//GEN-LAST:event_bProdutosMouseExited
 
-    private void bFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bFuncionarioActionPerformed
-        new TelaMenuFuncionario();
-    }//GEN-LAST:event_bFuncionarioActionPerformed
+    private void bProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bProdutosActionPerformed
+        new TelaProdutos();
+    }//GEN-LAST:event_bProdutosActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bFuncionario;
-    private javax.swing.JButton bPedidos;
+    private javax.swing.JButton bCompras;
+    private javax.swing.JButton bDespesas;
+    private javax.swing.JButton bFuncionarios;
     private javax.swing.JButton bPessoaJuridica;
     private javax.swing.JButton bProdutos;
-    private javax.swing.JButton bRelatorios;
     private javax.swing.JButton bVendas;
     private javax.swing.JButton bVoltar;
     private javax.swing.JLabel jLabel1;
@@ -469,8 +468,8 @@ public class TelaInicial extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel lCadastrarPedido;
-    private javax.swing.JLabel lCadastrarPedido1;
-    private javax.swing.JLabel lCadastrarPedido2;
     private javax.swing.JLabel lCadastrarPedido3;
+    private javax.swing.JLabel lData;
+    private javax.swing.JLabel lHora;
     // End of variables declaration//GEN-END:variables
 }

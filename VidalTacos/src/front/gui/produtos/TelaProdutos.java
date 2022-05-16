@@ -9,12 +9,12 @@ package front.gui.produtos;
  *
  * @author MIGUELCESARPENHAGOME
  */
-public class TelaRelatorioProdutos extends javax.swing.JFrame {
+public class TelaProdutos extends javax.swing.JFrame {
 
     /**
      * Creates new form TelaRelatorioVendas
      */
-    public TelaRelatorioProdutos() {
+    public TelaProdutos() {
         initComponents();
         this.setVisible(true);
         this.setLocationRelativeTo(null);

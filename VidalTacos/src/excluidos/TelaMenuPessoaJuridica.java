@@ -3,22 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package front.gui.venda;
+package excluidos;
 
-import front.gui.venda.TelaRelatorioVendas;
-import front.gui.venda.TelaCadastrarVenda;
+import front.gui.pj.TelaAlterarPessoaJuridica;
+import front.gui.pj.TelaBuscarPessoaJuridica;
+import front.gui.pj.TelaCadastrarPessoaJuridica;
+import objetos.VidalTacos;
 
 /**
  *
  * @author MIGUELCESARPENHAGOME
  */
-public class TelaMenuVendas extends javax.swing.JFrame {
+public class TelaMenuPessoaJuridica extends javax.swing.JFrame {
 
-    /**
-     * Creates new form TelaMenuPedidos
-     */
-    public TelaMenuVendas() {
+    private VidalTacos vidalTacos;
+    
+    public TelaMenuPessoaJuridica(VidalTacos vidalTacos) {
         initComponents();
+        this.vidalTacos = vidalTacos;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
     }
@@ -76,7 +78,7 @@ public class TelaMenuVendas extends javax.swing.JFrame {
         lCadastrarPedido1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lCadastrarPedido1.setForeground(new java.awt.Color(255, 255, 255));
         lCadastrarPedido1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lCadastrarPedido1.setText("Menu Vendas");
+        lCadastrarPedido1.setText("Menu Pessoa Jurídica");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -211,17 +213,19 @@ public class TelaMenuVendas extends javax.swing.JFrame {
     }//GEN-LAST:event_bVoltarActionPerformed
 
     private void bCadastrarPessoaJuridicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCadastrarPessoaJuridicaActionPerformed
-        new TelaCadastrarVenda();
+        // new TelaCadastrarPessoaJuridica(this.vidalTacos);
     }//GEN-LAST:event_bCadastrarPessoaJuridicaActionPerformed
 
     private void bAlterarPessoaJuridicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAlterarPessoaJuridicaActionPerformed
+        new TelaAlterarPessoaJuridica(this.vidalTacos);
     }//GEN-LAST:event_bAlterarPessoaJuridicaActionPerformed
 
     private void bBuscarPessoaJuridicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBuscarPessoaJuridicaActionPerformed
-        new TelaRelatorioVendas();
+        new TelaBuscarPessoaJuridica(this.vidalTacos);
     }//GEN-LAST:event_bBuscarPessoaJuridicaActionPerformed
 
     private void bExcluirPessoaJuridicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bExcluirPessoaJuridicaActionPerformed
+        new TelaExcluirPessoaJuridica();
     }//GEN-LAST:event_bExcluirPessoaJuridicaActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

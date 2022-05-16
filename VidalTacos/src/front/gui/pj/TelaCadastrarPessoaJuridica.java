@@ -26,10 +26,12 @@ public class TelaCadastrarPessoaJuridica extends javax.swing.JFrame {
     private Endereco endereco;
     private PessoaJuridica pj;
     private VidalTacos vidalTacos;
+    private TelaPJ telapj;
     
-    public TelaCadastrarPessoaJuridica(VidalTacos vidalTacos) {
+    public TelaCadastrarPessoaJuridica(VidalTacos vidalTacos, TelaPJ telapj) {
         initComponents();
         this.vidalTacos = vidalTacos;
+        this.telapj = telapj;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
     }
@@ -389,15 +391,15 @@ public class TelaCadastrarPessoaJuridica extends javax.swing.JFrame {
     private void bCadastrarPedido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCadastrarPedido1ActionPerformed
         this.dispose();
         this.razaoSocial = this.tRazaoSocial.getText();
-        this.nomeFantasia = (this.tNomeFantasia.getText() == null) ? "" :  this.tNomeFantasia.getText();;
+        this.nomeFantasia = this.tNomeFantasia.getText();
         this.cnpj = this.tCNPJ.getText();
         this.whatsapp = this.tWhatsapp.getText();
-        this.telefone = (this.tRazaoSocial.getText() == null) ? "" :  this.tRazaoSocial.getText();
-        this.email = (this.tRazaoSocial.getText() == null) ? "" :  this.tRazaoSocial.getText();
-        this.cliente = (this.bCliente.isSelected() == false) ? false : true;
-        this.fornecedor = (this.bFornecedor.isSelected() == false) ? false : true;
+        this.telefone =  this.tTelefone.getText();
+        this.email = this.tEmail.getText();
+        this.cliente = this.bCliente.isSelected();
+        this.fornecedor = this.bFornecedor.isSelected();
         this.pj = new PessoaJuridica(nomeFantasia, razaoSocial, cnpj, cliente, fornecedor, telefone, whatsapp, email, endereco);
-        new TelaConfirmacaoCadPJ(this.vidalTacos, this.pj);
+        new TelaConfirmacaoCadPJ(this.vidalTacos, this.pj, this.telapj);
     }//GEN-LAST:event_bCadastrarPedido1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
