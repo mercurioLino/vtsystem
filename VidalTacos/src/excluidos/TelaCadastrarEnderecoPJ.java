@@ -5,7 +5,6 @@
  */
 package excluidos;
 
-import front.gui.pj.TelaAlterarPJ;
 import front.gui.pj.TelaCadastrarPJ;
 import front.gui.pj.TelaCadastrarPJ;
 import objetos.Endereco;
@@ -25,7 +24,7 @@ public class TelaCadastrarEnderecoPJ extends javax.swing.JFrame{
     private String complemento;
     private Endereco endereco;
     private TelaCadastrarPJ telaCadPJ = null;
-    private TelaAlterarPJ telaAltPJ = null;
+    private TelaAlterarPJaaa telaAltPJ = null;
             
     public TelaCadastrarEnderecoPJ(TelaCadastrarPJ telaCadPJ) {
         initComponents();
@@ -34,7 +33,7 @@ public class TelaCadastrarEnderecoPJ extends javax.swing.JFrame{
         this.setLocationRelativeTo(null);
     }
     
-    public TelaCadastrarEnderecoPJ(TelaAlterarPJ telaAltPJ) {
+    public TelaCadastrarEnderecoPJ(TelaAlterarPJaaa telaAltPJ) {
         initComponents();
         this.telaAltPJ = telaAltPJ;
         this.setVisible(true);

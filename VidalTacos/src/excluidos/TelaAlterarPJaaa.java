@@ -3,8 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package front.gui.pj;
-import acoes.*;
+package excluidos;
+
+import acoes.RetornaBoxSelected;
+import acoes.RetornaTextoTextField;
+import front.gui.pj.TelaConfirmacaoPJ;
+import front.gui.pj.TelaEnderecoPJ;
+import front.gui.pj.TelaPJ;
 import objetos.Endereco;
 import objetos.VidalTacos;
 import objetos.pessoas.PessoaJuridica;
@@ -13,16 +18,15 @@ import objetos.pessoas.PessoaJuridica;
  *
  * @author MIGUELCESARPENHAGOME
  */
-public class TelaAlterarPJ extends javax.swing.JFrame {
-    
+public class TelaAlterarPJaaa extends javax.swing.JFrame{
+
     private Endereco endereco;
     private VidalTacos vidalTacos;
     private PessoaJuridica pj;
     TelaPJ telapj;
     
-    public TelaAlterarPJ(VidalTacos vidalTacos, PessoaJuridica pj, TelaPJ telapj) {
+    public TelaAlterarPJaaa(VidalTacos vidalTacos, PessoaJuridica pj, TelaPJ telapj) {
         initComponents();
-        this.pj = pj; 
         this.telapj = telapj;
         this.tCNPJ.setText(pj.getCnpj());
         this.tRazaoSocial.setText(pj.getRazaoSocial());
@@ -33,8 +37,10 @@ public class TelaAlterarPJ extends javax.swing.JFrame {
         this.cbCliente.setSelected(pj.isCliente());
         this.cbFornecedor.setSelected(pj.isFornecedor());
         this.vidalTacos = vidalTacos;
+        this.pj = pj; 
         this.setVisible(true);
         this.setLocationRelativeTo(null);
+        this.setAlwaysOnTop(rootPaneCheckingEnabled);
     }
     
     public void setEndereco(Endereco endereco){
@@ -44,6 +50,7 @@ public class TelaAlterarPJ extends javax.swing.JFrame {
     public Endereco getEndereco(){
         return this.endereco;
     }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -72,7 +79,7 @@ public class TelaAlterarPJ extends javax.swing.JFrame {
         tRazaoSocial = new javax.swing.JTextField();
         cbCliente = new javax.swing.JCheckBox();
         cbFornecedor = new javax.swing.JCheckBox();
-        bAlterarPJ = new javax.swing.JButton();
+        bAlterarPedido = new javax.swing.JButton();
         bWhatsapp1 = new javax.swing.JLabel();
         bExcluir = new javax.swing.JButton();
 
@@ -93,7 +100,7 @@ public class TelaAlterarPJ extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lCadastrarPedido, javax.swing.GroupLayout.DEFAULT_SIZE, 434, Short.MAX_VALUE)
+                .addComponent(lCadastrarPedido, javax.swing.GroupLayout.DEFAULT_SIZE, 386, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -201,24 +208,24 @@ public class TelaAlterarPJ extends javax.swing.JFrame {
 
         cbFornecedor.setText("Fornecedor");
 
-        bAlterarPJ.setBackground(new java.awt.Color(0, 204, 0));
-        bAlterarPJ.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        bAlterarPJ.setForeground(new java.awt.Color(255, 255, 255));
-        bAlterarPJ.setText("Alterar");
-        bAlterarPJ.setBorderPainted(false);
-        bAlterarPJ.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        bAlterarPJ.setFocusPainted(false);
-        bAlterarPJ.addMouseListener(new java.awt.event.MouseAdapter() {
+        bAlterarPedido.setBackground(new java.awt.Color(0, 204, 0));
+        bAlterarPedido.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        bAlterarPedido.setForeground(new java.awt.Color(255, 255, 255));
+        bAlterarPedido.setText("Alterar");
+        bAlterarPedido.setBorderPainted(false);
+        bAlterarPedido.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        bAlterarPedido.setFocusPainted(false);
+        bAlterarPedido.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                bAlterarPJMouseEntered(evt);
+                bAlterarPedidoMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                bAlterarPJMouseExited(evt);
+                bAlterarPedidoMouseExited(evt);
             }
         });
-        bAlterarPJ.addActionListener(new java.awt.event.ActionListener() {
+        bAlterarPedido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bAlterarPJActionPerformed(evt);
+                bAlterarPedidoActionPerformed(evt);
             }
         });
 
@@ -251,53 +258,52 @@ public class TelaAlterarPJ extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(bWhatsapp1)
-                        .addGap(23, 23, 23)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(bAlterarPedido, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(bVoltar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(lCliente8)
+                                                    .addComponent(lCNPJ)
+                                                    .addComponent(lCliente4))
+                                                .addGap(14, 14, 14)
+                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(tCNPJ, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(tTelefone, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addComponent(tEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addGap(11, 11, 11)
+                                                .addComponent(bEndereço, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                        .addComponent(bWhatsapp1)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addComponent(bExcluir, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(20, 20, 20))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(lRazaoSocial)
+                                .addGap(18, 18, 18)
+                                .addComponent(tRazaoSocial, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lNomeFantasia)
+                            .addComponent(bWhatsapp))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tWhatsapp, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tNomeFantasia, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cbCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cbFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(262, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bVoltar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(bAlterarPJ, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(bExcluir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bWhatsapp)
-                            .addComponent(lRazaoSocial)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(lNomeFantasia)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(tWhatsapp, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tNomeFantasia, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tRazaoSocial, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(lCliente8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(tTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lCliente4)
-                                    .addComponent(lCNPJ))
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGap(29, 29, 29)
-                                        .addComponent(tCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addContainerGap())))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(bEndereço, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(147, 147, 147))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -322,22 +328,23 @@ public class TelaAlterarPJ extends javax.swing.JFrame {
                     .addComponent(tEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(cbCliente)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cbFornecedor))
+                        .addGap(35, 35, 35)
+                        .addComponent(bWhatsapp1))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(bWhatsapp1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
-                .addComponent(bEndereço, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(bAlterarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
+                        .addComponent(cbCliente)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(cbFornecedor))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bEndereço, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addComponent(bAlterarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(bExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(11, 11, 11)
                 .addComponent(bVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
+                .addGap(15, 15, 15))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -355,7 +362,7 @@ public class TelaAlterarPJ extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(462, 491));
+        setSize(new java.awt.Dimension(414, 434));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -378,7 +385,7 @@ public class TelaAlterarPJ extends javax.swing.JFrame {
     }//GEN-LAST:event_bEndereçoMouseExited
 
     private void bEndereçoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEndereçoActionPerformed
-        new TelaEnderecoPJ(this, pj.getEndereco());
+        //new TelaEnderecoPJ(this, pj.getEndereco());
     }//GEN-LAST:event_bEndereçoActionPerformed
 
     private void bVoltarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bVoltarMouseEntered
@@ -409,15 +416,15 @@ public class TelaAlterarPJ extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tRazaoSocialActionPerformed
 
-    private void bAlterarPJMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bAlterarPJMouseEntered
+    private void bAlterarPedidoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bAlterarPedidoMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_bAlterarPJMouseEntered
+    }//GEN-LAST:event_bAlterarPedidoMouseEntered
 
-    private void bAlterarPJMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bAlterarPJMouseExited
+    private void bAlterarPedidoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bAlterarPedidoMouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_bAlterarPJMouseExited
+    }//GEN-LAST:event_bAlterarPedidoMouseExited
 
-    private void bAlterarPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAlterarPJActionPerformed
+    private void bAlterarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAlterarPedidoActionPerformed
         PessoaJuridica pjNovo = new PessoaJuridica(
             RetornaTextoTextField.retornaTextoTextField(this.tNomeFantasia),
             RetornaTextoTextField.retornaTextoTextField(this.tRazaoSocial),
@@ -429,9 +436,9 @@ public class TelaAlterarPJ extends javax.swing.JFrame {
             RetornaTextoTextField.retornaTextoTextField(this.tEmail),
             this.endereco
         );
-        new TelaConfirmacaoPJ(this, vidalTacos, pj, pjNovo, telapj);
+        //new TelaConfirmacaoPJ(this, vidalTacos, pj, pjNovo, telapj);
         this.dispose();
-    }//GEN-LAST:event_bAlterarPJActionPerformed
+    }//GEN-LAST:event_bAlterarPedidoActionPerformed
 
     private void bExcluirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bExcluirMouseEntered
         // TODO add your handling code here:
@@ -446,7 +453,7 @@ public class TelaAlterarPJ extends javax.swing.JFrame {
     }//GEN-LAST:event_bExcluirActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bAlterarPJ;
+    private javax.swing.JButton bAlterarPedido;
     private javax.swing.JButton bEndereço;
     private javax.swing.JButton bExcluir;
     private javax.swing.JButton bVoltar;

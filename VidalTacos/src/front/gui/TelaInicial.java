@@ -79,9 +79,9 @@ public class TelaInicial extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(38, 38, 38)
+                .addGap(54, 54, 54)
                 .addComponent(lCadastrarPedido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(63, 63, 63))
+                .addGap(47, 47, 47))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,9 +118,9 @@ public class TelaInicial extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(lData)
-                .addGap(256, 256, 256)
-                .addComponent(lCadastrarPedido3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lCadastrarPedido3)
+                .addGap(348, 348, 348)
                 .addComponent(lHora, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -169,22 +169,24 @@ public class TelaInicial extends javax.swing.JFrame {
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel10Layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel10Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         bFuncionarios.setBackground(new java.awt.Color(0, 204, 0));
         bFuncionarios.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        bFuncionarios.setForeground(new java.awt.Color(255, 255, 255));
+        bFuncionarios.setForeground(new java.awt.Color(0, 0, 0));
+        bFuncionarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/front/imgs/funcionarios.png"))); // NOI18N
         bFuncionarios.setText("Funcionários");
+        bFuncionarios.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         bFuncionarios.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bFuncionarios.setFocusPainted(false);
         bFuncionarios.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -203,7 +205,8 @@ public class TelaInicial extends javax.swing.JFrame {
 
         bPessoaJuridica.setBackground(new java.awt.Color(0, 204, 0));
         bPessoaJuridica.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        bPessoaJuridica.setForeground(new java.awt.Color(255, 255, 255));
+        bPessoaJuridica.setForeground(new java.awt.Color(0, 0, 0));
+        bPessoaJuridica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/front/imgs/pessoa_juridica.png"))); // NOI18N
         bPessoaJuridica.setText("Pessoas Jurídicas");
         bPessoaJuridica.setToolTipText("");
         bPessoaJuridica.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -224,7 +227,8 @@ public class TelaInicial extends javax.swing.JFrame {
 
         bCompras.setBackground(new java.awt.Color(0, 204, 0));
         bCompras.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        bCompras.setForeground(new java.awt.Color(255, 255, 255));
+        bCompras.setForeground(new java.awt.Color(0, 0, 0));
+        bCompras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/front/imgs/compras.png"))); // NOI18N
         bCompras.setText("Compras");
         bCompras.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bCompras.setFocusPainted(false);
@@ -244,7 +248,8 @@ public class TelaInicial extends javax.swing.JFrame {
 
         bDespesas.setBackground(new java.awt.Color(0, 204, 0));
         bDespesas.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        bDespesas.setForeground(new java.awt.Color(255, 255, 255));
+        bDespesas.setForeground(new java.awt.Color(0, 0, 0));
+        bDespesas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/front/imgs/despesas.png"))); // NOI18N
         bDespesas.setText("Despesas");
         bDespesas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bDespesas.setFocusPainted(false);
@@ -264,8 +269,10 @@ public class TelaInicial extends javax.swing.JFrame {
 
         bVendas.setBackground(new java.awt.Color(0, 204, 0));
         bVendas.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        bVendas.setForeground(new java.awt.Color(255, 255, 255));
+        bVendas.setForeground(new java.awt.Color(0, 0, 0));
+        bVendas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/front/imgs/vendas.png"))); // NOI18N
         bVendas.setText("Vendas");
+        bVendas.setToolTipText("");
         bVendas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bVendas.setFocusPainted(false);
         bVendas.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -284,7 +291,8 @@ public class TelaInicial extends javax.swing.JFrame {
 
         bProdutos.setBackground(new java.awt.Color(0, 204, 0));
         bProdutos.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        bProdutos.setForeground(new java.awt.Color(255, 255, 255));
+        bProdutos.setForeground(new java.awt.Color(0, 0, 0));
+        bProdutos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/front/imgs/produto.png"))); // NOI18N
         bProdutos.setText("Produtos");
         bProdutos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         bProdutos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -308,27 +316,27 @@ public class TelaInicial extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(85, 85, 85)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(bVendas, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(65, 65, 65)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(bVendas)
+                    .addComponent(bProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(0, 130, Short.MAX_VALUE)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(bCompras)
+                            .addComponent(bDespesas))
+                        .addGap(127, 127, 127)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(bFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bPessoaJuridica))
+                        .addGap(65, 65, 65))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addGap(110, 110, 110)
                         .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(bVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(25, 25, 25))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(98, 98, 98)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bCompras, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bDespesas, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(101, 101, 101)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bPessoaJuridica, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(123, 123, 123))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -343,11 +351,11 @@ public class TelaInicial extends javax.swing.JFrame {
                     .addComponent(bProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bDespesas, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
+                .addGap(44, 44, 44)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(bVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -356,7 +364,9 @@ public class TelaInicial extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
