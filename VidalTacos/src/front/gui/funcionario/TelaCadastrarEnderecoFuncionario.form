@@ -33,7 +33,7 @@
           <Group type="102" alignment="0" attributes="0">
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel2" max="32767" attributes="0"/>
+              <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -51,7 +51,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="lCadastrarPedido" max="32767" attributes="0"/>
+                  <Component id="lCadastrarPedido" pref="515" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -99,31 +99,37 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="bSalvar" alignment="0" max="32767" attributes="0"/>
                       <Component id="bVoltar" alignment="0" max="32767" attributes="0"/>
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lCEP3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lCEP6" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lCEP5" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lBairro" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lCEP2" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lCidade" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lCEP" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="lCEP5" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lCEP6" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lCEP3" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lBairro" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lCEP" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lCidade" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="tLogradouro" min="-2" pref="93" max="-2" attributes="0"/>
-                              <Component id="tBairro" min="-2" pref="93" max="-2" attributes="0"/>
-                              <Component id="tNumero" min="-2" pref="93" max="-2" attributes="0"/>
-                              <Component id="tComplemento" alignment="0" min="-2" pref="93" max="-2" attributes="0"/>
-                              <Component id="tUF" alignment="0" min="-2" pref="93" max="-2" attributes="0"/>
-                              <Component id="tCidade" alignment="0" min="-2" pref="93" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="tCEP" min="-2" pref="93" max="-2" attributes="0"/>
+                              <Component id="tNumero" max="32767" attributes="0"/>
+                              <Component id="tBairro" alignment="0" max="32767" attributes="0"/>
+                              <Component id="tLogradouro" alignment="0" max="32767" attributes="0"/>
+                              <Component id="tComplemento" alignment="1" max="32767" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="tCidade" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="tCEP" max="32767" attributes="0"/>
+                                  </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="bBuscar" min="-2" pref="69" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="bBuscar" min="-2" pref="69" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="lCEP2" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="jComboBox1" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
                           </Group>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -133,49 +139,48 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
+                  <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                          <Component id="tCEP" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                           <Component id="lCEP" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tCEP" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="bBuscar" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="bBuscar" min="-2" pref="29" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lCidade" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="tCidade" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                          <Component id="tCidade" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                          <Component id="lCEP2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lCidade" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="jComboBox1" min="-2" pref="29" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lCEP2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="tUF" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lCEP3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="tLogradouro" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="tBairro" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                       <Component id="lBairro" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="tBairro" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="tLogradouro" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                      <Component id="lCEP3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="tNumero" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                       <Component id="lCEP5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="tNumero" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace pref="23" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="tComplemento" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tComplemento" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                       <Component id="lCEP6" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="bSalvar" min="-2" pref="40" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="bVoltar" min="-2" pref="40" max="-2" attributes="0"/>
-                  <EmptySpace pref="20" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -206,60 +211,30 @@
             <Property name="text" type="java.lang.String" value="Cidade"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="tCidade">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tCidadeActionPerformed"/>
-          </Events>
-        </Component>
         <Component class="javax.swing.JLabel" name="lCEP2">
           <Properties>
             <Property name="text" type="java.lang.String" value="UF"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="tUF">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tUFActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lCEP3">
           <Properties>
             <Property name="text" type="java.lang.String" value="Logradouro"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="tLogradouro">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tLogradouroActionPerformed"/>
-          </Events>
-        </Component>
         <Component class="javax.swing.JLabel" name="lBairro">
           <Properties>
             <Property name="text" type="java.lang.String" value="Bairro"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="tBairro">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tBairroActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lCEP5">
           <Properties>
             <Property name="text" type="java.lang.String" value="Numero"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="tNumero">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tNumeroActionPerformed"/>
-          </Events>
-        </Component>
         <Component class="javax.swing.JLabel" name="lCEP6">
           <Properties>
             <Property name="text" type="java.lang.String" value="Complemento"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="tComplemento">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tComplementoActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="bSalvar">
           <Properties>
@@ -275,7 +250,7 @@
             <Property name="text" type="java.lang.String" value="Salvar"/>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+              <Color id="Cursor Padr&#xe3;o"/>
             </Property>
             <Property name="focusPainted" type="boolean" value="false"/>
           </Properties>
@@ -302,7 +277,7 @@
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+              <Color id="Cursor Padr&#xe3;o"/>
             </Property>
             <Property name="focusPainted" type="boolean" value="false"/>
           </Properties>
@@ -311,6 +286,46 @@
             <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bVoltarMouseExited"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bVoltarActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="tCidade">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tCidadeActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="tBairro">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tBairroActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="tLogradouro">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tLogradouroActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="tNumero">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tNumeroActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="tComplemento">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tComplementoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBox1">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="4">
+                <StringItem index="0" value="SP"/>
+                <StringItem index="1" value="MS"/>
+                <StringItem index="2" value="GO"/>
+                <StringItem index="3" value="RJ"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>
