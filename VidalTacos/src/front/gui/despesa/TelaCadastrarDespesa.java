@@ -6,6 +6,7 @@
 package front.gui.despesa;
 
 import front.gui.TelaConfirmacao;
+import java.awt.Cursor;
 
 /**
  *
@@ -20,6 +21,8 @@ public class TelaCadastrarDespesa extends javax.swing.JFrame {
         initComponents();
         this.setVisible(true);
         this.setLocationRelativeTo(null);
+        this.setFocusableWindowState(true);
+        this.setAlwaysOnTop(true);
     }
 
     /**
@@ -33,10 +36,10 @@ public class TelaCadastrarDespesa extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         lCadastrarPedido = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         lValor = new javax.swing.JLabel();
         bCadastrarPedido1 = new javax.swing.JButton();
-        bVoltar = new javax.swing.JButton();
         tData5 = new javax.swing.JTextField();
         tData6 = new javax.swing.JTextField();
         lData = new javax.swing.JLabel();
@@ -46,29 +49,48 @@ public class TelaCadastrarDespesa extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setBackground(new java.awt.Color(78, 148, 79));
 
         lCadastrarPedido.setBackground(new java.awt.Color(255, 255, 255));
-        lCadastrarPedido.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lCadastrarPedido.setForeground(new java.awt.Color(255, 255, 255));
+        lCadastrarPedido.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lCadastrarPedido.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lCadastrarPedido.setText("Cadastrar Despesa");
+        lCadastrarPedido.setText("Cadastrar Despesas");
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/front/imgs/back-icon.png"))); // NOI18N
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel2MouseExited(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(120, 120, 120)
-                .addComponent(lCadastrarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addGap(68, 68, 68)
+                .addComponent(lCadastrarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lCadastrarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lCadastrarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -76,9 +98,8 @@ public class TelaCadastrarDespesa extends javax.swing.JFrame {
         lValor.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lValor.setText("Valor");
 
-        bCadastrarPedido1.setBackground(new java.awt.Color(0, 204, 0));
-        bCadastrarPedido1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        bCadastrarPedido1.setForeground(new java.awt.Color(255, 255, 255));
+        bCadastrarPedido1.setBackground(new java.awt.Color(78, 148, 79));
+        bCadastrarPedido1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         bCadastrarPedido1.setText("Cadastrar");
         bCadastrarPedido1.setBorderPainted(false);
         bCadastrarPedido1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -94,28 +115,6 @@ public class TelaCadastrarDespesa extends javax.swing.JFrame {
         bCadastrarPedido1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bCadastrarPedido1ActionPerformed(evt);
-            }
-        });
-
-        bVoltar.setBackground(new java.awt.Color(0, 0, 0));
-        bVoltar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        bVoltar.setForeground(new java.awt.Color(255, 255, 255));
-        bVoltar.setText("Voltar");
-        bVoltar.setBorder(null);
-        bVoltar.setBorderPainted(false);
-        bVoltar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        bVoltar.setFocusPainted(false);
-        bVoltar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                bVoltarMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                bVoltarMouseExited(evt);
-            }
-        });
-        bVoltar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bVoltarActionPerformed(evt);
             }
         });
 
@@ -145,9 +144,7 @@ public class TelaCadastrarDespesa extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bCadastrarPedido1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(bVoltar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(bCadastrarPedido1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -169,19 +166,17 @@ public class TelaCadastrarDespesa extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lData, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
                     .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tData5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lDescricao1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lDescricao1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tData5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(tData6, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lValor, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(47, 47, 47)
+                .addGap(35, 35, 35)
                 .addComponent(bCadastrarPedido1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -206,28 +201,16 @@ public class TelaCadastrarDespesa extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bCadastrarPedido1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bCadastrarPedido1MouseEntered
-        // TODO add your handling code here:
+        this.setCursor(Cursor.HAND_CURSOR);
     }//GEN-LAST:event_bCadastrarPedido1MouseEntered
 
     private void bCadastrarPedido1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bCadastrarPedido1MouseExited
-        // TODO add your handling code here:
+        this.setCursor(Cursor.DEFAULT_CURSOR);
     }//GEN-LAST:event_bCadastrarPedido1MouseExited
 
     private void bCadastrarPedido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCadastrarPedido1ActionPerformed
 
     }//GEN-LAST:event_bCadastrarPedido1ActionPerformed
-
-    private void bVoltarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bVoltarMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bVoltarMouseEntered
-
-    private void bVoltarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bVoltarMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bVoltarMouseExited
-
-    private void bVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVoltarActionPerformed
-        this.dispose();
-    }//GEN-LAST:event_bVoltarActionPerformed
 
     private void tData5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tData5ActionPerformed
         // TODO add your handling code here:
@@ -237,11 +220,23 @@ public class TelaCadastrarDespesa extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tData6ActionPerformed
 
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        this.dispose();
+    }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void jLabel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseEntered
+        this.setCursor(Cursor.HAND_CURSOR);
+    }//GEN-LAST:event_jLabel2MouseEntered
+
+    private void jLabel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseExited
+        this.setCursor(Cursor.DEFAULT_CURSOR);
+    }//GEN-LAST:event_jLabel2MouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bCadastrarPedido1;
-    private javax.swing.JButton bVoltar;
     private com.toedter.calendar.JDateChooser jDateChooser1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel lCadastrarPedido;

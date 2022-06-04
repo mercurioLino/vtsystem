@@ -7,6 +7,7 @@ package front.gui.funcionario;
 
 import front.gui.*;
 import front.gui.pj.TelaCadastrarPJ;
+import java.awt.Cursor;
 import objetos.Endereco;
 
 /**
@@ -28,6 +29,8 @@ public class TelaCadastrarEnderecoFuncionario extends javax.swing.JFrame {
         initComponents();
         this.setVisible(true);
         this.setLocationRelativeTo(null);
+        this.setFocusableWindowState(true);
+        this.setAlwaysOnTop(true);
     }
     
     public Endereco getEndereco(){
@@ -45,6 +48,7 @@ public class TelaCadastrarEnderecoFuncionario extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         lCadastrarPedido = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         lCEP = new javax.swing.JLabel();
         tCEP = new javax.swing.JTextField();
@@ -56,40 +60,57 @@ public class TelaCadastrarEnderecoFuncionario extends javax.swing.JFrame {
         lCEP5 = new javax.swing.JLabel();
         lCEP6 = new javax.swing.JLabel();
         bSalvar = new javax.swing.JButton();
-        bVoltar = new javax.swing.JButton();
         tCidade = new javax.swing.JTextField();
         tBairro = new javax.swing.JTextField();
         tLogradouro = new javax.swing.JTextField();
         tNumero = new javax.swing.JTextField();
         tComplemento = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cUF = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setBackground(new java.awt.Color(78, 148, 79));
 
         lCadastrarPedido.setBackground(new java.awt.Color(255, 255, 255));
         lCadastrarPedido.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        lCadastrarPedido.setForeground(new java.awt.Color(255, 255, 255));
         lCadastrarPedido.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lCadastrarPedido.setText("Endereço");
+        lCadastrarPedido.setText("ENDEREÇO");
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/front/imgs/back-icon.png"))); // NOI18N
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel2MouseExited(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lCadastrarPedido, javax.swing.GroupLayout.DEFAULT_SIZE, 515, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(21, 21, 21)
+                .addComponent(jLabel2)
+                .addGap(135, 135, 135)
+                .addComponent(lCadastrarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lCadastrarPedido)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(lCadastrarPedido)))
+                .addContainerGap())
         );
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -102,8 +123,17 @@ public class TelaCadastrarEnderecoFuncionario extends javax.swing.JFrame {
             }
         });
 
+        bBuscar.setBackground(new java.awt.Color(131, 189, 117));
         bBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/front/imgs/search.png"))); // NOI18N
         bBuscar.setPreferredSize(new java.awt.Dimension(91, 20));
+        bBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                bBuscarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                bBuscarMouseExited(evt);
+            }
+        });
 
         lCidade.setText("Cidade");
 
@@ -117,9 +147,8 @@ public class TelaCadastrarEnderecoFuncionario extends javax.swing.JFrame {
 
         lCEP6.setText("Complemento");
 
-        bSalvar.setBackground(new java.awt.Color(0, 204, 0));
-        bSalvar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        bSalvar.setForeground(new java.awt.Color(255, 255, 255));
+        bSalvar.setBackground(new java.awt.Color(78, 148, 79));
+        bSalvar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         bSalvar.setText("Salvar");
         bSalvar.setBorderPainted(false);
         bSalvar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -135,28 +164,6 @@ public class TelaCadastrarEnderecoFuncionario extends javax.swing.JFrame {
         bSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bSalvarActionPerformed(evt);
-            }
-        });
-
-        bVoltar.setBackground(new java.awt.Color(0, 0, 0));
-        bVoltar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        bVoltar.setForeground(new java.awt.Color(255, 255, 255));
-        bVoltar.setText("Voltar");
-        bVoltar.setBorder(null);
-        bVoltar.setBorderPainted(false);
-        bVoltar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        bVoltar.setFocusPainted(false);
-        bVoltar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                bVoltarMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                bVoltarMouseExited(evt);
-            }
-        });
-        bVoltar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bVoltarActionPerformed(evt);
             }
         });
 
@@ -190,7 +197,16 @@ public class TelaCadastrarEnderecoFuncionario extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SP", "MS", "GO", "RJ" }));
+        cUF.setBackground(new java.awt.Color(131, 189, 117));
+        cUF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SP", "MS", "GO", "RJ" }));
+        cUF.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cUFMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cUFMouseExited(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -200,7 +216,6 @@ public class TelaCadastrarEnderecoFuncionario extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(bSalvar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(bVoltar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lCEP5)
@@ -217,7 +232,7 @@ public class TelaCadastrarEnderecoFuncionario extends javax.swing.JFrame {
                             .addComponent(tComplemento, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(tCidade, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(tCidade, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 353, Short.MAX_VALUE)
                                     .addComponent(tCEP))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -225,7 +240,7 @@ public class TelaCadastrarEnderecoFuncionario extends javax.swing.JFrame {
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addComponent(lCEP2)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))))
+                                        .addComponent(cUF, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -243,7 +258,7 @@ public class TelaCadastrarEnderecoFuncionario extends javax.swing.JFrame {
                         .addComponent(tCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(lCEP2)
                         .addComponent(lCidade))
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cUF, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(23, 23, 23)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -256,15 +271,13 @@ public class TelaCadastrarEnderecoFuncionario extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lCEP5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tComplemento, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lCEP6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(bSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(bVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -279,7 +292,7 @@ public class TelaCadastrarEnderecoFuncionario extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -294,18 +307,6 @@ public class TelaCadastrarEnderecoFuncionario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tCidadeActionPerformed
 
-    private void bVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVoltarActionPerformed
-        this.dispose();
-    }//GEN-LAST:event_bVoltarActionPerformed
-
-    private void bVoltarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bVoltarMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bVoltarMouseExited
-
-    private void bVoltarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bVoltarMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bVoltarMouseEntered
-
     private void bSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSalvarActionPerformed
         this.cep = this.tCEP.getText();
         this.cidade = this.tCidade.getText();
@@ -318,11 +319,11 @@ public class TelaCadastrarEnderecoFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_bSalvarActionPerformed
 
     private void bSalvarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bSalvarMouseExited
-        // TODO add your handling code here:
+        this.setCursor(Cursor.DEFAULT_CURSOR);
     }//GEN-LAST:event_bSalvarMouseExited
 
     private void bSalvarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bSalvarMouseEntered
-        // TODO add your handling code here:
+        this.setCursor(Cursor.HAND_CURSOR);
     }//GEN-LAST:event_bSalvarMouseEntered
 
     private void tCEPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tCEPActionPerformed
@@ -341,12 +342,40 @@ public class TelaCadastrarEnderecoFuncionario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tComplementoActionPerformed
 
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        this.dispose();
+    }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void jLabel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseEntered
+        this.setCursor(Cursor.HAND_CURSOR);
+    }//GEN-LAST:event_jLabel2MouseEntered
+
+    private void jLabel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseExited
+        this.setCursor(Cursor.DEFAULT_CURSOR);
+    }//GEN-LAST:event_jLabel2MouseExited
+
+    private void bBuscarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bBuscarMouseEntered
+        this.setCursor(Cursor.HAND_CURSOR);
+    }//GEN-LAST:event_bBuscarMouseEntered
+
+    private void cUFMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cUFMouseEntered
+        this.setCursor(Cursor.HAND_CURSOR);
+    }//GEN-LAST:event_cUFMouseEntered
+
+    private void cUFMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cUFMouseExited
+        this.setCursor(Cursor.DEFAULT_CURSOR);
+    }//GEN-LAST:event_cUFMouseExited
+
+    private void bBuscarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bBuscarMouseExited
+        this.setCursor(Cursor.DEFAULT_CURSOR);
+    }//GEN-LAST:event_bBuscarMouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bBuscar;
     private javax.swing.JButton bSalvar;
-    private javax.swing.JButton bVoltar;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> cUF;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lBairro;

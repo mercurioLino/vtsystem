@@ -5,6 +5,7 @@
  */
 package front.gui.pj;
 import acoes.*;
+import java.awt.Cursor;
 import objetos.Endereco;
 import objetos.VidalTacos;
 import objetos.pessoas.PessoaJuridica;
@@ -34,6 +35,8 @@ public class TelaCadastrarPJ extends javax.swing.JFrame {
         this.telapj = telapj;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
+        this.setFocusableWindowState(true);
+        this.setAlwaysOnTop(true);
     }
 
     public void setEndereco(Endereco endereco){
@@ -54,13 +57,13 @@ public class TelaCadastrarPJ extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         lCadastrarPedido = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         lCNPJ = new javax.swing.JLabel();
         tTelefone = new javax.swing.JTextField();
         lCliente4 = new javax.swing.JLabel();
         tEmail = new javax.swing.JTextField();
         bEndereço = new javax.swing.JButton();
-        bVoltar = new javax.swing.JButton();
         lRazaoSocial = new javax.swing.JLabel();
         tCNPJ = new javax.swing.JTextField();
         lCliente8 = new javax.swing.JLabel();
@@ -77,22 +80,36 @@ public class TelaCadastrarPJ extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setBackground(new java.awt.Color(78, 148, 79));
 
         lCadastrarPedido.setBackground(new java.awt.Color(255, 255, 255));
         lCadastrarPedido.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        lCadastrarPedido.setForeground(new java.awt.Color(255, 255, 255));
         lCadastrarPedido.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lCadastrarPedido.setText("Cadastro Pessoa Jurídica");
+        lCadastrarPedido.setText("CADASTRO PESSOA JURÍDICA");
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/front/imgs/back-icon.png"))); // NOI18N
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel2MouseExited(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lCadastrarPedido, javax.swing.GroupLayout.DEFAULT_SIZE, 453, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jLabel2)
+                .addGap(26, 26, 26)
+                .addComponent(lCadastrarPedido)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -100,6 +117,7 @@ public class TelaCadastrarPJ extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(lCadastrarPedido)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -120,9 +138,8 @@ public class TelaCadastrarPJ extends javax.swing.JFrame {
             }
         });
 
-        bEndereço.setBackground(new java.awt.Color(0, 0, 0));
+        bEndereço.setBackground(new java.awt.Color(131, 189, 117));
         bEndereço.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        bEndereço.setForeground(new java.awt.Color(255, 255, 255));
         bEndereço.setText("+ Endereço");
         bEndereço.setBorderPainted(false);
         bEndereço.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -138,28 +155,6 @@ public class TelaCadastrarPJ extends javax.swing.JFrame {
         bEndereço.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bEndereçoActionPerformed(evt);
-            }
-        });
-
-        bVoltar.setBackground(new java.awt.Color(0, 0, 0));
-        bVoltar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        bVoltar.setForeground(new java.awt.Color(255, 255, 255));
-        bVoltar.setText("Voltar");
-        bVoltar.setBorder(null);
-        bVoltar.setBorderPainted(false);
-        bVoltar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        bVoltar.setFocusPainted(false);
-        bVoltar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                bVoltarMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                bVoltarMouseExited(evt);
-            }
-        });
-        bVoltar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bVoltarActionPerformed(evt);
             }
         });
 
@@ -199,9 +194,8 @@ public class TelaCadastrarPJ extends javax.swing.JFrame {
 
         bFornecedor.setText("Fornecedor");
 
-        bCadastrarPJ.setBackground(new java.awt.Color(0, 204, 0));
-        bCadastrarPJ.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        bCadastrarPJ.setForeground(new java.awt.Color(255, 255, 255));
+        bCadastrarPJ.setBackground(new java.awt.Color(78, 148, 79));
+        bCadastrarPJ.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         bCadastrarPJ.setText("Cadastrar");
         bCadastrarPJ.setBorderPainted(false);
         bCadastrarPJ.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -248,7 +242,7 @@ public class TelaCadastrarPJ extends javax.swing.JFrame {
                                     .addComponent(tNomeFantasia, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(tRazaoSocial, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(lRazaoSocial))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lCliente8)
                             .addComponent(lCNPJ)
@@ -260,9 +254,7 @@ public class TelaCadastrarPJ extends javax.swing.JFrame {
                             .addComponent(tCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(48, 48, 48))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(bVoltar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(bCadastrarPJ, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(bCadastrarPJ, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -303,9 +295,7 @@ public class TelaCadastrarPJ extends javax.swing.JFrame {
                 .addComponent(bEndereço, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(bCadastrarPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -320,10 +310,10 @@ public class TelaCadastrarPJ extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        setSize(new java.awt.Dimension(481, 445));
+        setSize(new java.awt.Dimension(481, 394));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -338,28 +328,18 @@ public class TelaCadastrarPJ extends javax.swing.JFrame {
     private void bEndereçoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bEndereçoMouseEntered
         //bEntrar.setBackground(new Color(235, 235, 235));
         //bEntrar.setForeground(new Color(58, 65, 84));
+        this.setCursor(Cursor.HAND_CURSOR);
     }//GEN-LAST:event_bEndereçoMouseEntered
 
     private void bEndereçoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bEndereçoMouseExited
         //bEntrar.setBackground(new Color(58, 65, 84));
         //bSair.setForeground(Color.WHITE);
+        this.setCursor(Cursor.DEFAULT_CURSOR);
     }//GEN-LAST:event_bEndereçoMouseExited
 
     private void bEndereçoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEndereçoActionPerformed
         new TelaEnderecoPJ(this);
     }//GEN-LAST:event_bEndereçoActionPerformed
-
-    private void bVoltarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bVoltarMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bVoltarMouseEntered
-
-    private void bVoltarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bVoltarMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bVoltarMouseExited
-
-    private void bVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVoltarActionPerformed
-        this.dispose();
-    }//GEN-LAST:event_bVoltarActionPerformed
 
     private void tCNPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tCNPJActionPerformed
         // TODO add your handling code here:
@@ -378,11 +358,11 @@ public class TelaCadastrarPJ extends javax.swing.JFrame {
     }//GEN-LAST:event_tRazaoSocialActionPerformed
 
     private void bCadastrarPJMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bCadastrarPJMouseEntered
-        // TODO add your handling code here:
+        this.setCursor(Cursor.HAND_CURSOR);
     }//GEN-LAST:event_bCadastrarPJMouseEntered
 
     private void bCadastrarPJMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bCadastrarPJMouseExited
-        // TODO add your handling code here:
+        this.setCursor(Cursor.DEFAULT_CURSOR);
     }//GEN-LAST:event_bCadastrarPJMouseExited
 
     private void bCadastrarPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCadastrarPJActionPerformed
@@ -399,14 +379,26 @@ public class TelaCadastrarPJ extends javax.swing.JFrame {
         new TelaConfirmacaoPJ(this, this.vidalTacos, this.pj, this.telapj);
     }//GEN-LAST:event_bCadastrarPJActionPerformed
 
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        this.dispose();
+    }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void jLabel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseEntered
+        this.setCursor(Cursor.HAND_CURSOR);
+    }//GEN-LAST:event_jLabel2MouseEntered
+
+    private void jLabel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseExited
+        this.setCursor(Cursor.DEFAULT_CURSOR);
+    }//GEN-LAST:event_jLabel2MouseExited
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bCadastrarPJ;
     private javax.swing.JCheckBox bCliente;
     private javax.swing.JButton bEndereço;
     private javax.swing.JCheckBox bFornecedor;
-    private javax.swing.JButton bVoltar;
     private javax.swing.JLabel bWhatsapp;
     private javax.swing.JLabel bWhatsapp1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lCNPJ;

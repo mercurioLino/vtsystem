@@ -5,6 +5,8 @@
  */
 package front.gui.produtos;
 
+import java.awt.Cursor;
+
 /**
  *
  * @author MIGUELCESARPENHAGOME
@@ -18,7 +20,8 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
         initComponents();
         this.setVisible(true);
         this.setLocationRelativeTo(null);
-        this.setAlwaysOnTop(rootPaneCheckingEnabled);
+        this.setFocusableWindowState(true);
+        this.setAlwaysOnTop(true);
     }
 
     /**
@@ -33,6 +36,7 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         lProduto = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         lValorUnitario = new javax.swing.JLabel();
         tCodigo = new javax.swing.JTextField();
@@ -40,7 +44,6 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
         lTacoImg2 = new javax.swing.JLabel();
         bCarregarTacoImg2 = new javax.swing.JButton();
         bEntrar = new javax.swing.JButton();
-        bCancelar = new javax.swing.JButton();
         tNome1 = new javax.swing.JTextField();
         tModelo = new javax.swing.JTextField();
         tCor = new javax.swing.JTextField();
@@ -58,27 +61,42 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setBackground(new java.awt.Color(78, 148, 79));
 
-        lProduto.setFont(new java.awt.Font("DeVinne Txt BT", 1, 18)); // NOI18N
-        lProduto.setForeground(new java.awt.Color(255, 255, 255));
+        lProduto.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lProduto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lProduto.setText("Produto");
+        lProduto.setText("PRODUTO");
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/front/imgs/back-icon.png"))); // NOI18N
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel4MouseExited(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(75, 75, 75)
-                .addComponent(lProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addComponent(jLabel4)
+                .addGap(125, 125, 125)
+                .addComponent(lProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 25, Short.MAX_VALUE)
-                .addComponent(lProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                .addGap(2, 2, 2))
+            .addComponent(lProduto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -97,9 +115,8 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
 
         lTacoImg2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/front/imgs/taco-icon.png"))); // NOI18N
 
-        bCarregarTacoImg2.setBackground(new java.awt.Color(0, 0, 0));
-        bCarregarTacoImg2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        bCarregarTacoImg2.setForeground(new java.awt.Color(255, 255, 255));
+        bCarregarTacoImg2.setBackground(new java.awt.Color(131, 189, 117));
+        bCarregarTacoImg2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         bCarregarTacoImg2.setText("Carregar");
         bCarregarTacoImg2.setBorderPainted(false);
         bCarregarTacoImg2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -142,9 +159,8 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
                 .addGap(22, 22, 22))
         );
 
-        bEntrar.setBackground(new java.awt.Color(0, 204, 0));
-        bEntrar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        bEntrar.setForeground(new java.awt.Color(255, 255, 255));
+        bEntrar.setBackground(new java.awt.Color(78, 148, 79));
+        bEntrar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         bEntrar.setText("Salvar");
         bEntrar.setBorderPainted(false);
         bEntrar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -160,27 +176,6 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
         bEntrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bEntrarActionPerformed(evt);
-            }
-        });
-
-        bCancelar.setBackground(new java.awt.Color(0, 0, 0));
-        bCancelar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        bCancelar.setForeground(new java.awt.Color(255, 255, 255));
-        bCancelar.setText("Voltar");
-        bCancelar.setBorderPainted(false);
-        bCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        bCancelar.setFocusPainted(false);
-        bCancelar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                bCancelarMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                bCancelarMouseExited(evt);
-            }
-        });
-        bCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bCancelarActionPerformed(evt);
             }
         });
 
@@ -237,33 +232,34 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(bEntrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(bCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lDescricao)
-                                    .addComponent(lModelo))
-                                .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(0, 21, Short.MAX_VALUE)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(tModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tNome1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(lCodigo)
-                                .addGap(18, 18, 18)
-                                .addComponent(tCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(lNome)
-                                .addGap(18, 18, 18)
-                                .addComponent(tNome, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(lCor)
-                                .addGap(18, 18, 18)
-                                .addComponent(tCor, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(lDescricao)
+                                            .addComponent(lModelo))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(tModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(tNome1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                        .addComponent(lCodigo)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(tCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                        .addComponent(lNome)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(tNome, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                        .addComponent(lCor)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(tCor, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(lValorUnitario)
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(tValorUnitario, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -272,13 +268,9 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(13, 13, 13)
@@ -301,15 +293,17 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(tCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lCodigo))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(tValorUnitario, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lValorUnitario))
-                        .addGap(53, 53, 53)))
+                        .addGap(64, 64, 64))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(58, 58, 58)
+                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(bEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(bCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -322,9 +316,10 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -337,11 +332,13 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
     private void bCarregarTacoImgMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bCarregarTacoImgMouseExited
         //bEntrar.setBackground(new Color(58, 65, 84));
         //bSair.setForeground(Color.WHITE);
+        this.setCursor(Cursor.DEFAULT_CURSOR);
     }//GEN-LAST:event_bCarregarTacoImgMouseExited
 
     private void bCarregarTacoImgMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bCarregarTacoImgMouseEntered
         //bEntrar.setBackground(new Color(235, 235, 235));
         //bEntrar.setForeground(new Color(58, 65, 84));
+        this.setCursor(Cursor.HAND_CURSOR);
     }//GEN-LAST:event_bCarregarTacoImgMouseEntered
 
     private void tCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tCodigoActionPerformed
@@ -355,26 +352,14 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
     private void bEntrarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bEntrarMouseExited
         //bEntrar.setBackground(new Color(58, 65, 84));
         //bSair.setForeground(Color.WHITE);
+        this.setCursor(Cursor.DEFAULT_CURSOR);
     }//GEN-LAST:event_bEntrarMouseExited
 
     private void bEntrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bEntrarMouseEntered
         //bEntrar.setBackground(new Color(235, 235, 235));
         //bEntrar.setForeground(new Color(58, 65, 84));
+        this.setCursor(Cursor.HAND_CURSOR);
     }//GEN-LAST:event_bEntrarMouseEntered
-
-    private void bCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCancelarActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_bCancelarActionPerformed
-
-    private void bCancelarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bCancelarMouseExited
-        //bEntrar.setBackground(new Color(217, 81, 51));
-        //bSair.setForeground(Color.WHITE);
-    }//GEN-LAST:event_bCancelarMouseExited
-
-    private void bCancelarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bCancelarMouseEntered
-        //bEntrar.setBackground(new Color(235, 235, 235));
-        //bSair.setForeground(new Color(217, 81, 51));
-    }//GEN-LAST:event_bCancelarMouseEntered
 
     private void tNome1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tNome1ActionPerformed
         // TODO add your handling code here:
@@ -396,12 +381,24 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tValorUnitarioActionPerformed
 
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        this.dispose();
+    }//GEN-LAST:event_jLabel4MouseClicked
+
+    private void jLabel4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseEntered
+        this.setCursor(Cursor.HAND_CURSOR);
+    }//GEN-LAST:event_jLabel4MouseEntered
+
+    private void jLabel4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseExited
+        this.setCursor(Cursor.DEFAULT_CURSOR);
+    }//GEN-LAST:event_jLabel4MouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bCancelar;
     private javax.swing.JButton bCarregarTacoImg2;
     private javax.swing.JButton bEntrar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package front.gui.funcionario;
-
+import java.awt.Cursor;
 /**
  *
  * @author MIGUELCESARPENHAGOME
@@ -18,6 +18,8 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
         initComponents();
         this.setVisible(true);
         this.setLocationRelativeTo(null);
+        this.setFocusableWindowState(true);
+        this.setAlwaysOnTop(true);
     }
 
     /**
@@ -31,13 +33,13 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         lCadastrarPedido = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         lCNPJ = new javax.swing.JLabel();
         tTelefone = new javax.swing.JTextField();
         lCliente4 = new javax.swing.JLabel();
         tEmail = new javax.swing.JTextField();
         bEndereço = new javax.swing.JButton();
-        bVoltar = new javax.swing.JButton();
         lNome = new javax.swing.JLabel();
         lCliente8 = new javax.swing.JLabel();
         lNomeFantasia = new javax.swing.JLabel();
@@ -55,28 +57,44 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setBackground(new java.awt.Color(78, 148, 79));
 
-        lCadastrarPedido.setBackground(new java.awt.Color(255, 255, 255));
+        lCadastrarPedido.setBackground(new java.awt.Color(0, 0, 0));
         lCadastrarPedido.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        lCadastrarPedido.setForeground(new java.awt.Color(255, 255, 255));
         lCadastrarPedido.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lCadastrarPedido.setText("Cadastro Funcionário");
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/front/imgs/back-icon.png"))); // NOI18N
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel2MouseExited(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lCadastrarPedido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addGap(79, 79, 79)
+                .addComponent(lCadastrarPedido)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lCadastrarPedido)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lCadastrarPedido, javax.swing.GroupLayout.Alignment.LEADING))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -98,9 +116,8 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
             }
         });
 
-        bEndereço.setBackground(new java.awt.Color(0, 0, 0));
+        bEndereço.setBackground(new java.awt.Color(131, 189, 117));
         bEndereço.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        bEndereço.setForeground(new java.awt.Color(255, 255, 255));
         bEndereço.setText("+ Endereço");
         bEndereço.setBorderPainted(false);
         bEndereço.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -116,28 +133,6 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
         bEndereço.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bEndereçoActionPerformed(evt);
-            }
-        });
-
-        bVoltar.setBackground(new java.awt.Color(0, 0, 0));
-        bVoltar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        bVoltar.setForeground(new java.awt.Color(255, 255, 255));
-        bVoltar.setText("Voltar");
-        bVoltar.setBorder(null);
-        bVoltar.setBorderPainted(false);
-        bVoltar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        bVoltar.setFocusPainted(false);
-        bVoltar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                bVoltarMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                bVoltarMouseExited(evt);
-            }
-        });
-        bVoltar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bVoltarActionPerformed(evt);
             }
         });
 
@@ -167,9 +162,8 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
             }
         });
 
-        bCadastrarFuncionario.setBackground(new java.awt.Color(0, 204, 0));
-        bCadastrarFuncionario.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        bCadastrarFuncionario.setForeground(new java.awt.Color(255, 255, 255));
+        bCadastrarFuncionario.setBackground(new java.awt.Color(78, 148, 79));
+        bCadastrarFuncionario.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         bCadastrarFuncionario.setText("Cadastrar");
         bCadastrarFuncionario.setBorderPainted(false);
         bCadastrarFuncionario.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -214,9 +208,7 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bCadastrarFuncionario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(bVoltar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(bCadastrarFuncionario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -296,8 +288,6 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
                 .addComponent(bEndereço)
                 .addGap(35, 35, 35)
                 .addComponent(bCadastrarFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -313,10 +303,11 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
-        setSize(new java.awt.Dimension(484, 410));
+        setSize(new java.awt.Dimension(484, 363));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -331,28 +322,18 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
     private void bEndereçoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bEndereçoMouseEntered
         //bEntrar.setBackground(new Color(235, 235, 235));
         //bEntrar.setForeground(new Color(58, 65, 84));
+        this.setCursor(Cursor.HAND_CURSOR);
     }//GEN-LAST:event_bEndereçoMouseEntered
 
     private void bEndereçoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bEndereçoMouseExited
         //bEntrar.setBackground(new Color(58, 65, 84));
         //bSair.setForeground(Color.WHITE);
+        this.setCursor(Cursor.DEFAULT_CURSOR);
     }//GEN-LAST:event_bEndereçoMouseExited
 
     private void bEndereçoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEndereçoActionPerformed
         new TelaCadastrarEnderecoFuncionario();
     }//GEN-LAST:event_bEndereçoActionPerformed
-
-    private void bVoltarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bVoltarMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bVoltarMouseEntered
-
-    private void bVoltarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bVoltarMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bVoltarMouseExited
-
-    private void bVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVoltarActionPerformed
-        this.dispose();
-    }//GEN-LAST:event_bVoltarActionPerformed
 
     private void bNomeFantasiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bNomeFantasiaActionPerformed
         // TODO add your handling code here:
@@ -367,11 +348,11 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_tNomeActionPerformed
 
     private void bCadastrarFuncionarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bCadastrarFuncionarioMouseEntered
-        // TODO add your handling code here:
+        this.setCursor(Cursor.HAND_CURSOR);
     }//GEN-LAST:event_bCadastrarFuncionarioMouseEntered
 
     private void bCadastrarFuncionarioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bCadastrarFuncionarioMouseExited
-        // TODO add your handling code here:
+        this.setCursor(Cursor.DEFAULT_CURSOR);
     }//GEN-LAST:event_bCadastrarFuncionarioMouseExited
 
     private void bCadastrarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCadastrarFuncionarioActionPerformed
@@ -386,14 +367,26 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tEmail1ActionPerformed
 
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        this.dispose();
+    }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void jLabel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseEntered
+        this.setCursor(Cursor.HAND_CURSOR);
+    }//GEN-LAST:event_jLabel2MouseEntered
+
+    private void jLabel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseExited
+        this.setCursor(Cursor.DEFAULT_CURSOR);
+    }//GEN-LAST:event_jLabel2MouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bCadastrarFuncionario;
     private javax.swing.JButton bEndereço;
     private javax.swing.JTextField bNomeFantasia;
-    private javax.swing.JButton bVoltar;
     private javax.swing.JLabel bWhatsapp;
     private com.toedter.calendar.JDateChooser jDataAdmissao;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lCNPJ;

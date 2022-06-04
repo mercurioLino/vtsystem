@@ -5,6 +5,7 @@
  */
 package front.gui.pj;
 
+import java.awt.Cursor;
 import objetos.VidalTacos;
 import objetos.pessoas.PessoaJuridica;
 
@@ -30,6 +31,7 @@ public class TelaConfirmacaoPJ extends javax.swing.JFrame {
         this.setVisible(true);
         this.setLocationRelativeTo(null);
         this.setAlwaysOnTop(rootPaneCheckingEnabled);
+        this.setFocusableWindowState(true);
     }
     
     public TelaConfirmacaoPJ(TelaAlterarPJ telaAltPJ, VidalTacos vidalTacos, PessoaJuridica pjAnterior, PessoaJuridica pjNovo, TelaPJ telapj) {
@@ -61,11 +63,10 @@ public class TelaConfirmacaoPJ extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel2.setBackground(new java.awt.Color(78, 148, 79));
 
         lCadastrarPedido1.setBackground(new java.awt.Color(255, 255, 255));
         lCadastrarPedido1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lCadastrarPedido1.setForeground(new java.awt.Color(255, 255, 255));
         lCadastrarPedido1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lCadastrarPedido1.setText("Confirma essa ação?");
 
@@ -73,9 +74,10 @@ public class TelaConfirmacaoPJ extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addComponent(lCadastrarPedido1, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addComponent(lCadastrarPedido1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -87,9 +89,8 @@ public class TelaConfirmacaoPJ extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        bSim.setBackground(new java.awt.Color(0, 0, 0));
+        bSim.setBackground(new java.awt.Color(131, 189, 117));
         bSim.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        bSim.setForeground(new java.awt.Color(255, 255, 255));
         bSim.setText("Sim");
         bSim.setBorder(null);
         bSim.setBorderPainted(false);
@@ -109,9 +110,8 @@ public class TelaConfirmacaoPJ extends javax.swing.JFrame {
             }
         });
 
-        bNao.setBackground(new java.awt.Color(0, 0, 0));
+        bNao.setBackground(new java.awt.Color(131, 189, 117));
         bNao.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        bNao.setForeground(new java.awt.Color(255, 255, 255));
         bNao.setText("Não");
         bNao.setBorder(null);
         bNao.setBorderPainted(false);
@@ -152,7 +152,7 @@ public class TelaConfirmacaoPJ extends javax.swing.JFrame {
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
-        jPanel3.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel3.setBackground(new java.awt.Color(78, 148, 79));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -188,11 +188,11 @@ public class TelaConfirmacaoPJ extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bSimMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bSimMouseEntered
-        // TODO add your handling code here:
+        this.setCursor(Cursor.HAND_CURSOR);
     }//GEN-LAST:event_bSimMouseEntered
 
     private void bSimMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bSimMouseExited
-        // TODO add your handling code here:
+        this.setCursor(Cursor.DEFAULT_CURSOR);
     }//GEN-LAST:event_bSimMouseExited
 
     private void bSimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSimActionPerformed
@@ -215,11 +215,11 @@ public class TelaConfirmacaoPJ extends javax.swing.JFrame {
     }//GEN-LAST:event_bSimActionPerformed
 
     private void bNaoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bNaoMouseEntered
-        // TODO add your handling code here:
+        this.setCursor(Cursor.HAND_CURSOR);
     }//GEN-LAST:event_bNaoMouseEntered
 
     private void bNaoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bNaoMouseExited
-        // TODO add your handling code here:
+        this.setCursor(Cursor.DEFAULT_CURSOR);
     }//GEN-LAST:event_bNaoMouseExited
 
     private void bNaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bNaoActionPerformed
