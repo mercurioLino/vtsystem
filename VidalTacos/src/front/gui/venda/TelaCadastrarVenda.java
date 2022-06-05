@@ -21,9 +21,6 @@ public class TelaCadastrarVenda extends javax.swing.JFrame {
         initComponents();
         this.setVisible(true);
         this.setLocationRelativeTo(null);
-        this.setFocusableWindowState(true);
-        this.setAlwaysOnTop(true);
-        this.setAutoRequestFocus(rootPaneCheckingEnabled);
     }
 
     /** This method is called from within the constructor to
@@ -278,9 +275,9 @@ public class TelaCadastrarVenda extends javax.swing.JFrame {
             }
         });
 
-        jDateChooser1.setDateFormatString("d'/'m'/'y");
+        jDateChooser1.setDateFormatString("dd'/'MM'/'y");
 
-        jDateChooser2.setDateFormatString("d'/'m'/'y");
+        jDateChooser2.setDateFormatString("dd'/'MM'/'y");
 
         bCadastrarCompra4.setBackground(new java.awt.Color(78, 148, 79));
         bCadastrarCompra4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N

@@ -41,9 +41,8 @@
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="12" max="32767" attributes="0"/>
               <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -166,7 +165,7 @@
                                   <Component id="rPedidosEmAberto" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="bBuscar" pref="53" max="32767" attributes="0"/>
+                              <Component id="bBuscar" pref="56" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
@@ -316,7 +315,7 @@
         </Component>
         <Component class="com.toedter.calendar.JDateChooser" name="jDataInicial">
           <Properties>
-            <Property name="dateFormatString" type="java.lang.String" value="d&apos;/&apos;m&apos;/&apos;y"/>
+            <Property name="dateFormatString" type="java.lang.String" value="dd&apos;/&apos;MM&apos;/&apos;y"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lAte1">
@@ -326,7 +325,7 @@
         </Component>
         <Component class="com.toedter.calendar.JDateChooser" name="jDataFinal">
           <Properties>
-            <Property name="dateFormatString" type="java.lang.String" value="d&apos;/&apos;m&apos;/&apos;y"/>
+            <Property name="dateFormatString" type="java.lang.String" value="dd&apos;/&apos;MM&apos;/&apos;y"/>
           </Properties>
         </Component>
       </SubComponents>

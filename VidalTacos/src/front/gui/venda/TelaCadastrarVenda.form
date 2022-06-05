@@ -356,7 +356,7 @@
                 <Property name="text" type="java.lang.String" value="+"/>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Cursor Padr&#xe3;o"/>
+                  <Color id="Default Cursor"/>
                 </Property>
                 <Property name="focusPainted" type="boolean" value="false"/>
               </Properties>
@@ -437,12 +437,12 @@
         </Component>
         <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
           <Properties>
-            <Property name="dateFormatString" type="java.lang.String" value="d&apos;/&apos;m&apos;/&apos;y"/>
+            <Property name="dateFormatString" type="java.lang.String" value="dd&apos;/&apos;MM&apos;/&apos;y"/>
           </Properties>
         </Component>
         <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser2">
           <Properties>
-            <Property name="dateFormatString" type="java.lang.String" value="d&apos;/&apos;m&apos;/&apos;y"/>
+            <Property name="dateFormatString" type="java.lang.String" value="dd&apos;/&apos;MM&apos;/&apos;y"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="bCadastrarCompra4">
@@ -456,7 +456,7 @@
             <Property name="text" type="java.lang.String" value="Cadastrar"/>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Cursor Padr&#xe3;o"/>
+              <Color id="Default Cursor"/>
             </Property>
             <Property name="focusPainted" type="boolean" value="false"/>
           </Properties>

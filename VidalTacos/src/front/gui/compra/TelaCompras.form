@@ -124,15 +124,17 @@
                       <Component id="lPeriodo" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="cFornecedor" pref="100" max="32767" attributes="0"/>
-                      <Component id="jDateChooser1" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="cFornecedor" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jDateInicial" min="-2" pref="115" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="lAte" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jDateFinal" min="-2" pref="115" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                  <Component id="lAte" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jDateChooser2" max="32767" attributes="0"/>
-                  <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                  <EmptySpace pref="90" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="rPedidosRecebidos" min="-2" max="-2" attributes="0"/>
                       <Component id="rPedidosEmEspera" min="-2" max="-2" attributes="0"/>
@@ -158,12 +160,10 @@
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jDateChooser2" min="-2" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="lAte" alignment="1" min="-2" pref="22" max="-2" attributes="0"/>
-                                          <Component id="lPeriodo" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                          <Component id="jDateChooser1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
+                                      <Component id="lAte" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
+                                      <Component id="lPeriodo" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+                                      <Component id="jDateInicial" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jDateFinal" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
@@ -227,13 +227,7 @@
         <Component class="javax.swing.JComboBox" name="cFornecedor">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="5">
-                <StringItem index="0" value="Leonardo"/>
-                <StringItem index="1" value="Eduardo"/>
-                <StringItem index="2" value="Anelise"/>
-                <StringItem index="3" value="Miguel"/>
-                <StringItem index="4" value=" "/>
-              </StringArray>
+              <StringArray count="0"/>
             </Property>
           </Properties>
           <Events>
@@ -298,14 +292,18 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
+        <Component class="com.toedter.calendar.JDateChooser" name="jDateInicial">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="75" green="bd" red="83" type="rgb"/>
             </Property>
+            <Property name="dateFormatString" type="java.lang.String" value="dd&apos;/&apos;MM&apos;/&apos;y"/>
           </Properties>
         </Component>
-        <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser2">
+        <Component class="com.toedter.calendar.JDateChooser" name="jDateFinal">
+          <Properties>
+            <Property name="dateFormatString" type="java.lang.String" value="dd&apos;/&apos;MM&apos;/&apos;y"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

@@ -30,8 +30,6 @@ public class TelaConfirmacaoPJ extends javax.swing.JFrame {
         this.telaCadPJ = telaCadPJ;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
-        this.setAlwaysOnTop(rootPaneCheckingEnabled);
-        this.setFocusableWindowState(true);
     }
     
     public TelaConfirmacaoPJ(TelaAlterarPJ telaAltPJ, VidalTacos vidalTacos, PessoaJuridica pjAnterior, PessoaJuridica pjNovo, TelaPJ telapj) {

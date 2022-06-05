@@ -198,7 +198,7 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
             }
         });
 
-        jDataAdmissao.setDateFormatString("d'/'mm'/' y");
+        jDataAdmissao.setDateFormatString("dd'/'MM'/'y");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -222,7 +222,7 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
                                             .addComponent(lSalario)
                                             .addComponent(lCNPJ, javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(lNomeFantasia))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 11, Short.MAX_VALUE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addGap(0, 0, Short.MAX_VALUE)
                                         .addComponent(lNome)
@@ -304,10 +304,10 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(15, 15, 15))
         );
 
-        setSize(new java.awt.Dimension(484, 363));
+        setSize(new java.awt.Dimension(484, 333));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

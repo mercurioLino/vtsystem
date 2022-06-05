@@ -14,13 +14,10 @@ import java.awt.Cursor;
  */
 public class TelaVendas extends javax.swing.JFrame {
 
-    
     public TelaVendas() {
         initComponents();
         this.setVisible(true);
         this.setLocationRelativeTo(null);
-        this.setFocusableWindowState(true);
-        this.setAlwaysOnTop(true);
     }
 
     /**
@@ -168,11 +165,11 @@ public class TelaVendas extends javax.swing.JFrame {
 
         lPeriodo1.setText("Período");
 
-        jDataInicial.setDateFormatString("d'/'m'/'y");
+        jDataInicial.setDateFormatString("dd'/'MM'/'y");
 
         lAte1.setText("Até");
 
-        jDataFinal.setDateFormatString("d'/'m'/'y");
+        jDataFinal.setDateFormatString("dd'/'MM'/'y");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -217,7 +214,7 @@ public class TelaVendas extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(rPedidosEmAberto)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(bBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)))
+                            .addComponent(bBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jDataFinal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -299,9 +296,8 @@ public class TelaVendas extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();

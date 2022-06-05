@@ -46,13 +46,9 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="jPanel1" max="32767" attributes="0"/>
-          <Component id="jPanel3" alignment="0" max="32767" attributes="0"/>
           <Component id="jPanel4" alignment="1" max="32767" attributes="0"/>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane1" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-          </Group>
+          <Component id="jPanel3" alignment="1" max="32767" attributes="0"/>
+          <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -62,10 +58,9 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jScrollPane1" pref="433" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -282,7 +277,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="lCPF" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                          <Component id="jtfCpf" pref="116" max="32767" attributes="0"/>
+                          <Component id="jtfCpf" pref="113" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="lCargo" min="-2" max="-2" attributes="0"/>
@@ -371,7 +366,7 @@
         </Component>
         <Component class="com.toedter.calendar.JDateChooser" name="jDataInicial">
           <Properties>
-            <Property name="dateFormatString" type="java.lang.String" value="d&apos;/&apos;m&apos;/&apos;y"/>
+            <Property name="dateFormatString" type="java.lang.String" value="dd&apos;/&apos;MM&apos;/&apos;y"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lAte">
@@ -381,7 +376,7 @@
         </Component>
         <Component class="com.toedter.calendar.JDateChooser" name="jDataFinal">
           <Properties>
-            <Property name="dateFormatString" type="java.lang.String" value="d&apos;/&apos;m&apos;/&apos;y"/>
+            <Property name="dateFormatString" type="java.lang.String" value="dd&apos;/&apos;MM&apos;/&apos;y"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jtfCpf">

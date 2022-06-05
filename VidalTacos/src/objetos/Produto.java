@@ -18,7 +18,7 @@ public class Produto implements Serializable{
     private String modelo;
     private String cor;
     private double valorUnitario;
-    private boolean foraDeLinha;
+    private boolean producao;
 
     public Produto(String nome, String codigo, String descricao, String modelo, String cor, double valorUnitario) {
         this.nome = nome;
@@ -83,12 +83,12 @@ public class Produto implements Serializable{
         this.valorUnitario = valorUnitario;
     }
 
-    public boolean isForaDeLinha() {
-        return foraDeLinha;
+    public boolean isProducao() {
+        return producao;
     }
 
-    public void setForaDeLinha(boolean foraDeLinha) {
-        this.foraDeLinha = foraDeLinha;
+    public void setProducao(boolean producao) {
+        this.producao = producao;
     }
      
 }

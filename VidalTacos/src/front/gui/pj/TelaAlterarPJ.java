@@ -36,8 +36,6 @@ public class TelaAlterarPJ extends javax.swing.JFrame {
         this.vidalTacos = vidalTacos;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
-        this.setFocusableWindowState(true);
-        this.setAlwaysOnTop(true);
     }
     
     public void setEndereco(Endereco endereco){

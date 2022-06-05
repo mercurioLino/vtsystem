@@ -56,15 +56,15 @@ public class TelaInicial extends javax.swing.JFrame {
         bVoltar = new javax.swing.JButton();
         jPanel10 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        bFuncionarios = new javax.swing.JButton();
         bPessoaJuridica = new javax.swing.JButton();
-        bCompras = new javax.swing.JButton();
+        bFuncionarios = new javax.swing.JButton();
         bDespesas = new javax.swing.JButton();
         bVendas = new javax.swing.JButton();
-        bProdutos = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         teste = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
+        bProdutos = new javax.swing.JButton();
+        bCompras = new javax.swing.JButton();
 
         jLabel2.setText("jLabel2");
 
@@ -186,27 +186,6 @@ public class TelaInicial extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        bFuncionarios.setBackground(new java.awt.Color(180, 225, 151));
-        bFuncionarios.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        bFuncionarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/front/imgs/funcionarios.png"))); // NOI18N
-        bFuncionarios.setText("Funcionários");
-        bFuncionarios.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        bFuncionarios.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        bFuncionarios.setFocusPainted(false);
-        bFuncionarios.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                bFuncionariosMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                bFuncionariosMouseExited(evt);
-            }
-        });
-        bFuncionarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bFuncionariosActionPerformed(evt);
-            }
-        });
-
         bPessoaJuridica.setBackground(new java.awt.Color(131, 189, 117));
         bPessoaJuridica.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         bPessoaJuridica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/front/imgs/pessoa_juridica.png"))); // NOI18N
@@ -228,23 +207,23 @@ public class TelaInicial extends javax.swing.JFrame {
             }
         });
 
-        bCompras.setBackground(new java.awt.Color(180, 225, 151));
-        bCompras.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        bCompras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/front/imgs/compras.png"))); // NOI18N
-        bCompras.setText("Compras");
-        bCompras.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        bCompras.setFocusPainted(false);
-        bCompras.addMouseListener(new java.awt.event.MouseAdapter() {
+        bFuncionarios.setBackground(new java.awt.Color(180, 225, 151));
+        bFuncionarios.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        bFuncionarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/front/imgs/funcionarios.png"))); // NOI18N
+        bFuncionarios.setText("Funcionários");
+        bFuncionarios.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        bFuncionarios.setFocusPainted(false);
+        bFuncionarios.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                bComprasMouseEntered(evt);
+                bFuncionariosMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                bComprasMouseExited(evt);
+                bFuncionariosMouseExited(evt);
             }
         });
-        bCompras.addActionListener(new java.awt.event.ActionListener() {
+        bFuncionarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bComprasActionPerformed(evt);
+                bFuncionariosActionPerformed(evt);
             }
         });
 
@@ -289,27 +268,6 @@ public class TelaInicial extends javax.swing.JFrame {
             }
         });
 
-        bProdutos.setBackground(new java.awt.Color(180, 225, 151));
-        bProdutos.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        bProdutos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/front/imgs/produto.png"))); // NOI18N
-        bProdutos.setText("Produtos");
-        bProdutos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        bProdutos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        bProdutos.setFocusPainted(false);
-        bProdutos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                bProdutosMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                bProdutosMouseExited(evt);
-            }
-        });
-        bProdutos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bProdutosActionPerformed(evt);
-            }
-        });
-
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/front/imgs/logo.png"))); // NOI18N
 
         teste.setBackground(new java.awt.Color(233, 239, 192));
@@ -333,6 +291,46 @@ public class TelaInicial extends javax.swing.JFrame {
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
+        bProdutos.setBackground(new java.awt.Color(180, 225, 151));
+        bProdutos.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        bProdutos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/front/imgs/produto.png"))); // NOI18N
+        bProdutos.setText("Produtos");
+        bProdutos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        bProdutos.setFocusPainted(false);
+        bProdutos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                bProdutosMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                bProdutosMouseExited(evt);
+            }
+        });
+        bProdutos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bProdutosActionPerformed(evt);
+            }
+        });
+
+        bCompras.setBackground(new java.awt.Color(180, 225, 151));
+        bCompras.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        bCompras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/front/imgs/compras.png"))); // NOI18N
+        bCompras.setText("Compras");
+        bCompras.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        bCompras.setFocusPainted(false);
+        bCompras.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                bComprasMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                bComprasMouseExited(evt);
+            }
+        });
+        bCompras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bComprasActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -340,61 +338,55 @@ public class TelaInicial extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(65, 65, 65)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(bVendas)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 163, Short.MAX_VALUE)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                        .addComponent(teste, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(bVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(bFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                                .addComponent(bCompras)
-                                                .addGap(130, 130, 130)
-                                                .addComponent(bPessoaJuridica)))
-                                        .addGap(65, 65, 65))))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(bDespesas)
-                                .addGap(398, 398, 398)))
-                        .addGap(18, 18, 18))
+                    .addComponent(bVendas, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(teste, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(bProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(294, 294, 294)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(bCompras, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bDespesas, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(128, 128, 128)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(bFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bPessoaJuridica, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(65, 65, 65)))
+                .addGap(18, 18, 18))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(444, 444, 444)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(51, 51, 51)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bVendas, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bCompras, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bPessoaJuridica, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(bVendas, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bPessoaJuridica, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bCompras, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bDespesas, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(bDespesas, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(bVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(teste, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                    .addComponent(teste, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -435,18 +427,6 @@ public class TelaInicial extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_bVoltarActionPerformed
 
-    private void bFuncionariosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bFuncionariosMouseEntered
-        this.setCursor(Cursor.HAND_CURSOR);
-    }//GEN-LAST:event_bFuncionariosMouseEntered
-
-    private void bFuncionariosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bFuncionariosMouseExited
-        this.setCursor(Cursor.DEFAULT_CURSOR);
-    }//GEN-LAST:event_bFuncionariosMouseExited
-
-    private void bFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bFuncionariosActionPerformed
-        new TelaFuncionarios();
-    }//GEN-LAST:event_bFuncionariosActionPerformed
-
     private void bPessoaJuridicaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bPessoaJuridicaMouseEntered
         this.setCursor(Cursor.HAND_CURSOR);
     }//GEN-LAST:event_bPessoaJuridicaMouseEntered
@@ -459,17 +439,17 @@ public class TelaInicial extends javax.swing.JFrame {
         new TelaPJ(vidalTacos);
     }//GEN-LAST:event_bPessoaJuridicaActionPerformed
 
-    private void bComprasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bComprasMouseEntered
+    private void bFuncionariosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bFuncionariosMouseEntered
         this.setCursor(Cursor.HAND_CURSOR);
-    }//GEN-LAST:event_bComprasMouseEntered
+    }//GEN-LAST:event_bFuncionariosMouseEntered
 
-    private void bComprasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bComprasMouseExited
+    private void bFuncionariosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bFuncionariosMouseExited
         this.setCursor(Cursor.DEFAULT_CURSOR);
-    }//GEN-LAST:event_bComprasMouseExited
+    }//GEN-LAST:event_bFuncionariosMouseExited
 
-    private void bComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bComprasActionPerformed
-        new TelaCompras();
-    }//GEN-LAST:event_bComprasActionPerformed
+    private void bFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bFuncionariosActionPerformed
+        new TelaFuncionarios();
+    }//GEN-LAST:event_bFuncionariosActionPerformed
 
     private void bDespesasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bDespesasMouseEntered
         this.setCursor(Cursor.HAND_CURSOR);
@@ -495,18 +475,6 @@ public class TelaInicial extends javax.swing.JFrame {
         new TelaVendas();
     }//GEN-LAST:event_bVendasActionPerformed
 
-    private void bProdutosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bProdutosMouseEntered
-        this.setCursor(Cursor.HAND_CURSOR);
-    }//GEN-LAST:event_bProdutosMouseEntered
-
-    private void bProdutosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bProdutosMouseExited
-        this.setCursor(Cursor.DEFAULT_CURSOR);
-    }//GEN-LAST:event_bProdutosMouseExited
-
-    private void bProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bProdutosActionPerformed
-        new TelaProdutos();
-    }//GEN-LAST:event_bProdutosActionPerformed
-
     private void jPanel10MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel10MouseEntered
         this.teste.setVisible(true);
     }//GEN-LAST:event_jPanel10MouseEntered
@@ -514,6 +482,30 @@ public class TelaInicial extends javax.swing.JFrame {
     private void jPanel10MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel10MouseExited
         this.teste.setVisible(false);
     }//GEN-LAST:event_jPanel10MouseExited
+
+    private void bProdutosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bProdutosMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bProdutosMouseEntered
+
+    private void bProdutosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bProdutosMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bProdutosMouseExited
+
+    private void bProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bProdutosActionPerformed
+        new TelaProdutos(); 
+    }//GEN-LAST:event_bProdutosActionPerformed
+
+    private void bComprasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bComprasMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bComprasMouseEntered
+
+    private void bComprasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bComprasMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bComprasMouseExited
+
+    private void bComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bComprasActionPerformed
+        new TelaCompras();
+    }//GEN-LAST:event_bComprasActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
