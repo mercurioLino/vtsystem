@@ -15,7 +15,7 @@ import objetos.Endereco;
  *
  * @author MIGUELCESARPENHAGOME
  */
-public class TelaCadastrarEnderecoFuncionario extends javax.swing.JFrame {
+public class TelaEnderecoFuncionario extends javax.swing.JFrame {
 
     private String cep;
     private String cidade;
@@ -26,11 +26,8 @@ public class TelaCadastrarEnderecoFuncionario extends javax.swing.JFrame {
     private String complemento;
     private Endereco endereco;
     
-    Database database;
-            
-    public TelaCadastrarEnderecoFuncionario(Database database) {
+    public TelaEnderecoFuncionario() {
         initComponents();
-        this.database = database;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
         this.setFocusableWindowState(true);

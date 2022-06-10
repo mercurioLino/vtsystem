@@ -340,7 +340,7 @@ public class TelaPJ extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInserirActionPerformed
-        new TelaCadastrarPJ(database);
+        new TelaCadastrarPJ(database, this);
         //atualizaTabela();
     }//GEN-LAST:event_bInserirActionPerformed
 

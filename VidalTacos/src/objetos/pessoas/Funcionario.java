@@ -20,15 +20,13 @@ public class Funcionario extends Pessoa implements Serializable{
     private String dataDeAdmissao;
     private String dataDeDesligamento;
     
-
-    public Funcionario(String cpf, String nome, String cargo, String dataDeNascimento, String dataDeAdmissao, String dataDeDesligamento, String telefone, String whatsapp, String email, Endereco endereco) {
+    public Funcionario(String cpf, String nome, String cargo, String dataDeNascimento, String dataDeAdmissao, String telefone, String whatsapp, String email, Endereco endereco) {
         super(telefone, whatsapp, email, endereco);
         this.cpf = cpf;
         this.nome = nome;
         this.cargo = cargo;
         this.dataDeNascimento = dataDeNascimento;
         this.dataDeAdmissao = dataDeAdmissao;
-        this.dataDeDesligamento = dataDeDesligamento;
     }
 
     public String getNome() {

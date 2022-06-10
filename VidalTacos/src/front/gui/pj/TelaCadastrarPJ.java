@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package front.gui.pj;
+import front.gui.TelaConfirmacao;
 import static acoes.RetornaBoxSelected.retornaBoxSelected;
 import static acoes.RetornaTextoTextField.retornaTextoTextField;
 import database.Database;
@@ -20,15 +21,14 @@ public class TelaCadastrarPJ extends javax.swing.JFrame {
     Endereco endereco;
     Database database;
     
-    public TelaCadastrarPJ(Database database) {
+    TelaPJ telapj;
+    
+    public TelaCadastrarPJ(Database database, TelaPJ telapj) {
         initComponents();
         this.database = database;
+        this.telapj = telapj;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
-    }
-
-    public Endereco getEndereco() {
-        return endereco;
     }
 
     public void setEndereco(Endereco endereco) {
@@ -322,10 +322,7 @@ public class TelaCadastrarPJ extends javax.swing.JFrame {
     }//GEN-LAST:event_bEndereçoMouseExited
 
     private void bEndereçoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEndereçoActionPerformed
-        if(this.endereco != null){
-            System.out.println(this.endereco.getCep());
-        }
-        new TelaEnderecoPJ(this, this.endereco);
+        new TelaEnderecoPessoa(this, this.endereco);
     }//GEN-LAST:event_bEndereçoActionPerformed
 
     private void tCNPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tCNPJActionPerformed
@@ -365,7 +362,8 @@ public class TelaCadastrarPJ extends javax.swing.JFrame {
                 retornaTextoTextField(this.tEmail),
                 this.endereco
         );
-        new TelaConfirmacao(database, this, pj);
+        
+        new TelaConfirmacao(this.database, this.telapj, this, pj);
     }//GEN-LAST:event_bCadastrarPJActionPerformed
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked

@@ -5,8 +5,8 @@
  */
 package front.gui.pj;
 
-import acoes.RetornaTextoTextField;
 import static acoes.RetornaTextoTextField.retornaTextoTextField;
+import front.gui.funcionario.TelaCadastrarFuncionario;
 import java.awt.Cursor;
 import objetos.Endereco;
 
@@ -14,12 +14,21 @@ import objetos.Endereco;
  *
  * @author MIGUELCESARPENHAGOME
  */
-public class TelaEnderecoPJ extends javax.swing.JFrame {
+public class TelaEnderecoPessoa extends javax.swing.JFrame {
 
     private TelaCadastrarPJ telaCadPJ = null;
+    TelaCadastrarFuncionario telaCadFunc = null;
     //private TelaAlterarPJ telaAltPJ = null;
             
-    public TelaEnderecoPJ(TelaCadastrarPJ telaCadPJ, Endereco endereco) {
+    public TelaEnderecoPessoa(TelaCadastrarPJ telaCadPJ, Endereco endereco) {
+        initComponents();
+        this.telaCadPJ = telaCadPJ;
+        this.bSalvar.setText("Cadastrar");
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);
+    }
+    
+    public TelaEnderecoPessoa(TelaCadastrarFuncionario telaCadFunc, Endereco endereco) {
         initComponents();
         this.telaCadPJ = telaCadPJ;
         this.bSalvar.setText("Cadastrar");
@@ -311,7 +320,6 @@ public class TelaEnderecoPJ extends javax.swing.JFrame {
     }//GEN-LAST:event_tCidadeActionPerformed
 
     private void bSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSalvarActionPerformed
-        
         Endereco endereco = new Endereco(
                 this.tCEP.getText(), 
                 this.cUF.getSelectedItem().toString(), 
@@ -323,9 +331,12 @@ public class TelaEnderecoPJ extends javax.swing.JFrame {
         );
         if(this.telaCadPJ != null){
             telaCadPJ.setEndereco(endereco);
-        } /*else if(this.telaAltPJ != null){
+        } else if (this.telaCadFunc != null){
+            telaCadFunc.setEndereco(endereco);
+        }/*else if(this.telaAltPJ != null){
             telaAltPJ.setEndereco(this.endereco);
         }*/
+        
         this.dispose();
     }//GEN-LAST:event_bSalvarActionPerformed
 

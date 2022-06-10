@@ -7,8 +7,8 @@ package excluidos;
 
 import acoes.RetornaBoxSelected;
 import acoes.RetornaTextoTextField;
-import front.gui.pj.TelaConfirmacaoPJ;
-import front.gui.pj.TelaEnderecoPJ;
+import front.gui.TelaConfirmacao;
+import front.gui.pj.TelaEnderecoPessoa;
 import front.gui.pj.TelaPJ;
 import objetos.Endereco;
 import objetos.VidalTacos;
