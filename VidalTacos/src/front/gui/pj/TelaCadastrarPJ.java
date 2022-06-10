@@ -365,7 +365,7 @@ public class TelaCadastrarPJ extends javax.swing.JFrame {
                 retornaTextoTextField(this.tEmail),
                 this.endereco
         );
-        new TelaConfirmacaoPJ(database, this, pj);
+        new TelaConfirmacao(database, this, pj);
     }//GEN-LAST:event_bCadastrarPJActionPerformed
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
