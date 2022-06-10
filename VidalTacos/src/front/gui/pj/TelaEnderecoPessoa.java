@@ -30,7 +30,7 @@ public class TelaEnderecoPessoa extends javax.swing.JFrame {
     
     public TelaEnderecoPessoa(TelaCadastrarFuncionario telaCadFunc, Endereco endereco) {
         initComponents();
-        this.telaCadPJ = telaCadPJ;
+        this.telaCadFunc = telaCadFunc;
         this.bSalvar.setText("Cadastrar");
         this.setVisible(true);
         this.setLocationRelativeTo(null);

@@ -28,7 +28,6 @@ public class TelaFuncionarios extends javax.swing.JFrame {
         this.setVisible(true);
         this.setLocationRelativeTo(null);
         this.setFocusableWindowState(true);
-        this.setAlwaysOnTop(true);
         atualizaTabela();
     }
     
@@ -44,7 +43,7 @@ public class TelaFuncionarios extends javax.swing.JFrame {
                 row.add(rs.getString("dataDeAdmissao"));
                 row.add(rs.getString("telefone"));
                 row.add(rs.getString("whatsapp"));
-                row.add(rs.getBoolean("email"));
+                row.add(rs.getString("email"));
                 model.addRow(row);
             }
         }catch (Exception e){
