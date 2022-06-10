@@ -14,25 +14,17 @@ public class Endereco implements Serializable{
     
     private String logradouro;
     private String numero;
-    private String complemento;
+    private String complemento = "";
     private String bairro;
     private String cidade;
     private String uf;
     private String cep; 
+    private String documento;
 
-    public Endereco(String logradouro, String numero, String complemento, String bairro, String cidade, String uf, String cep) {
+    public Endereco(String cep, String uf, String cidade, String bairro, String logradouro, String numero, String complemento) {
         this.logradouro = logradouro;
         this.numero = numero;
         this.complemento = complemento;
-        this.bairro = bairro;
-        this.cidade = cidade;
-        this.uf = uf;
-        this.cep = cep;
-    }
-
-    public Endereco(String logradouro, String numero, String bairro, String cidade, String uf, String cep) {
-        this.logradouro = logradouro;
-        this.numero = numero;
         this.bairro = bairro;
         this.cidade = cidade;
         this.uf = uf;
@@ -94,7 +86,13 @@ public class Endereco implements Serializable{
     public void setCep(String cep) {
         this.cep = cep;
     }
-    
-    
+
+    public String getDocumento() {
+        return documento;
+    }
+
+    public void setDocumento(String documento) {
+        this.documento = documento;
+    }
     
 }

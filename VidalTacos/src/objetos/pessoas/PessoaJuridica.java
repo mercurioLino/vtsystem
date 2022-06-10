@@ -19,7 +19,7 @@ public class PessoaJuridica extends Pessoa implements Serializable{
     private boolean cliente;
     private boolean fornecedor;
 
-    public PessoaJuridica(String nomeFantasia, String razaoSocial, String cnpj, boolean cliente, boolean fornecedor, String telefone, String whatsapp, String email, Endereco endereco) {
+    public PessoaJuridica(String cnpj, String razaoSocial, String nomeFantasia, boolean cliente, boolean fornecedor, String telefone, String whatsapp, String email, Endereco endereco) {
         super(telefone, whatsapp, email, endereco);
         this.nomeFantasia = nomeFantasia;
         this.razaoSocial = razaoSocial;

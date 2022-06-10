@@ -6,6 +6,7 @@
 package front.gui;
 
 import acoes.Sair;
+import database.Database;
 import static extras.DataHoraAtual.mostraTempo;
 import front.gui.compra.TelaCompras;
 import front.gui.despesa.TelaDespesas;
@@ -25,12 +26,11 @@ import objetos.VidalTacos;
  */
 public class TelaInicial extends javax.swing.JFrame {
 
-    private VidalTacos vidalTacos;
+    private Database database; 
     
-    public TelaInicial(VidalTacos vidalTacos) {
+    public TelaInicial(Database database) {
         initComponents();
-        this.teste.setVisible(false);
-        this.vidalTacos= vidalTacos;
+        this.database = database;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
         mostraTempo(this.lHora, this.lData);
@@ -420,11 +420,7 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_bVoltarMouseExited
 
     private void bVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVoltarActionPerformed
-        try {
-            new Sair().encerraPrograma(vidalTacos);
-        } catch (ErroDeGravacaoException ex) {
-            Logger.getLogger(TelaInicial.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        System.exit(0);
     }//GEN-LAST:event_bVoltarActionPerformed
 
     private void bPessoaJuridicaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bPessoaJuridicaMouseEntered
@@ -436,7 +432,7 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_bPessoaJuridicaMouseExited
 
     private void bPessoaJuridicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPessoaJuridicaActionPerformed
-        new TelaPJ(vidalTacos);
+        new TelaPJ(database);
     }//GEN-LAST:event_bPessoaJuridicaActionPerformed
 
     private void bFuncionariosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bFuncionariosMouseEntered
@@ -472,7 +468,7 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_bVendasMouseExited
 
     private void bVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVendasActionPerformed
-        new TelaVendas();
+        new TelaVendas(database);
     }//GEN-LAST:event_bVendasActionPerformed
 
     private void jPanel10MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel10MouseEntered

@@ -5,6 +5,7 @@
  */
 package front.gui;
 
+import database.Database;
 import java.awt.Cursor;
 import objetos.VidalTacos;
 
@@ -14,11 +15,11 @@ import objetos.VidalTacos;
  */
 public class TelaAcesso extends javax.swing.JFrame {
 
-    private VidalTacos vidalTacos;
+    Database database;
     
-    public TelaAcesso(VidalTacos vidalTacos) {
+    public TelaAcesso(Database database) {
         initComponents();
-        this.vidalTacos = vidalTacos;
+        this.database = database;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
     }
@@ -201,7 +202,7 @@ public class TelaAcesso extends javax.swing.JFrame {
     }//GEN-LAST:event_bSairMouseExited
 
     private void bEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEntrarActionPerformed
-        new TelaInicial(vidalTacos);
+        new TelaInicial(this.database);
         this.setVisible(false);
     }//GEN-LAST:event_bEntrarActionPerformed
 

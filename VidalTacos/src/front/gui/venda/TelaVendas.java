@@ -5,7 +5,7 @@
  */
 package front.gui.venda;
 
-import front.gui.TelaInicial;
+import database.Database;
 import java.awt.Cursor;
 
 /**
@@ -14,8 +14,11 @@ import java.awt.Cursor;
  */
 public class TelaVendas extends javax.swing.JFrame {
 
-    public TelaVendas() {
+    Database database;
+    
+    public TelaVendas(Database database) {
         initComponents();
+        this.database = database;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
     }
@@ -305,7 +308,7 @@ public class TelaVendas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInserirActionPerformed
-        new TelaCadastrarVenda();
+        new TelaCadastrarVenda(database);
     }//GEN-LAST:event_bInserirActionPerformed
 
     private void cClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cClienteActionPerformed

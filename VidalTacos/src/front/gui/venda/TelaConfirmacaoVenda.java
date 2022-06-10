@@ -3,32 +3,30 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package front.gui.pj;
+package front.gui.venda;
 
 import database.Database;
 import static database.InsertsDB.*;
 import java.awt.Cursor;
-import objetos.pessoas.PessoaJuridica;
+import objetos.Venda;
 
 /**
  *
  * @author MIGUELCESARPENHAGOME
  */
-public class TelaConfirmacaoPJ extends javax.swing.JFrame {
+public class TelaConfirmacaoVenda extends javax.swing.JFrame {
     
     Database database;
-    PessoaJuridica pj;
-    PessoaJuridica pjAnterior, pjNovo;
-    TelaCadastrarPJ telaCadPJ = null;
-    TelaAlterarPJ telaAltPJ = null;
-    TelaPJ telapj;
+    Venda venda;
+    TelaVendas telaVendas;
+    TelaCadastrarVenda telaCadastroVenda;
     
-    public TelaConfirmacaoPJ(Database database, TelaCadastrarPJ telaCadPJ, PessoaJuridica pj) {
+    public TelaConfirmacaoVenda(Database database, Venda venda, TelaVendas telaVendas, TelaCadastrarVenda telaCadastroVenda) {
         initComponents();
         this.database = database;
-        this.pj = pj;
-        //this.telapj = telapj;
-        this.telaCadPJ = telaCadPJ;
+        this.venda = venda;
+        this.telaVendas = telaVendas;
+        this.telaCadastroVenda = telaCadastroVenda;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
     }
@@ -195,23 +193,10 @@ public class TelaConfirmacaoPJ extends javax.swing.JFrame {
     }//GEN-LAST:event_bSimMouseExited
 
     private void bSimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSimActionPerformed
-        if(telaCadPJ != null){
-            insertPJ(this.database, pj);
-            insertEnderecoPJ(this.database, pj.getEndereco());
-            telapj.atualizaTabela();
-        } /*else if(telaAltPJ != null){
-            pjAnterior.setCnpj(pjNovo.getCnpj());
-            pjAnterior.setCliente(pjNovo.isCliente());
-            pjAnterior.setEmail(pjNovo.getEmail());
-            pjAnterior.setEndereco(pjNovo.getEndereco());
-            pjAnterior.setFornecedor(pjNovo.isFornecedor());
-            pjAnterior.setNomeFantasia(pjNovo.getNomeFantasia());
-            pjAnterior.setRazaoSocial(pjNovo.getRazaoSocial());
-            pjAnterior.setTelefone(pjNovo.getTelefone());
-            pjAnterior.setWhatsapp(pjNovo.getWhatsapp());
-            telapj.atualizaTabela();
-        }*/
-        telaCadPJ.dispose();
+        
+        insertVenda(this.database, venda);
+        //telaVendas.atualizaTabela();
+        telaCadastroVenda.dispose();
         this.dispose();
     }//GEN-LAST:event_bSimActionPerformed
 

@@ -4,6 +4,7 @@
  */
 package objetos;
 
+import excluidos.ProdutoParaVenda;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,52 +16,25 @@ import objetos.pessoas.PessoaJuridica;
  */
 public class Venda implements Serializable{
     
-    private List<ProdutoParaVenda> produtos = new ArrayList<>();
-    private PessoaJuridica cliente;
-    private String dataPedido;
+    private String codigo;
+    private String dataDeRealizacao;
     private String previsaoDeEntrega;
     private String dataDeEntrega;
+    private double valorTotal = 0;
     private String metodoDePagamento;
     private String prazoPagamento;
-    private String codigo;
-    private double valorTotal = 0;
     private boolean concluido;
+    private String cnpjCliente;
 
-    public Venda(PessoaJuridica cliente, String codigo, String dataPedido, String previsaoDeEntrega, String metodoDePagamento, String prazoPagamento) {
-        this.cliente = cliente;
-        this.dataPedido = dataPedido;
+    public Venda(String codigo, String dataDeRealizacao, String previsaoDeEntrega, String dataDeEntrega, String metodoDePagamento, String prazoPagamento, boolean concluido, String cnpjCliente) {
+        this.codigo = codigo;
+        this.dataDeRealizacao = dataDeRealizacao;
         this.previsaoDeEntrega = previsaoDeEntrega;
+        this.dataDeEntrega = dataDeEntrega;
         this.metodoDePagamento = metodoDePagamento;
         this.prazoPagamento = prazoPagamento;
-        this.codigo = codigo;
-    }
-    
-    public void addProduto(Produto produto, int quantidade){
-        this.produtos.add(new ProdutoParaVenda(produto, quantidade));
-        this.attValorTotal();
-    }
-    
-    public void removeProduto(Produto produto){
-        this.produtos.remove(new ProdutoParaVenda(produto));
-        this.attValorTotal();
-    }
-    
-    public void attValorTotal(){
-        double total = 0;
-        
-        for(ProdutoParaVenda produto : this.produtos){
-            total = produto.getValorTotal();
-        }
-        
-        this.valorTotal = total;
-    }
-
-    public List<ProdutoParaVenda> getProdutos() {
-        return produtos;
-    }
-
-    public void setProdutos(List<ProdutoParaVenda> produtos) {
-        this.produtos = produtos;
+        this.concluido = concluido;
+        this.cnpjCliente = cnpjCliente;
     }
 
     public String getCodigo() {
@@ -71,20 +45,12 @@ public class Venda implements Serializable{
         this.codigo = codigo;
     }
 
-    public PessoaJuridica getCliente() {
-        return cliente;
+    public String getDataDeRealizacao() {
+        return dataDeRealizacao;
     }
 
-    public void setCliente(PessoaJuridica cliente) {
-        this.cliente = cliente;
-    }
-
-    public String getDataPedido() {
-        return dataPedido;
-    }
-
-    public void setDataPedido(String dataPedido) {
-        this.dataPedido = dataPedido;
+    public void setDataDeRealizacao(String dataDeRealizacao) {
+        this.dataDeRealizacao = dataDeRealizacao;
     }
 
     public String getPrevisaoDeEntrega() {
@@ -103,6 +69,14 @@ public class Venda implements Serializable{
         this.dataDeEntrega = dataDeEntrega;
     }
 
+    public double getValorTotal() {
+        return valorTotal;
+    }
+
+    public void setValorTotal(double valorTotal) {
+        this.valorTotal = valorTotal;
+    }
+
     public String getMetodoDePagamento() {
         return metodoDePagamento;
     }
@@ -119,14 +93,6 @@ public class Venda implements Serializable{
         this.prazoPagamento = prazoPagamento;
     }
 
-    public double getValorTotal() {
-        return valorTotal;
-    }
-
-    public void setValorTotal(double valorTotal) {
-        this.valorTotal = valorTotal;
-    }
-
     public boolean isConcluido() {
         return concluido;
     }
@@ -134,7 +100,14 @@ public class Venda implements Serializable{
     public void setConcluido(boolean concluido) {
         this.concluido = concluido;
     }
-    
-    
+
+    public String getCnpjCliente() {
+        return cnpjCliente;
+    }
+
+    public void setCnpjCliente(String cnpjCliente) {
+        this.cnpjCliente = cnpjCliente;
+    }
+
     
 }

@@ -6,9 +6,7 @@
 package front.gui.pj;
 
 import acoes.RetornaTextoTextField;
-import front.gui.funcionario.*;
-import front.gui.*;
-import front.gui.pj.TelaCadastrarPJ;
+import static acoes.RetornaTextoTextField.retornaTextoTextField;
 import java.awt.Cursor;
 import objetos.Endereco;
 
@@ -18,18 +16,10 @@ import objetos.Endereco;
  */
 public class TelaEnderecoPJ extends javax.swing.JFrame {
 
-    private String cep;
-    private String cidade;
-    private String uf;
-    private String logradouro;
-    private String bairro;
-    private String numero;
-    private String complemento;
-    private Endereco endereco;
     private TelaCadastrarPJ telaCadPJ = null;
-    private TelaAlterarPJ telaAltPJ = null;
+    //private TelaAlterarPJ telaAltPJ = null;
             
-    public TelaEnderecoPJ(TelaCadastrarPJ telaCadPJ) {
+    public TelaEnderecoPJ(TelaCadastrarPJ telaCadPJ, Endereco endereco) {
         initComponents();
         this.telaCadPJ = telaCadPJ;
         this.bSalvar.setText("Cadastrar");
@@ -37,7 +27,7 @@ public class TelaEnderecoPJ extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
     
-    public TelaEnderecoPJ(TelaAlterarPJ telaAltPJ, Endereco endereco) {
+    /*public TelaEnderecoPJ(TelaAlterarPJ telaAltPJ, Endereco endereco) {
         initComponents();
         this.telaAltPJ = telaAltPJ;
         this.bSalvar.setText("Alterar");
@@ -50,12 +40,8 @@ public class TelaEnderecoPJ extends javax.swing.JFrame {
         this.tLogradouro.setText(endereco.getLogradouro());
         this.setVisible(true);
         this.setLocationRelativeTo(null);
-    }
+    }*/
     
-    public Endereco getEndereco(){
-        return this.endereco;
-    }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -211,13 +197,18 @@ public class TelaEnderecoPJ extends javax.swing.JFrame {
         });
 
         cUF.setBackground(new java.awt.Color(131, 189, 117));
-        cUF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SP", "MS", "GO", "RJ" }));
+        cUF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RR", "RO", "RJ", "RN", "RS", "SC", "SP", "SE", "TO" }));
         cUF.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 cUFMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 cUFMouseExited(evt);
+            }
+        });
+        cUF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cUFActionPerformed(evt);
             }
         });
 
@@ -320,19 +311,21 @@ public class TelaEnderecoPJ extends javax.swing.JFrame {
     }//GEN-LAST:event_tCidadeActionPerformed
 
     private void bSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSalvarActionPerformed
-        this.cep = RetornaTextoTextField.retornaTextoTextField(this.tCEP);
-        this.cidade = RetornaTextoTextField.retornaTextoTextField(this.tCidade);
-        //this.uf = RetornaTextoTextField.retornaTextoTextField(this.tUF);
-        this.logradouro = RetornaTextoTextField.retornaTextoTextField(this.tLogradouro);
-        this.bairro = RetornaTextoTextField.retornaTextoTextField(this.tBairro);
-        this.numero = RetornaTextoTextField.retornaTextoTextField(this.tNumero);
-        this.complemento = RetornaTextoTextField.retornaTextoTextField(this.tComplemento);
-        this.endereco = new Endereco(logradouro, numero, complemento, bairro, cidade, uf, cep);
+        
+        Endereco endereco = new Endereco(
+                this.tCEP.getText(), 
+                this.cUF.getSelectedItem().toString(), 
+                this.tCidade.getText(),
+                this.tBairro.getText(),
+                this.tLogradouro.getText(),
+                this.tNumero.getText(),
+                retornaTextoTextField(this.tComplemento)
+        );
         if(this.telaCadPJ != null){
-            telaCadPJ.setEndereco(this.endereco);
-        } else if(this.telaAltPJ != null){
+            telaCadPJ.setEndereco(endereco);
+        } /*else if(this.telaAltPJ != null){
             telaAltPJ.setEndereco(this.endereco);
-        }
+        }*/
         this.dispose();
     }//GEN-LAST:event_bSalvarActionPerformed
 
@@ -387,6 +380,10 @@ public class TelaEnderecoPJ extends javax.swing.JFrame {
     private void bBuscarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bBuscarMouseExited
         this.setCursor(Cursor.DEFAULT_CURSOR);
     }//GEN-LAST:event_bBuscarMouseExited
+
+    private void cUFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cUFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cUFActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

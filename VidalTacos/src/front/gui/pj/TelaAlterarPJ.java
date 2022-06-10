@@ -366,7 +366,7 @@ public class TelaAlterarPJ extends javax.swing.JFrame {
     }//GEN-LAST:event_bEndereçoMouseExited
 
     private void bEndereçoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEndereçoActionPerformed
-        new TelaEnderecoPJ(this, pj.getEndereco());
+        //new TelaEnderecoPJ(this, pj.getEndereco());
     }//GEN-LAST:event_bEndereçoActionPerformed
 
     private void tCNPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tCNPJActionPerformed
@@ -405,7 +405,7 @@ public class TelaAlterarPJ extends javax.swing.JFrame {
             RetornaTextoTextField.retornaTextoTextField(this.tEmail),
             this.endereco
         );
-        new TelaConfirmacaoPJ(this, vidalTacos, pj, pjNovo, telapj);
+        //new TelaConfirmacaoPJ(this, vidalTacos, pj, pjNovo, telapj);
         this.dispose();
     }//GEN-LAST:event_bAlterarPJActionPerformed
 

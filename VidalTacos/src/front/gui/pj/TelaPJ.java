@@ -5,26 +5,23 @@
  */
 package front.gui.pj;
 
-import static acoes.buscarCNPJ.buscarCNPJ;
-import front.gui.TelaInicial;
+import database.Database;
 import java.awt.Cursor;
 import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
-import objetos.VidalTacos;
-import objetos.pessoas.PessoaJuridica;
+import java.sql.ResultSet;
 
 /**
  *
  * @author MIGUELCESARPENHAGOME
  */
 public class TelaPJ extends javax.swing.JFrame {
-
     
-    VidalTacos vidalTacos;
-    public TelaPJ(VidalTacos vidalTacos) {
+    Database database;
+    
+    public TelaPJ(Database database) {
         initComponents();
-        this.vidalTacos = vidalTacos;
+        this.database = database;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
         atualizaTabela();
@@ -33,16 +30,21 @@ public class TelaPJ extends javax.swing.JFrame {
     public void atualizaTabela(){
         DefaultTableModel model = (DefaultTableModel)this.tClientes.getModel();
         model.setRowCount(0);
-        for(PessoaJuridica pj: vidalTacos.getPessoasJuridicas()){
-            Vector row = new Vector();
-            row.add(pj.getCnpj());
-            row.add(pj.getRazaoSocial());
-            row.add(pj.getTelefone());
-            row.add(pj.getEmail());
-            row.add(pj.getWhatsapp());
-            row.add(pj.isCliente());
-            row.add(pj.isFornecedor());
-            model.addRow(row);
+        ResultSet rs = database.exeSearchSQL("SELECT * FROM vt.pessoajuridica");
+        try{
+            while(rs.next()){
+                Vector row = new Vector();
+                row.add(rs.getString("cnpj"));
+                row.add(rs.getString("razaosocial"));
+                row.add(rs.getString("telefone"));
+                row.add(rs.getString("email"));
+                row.add(rs.getString("whatsapp"));
+                row.add(rs.getBoolean("cliente"));
+                row.add(rs.getBoolean("fornecedor"));
+                model.addRow(row);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
     
@@ -338,8 +340,8 @@ public class TelaPJ extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInserirActionPerformed
-        new TelaCadastrarPJ(vidalTacos, this);
-        atualizaTabela();
+        new TelaCadastrarPJ(database);
+        //atualizaTabela();
     }//GEN-LAST:event_bInserirActionPerformed
 
     private void tClientesAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tClientesAncestorAdded
@@ -347,11 +349,11 @@ public class TelaPJ extends javax.swing.JFrame {
     }//GEN-LAST:event_tClientesAncestorAdded
 
     private void tClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tClientesMouseClicked
-        int index = this.tClientes.getSelectedRow();
+        /*int index = this.tClientes.getSelectedRow();
         TableModel model = this.tClientes.getModel();
         String cnpj = model.getValueAt(index, 0).toString();
         PessoaJuridica pj = buscarCNPJ(vidalTacos, cnpj);
-        new TelaAlterarPJ(vidalTacos, pj, this);
+        new TelaAlterarPJ(vidalTacos, pj, this);*/
     }//GEN-LAST:event_tClientesMouseClicked
 
     private void jrbClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbClientesActionPerformed
