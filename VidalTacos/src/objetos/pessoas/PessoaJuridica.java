@@ -13,17 +13,17 @@ import objetos.Endereco;
  */
 public class PessoaJuridica extends Pessoa implements Serializable{
     
-    private String nomeFantasia;
+    private String cnpj; 
     private String razaoSocial;
-    private String cnpj;    
+    private String nomeFantasia;
     private boolean cliente;
     private boolean fornecedor;
 
     public PessoaJuridica(String cnpj, String razaoSocial, String nomeFantasia, boolean cliente, boolean fornecedor, String telefone, String whatsapp, String email, Endereco endereco) {
         super(telefone, whatsapp, email, endereco);
-        this.nomeFantasia = nomeFantasia;
-        this.razaoSocial = razaoSocial;
         this.cnpj = cnpj;
+        this.razaoSocial = razaoSocial;
+        this.nomeFantasia = nomeFantasia;
         this.cliente = cliente;
         this.fornecedor = fornecedor;
     }

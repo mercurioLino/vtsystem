@@ -318,7 +318,7 @@ public class TelaEnderecoPJ extends javax.swing.JFrame {
                 this.tCidade.getText(),
                 this.tBairro.getText(),
                 this.tLogradouro.getText(),
-                this.tNumero.getText(),
+                Integer.parseInt(this.tNumero.getText()),
                 retornaTextoTextField(this.tComplemento)
         );
         if(this.telaCadPJ != null){

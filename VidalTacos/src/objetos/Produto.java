@@ -12,35 +12,27 @@ import java.io.Serializable;
  */
 public class Produto implements Serializable{
     
-    private String nome;
     private String codigo;
+    private String nome;
     private String descricao;
     private String modelo;
     private String cor;
     private double valorUnitario;
     private boolean producao;
 
-    public Produto(String nome, String codigo, String descricao, String modelo, String cor, double valorUnitario) {
-        this.nome = nome;
+    public Produto(String codigo, String nome, String descricao, String modelo, String cor, double valorUnitario) {
         this.codigo = codigo;
+        this.nome = nome;
         this.descricao = descricao;
         this.modelo = modelo;
         this.cor = cor;
         this.valorUnitario = valorUnitario;
     }
-
-    public Produto(String nome, String codigo, double valorUnitario) {
-        this.nome = nome;
-        this.codigo = codigo;
-        this.valorUnitario = valorUnitario;
-    }
     
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
+    public Produto(String codigo, String nome, double valorUnitario) {
+        this.codigo = codigo;
         this.nome = nome;
+        this.valorUnitario = valorUnitario;
     }
 
     public String getCodigo() {
@@ -49,6 +41,14 @@ public class Produto implements Serializable{
 
     public void setCodigo(String codigo) {
         this.codigo = codigo;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getDescricao() {
@@ -90,5 +90,6 @@ public class Produto implements Serializable{
     public void setProducao(boolean producao) {
         this.producao = producao;
     }
-     
+
+    
 }

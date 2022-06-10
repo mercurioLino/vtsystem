@@ -23,8 +23,7 @@ public class InsertsDB {
                 pj.getTelefone() + "', '" + 
                 pj.getWhatsapp() + "', '" + 
                 pj.getEmail() + "'";
-        String sql = "INSERT INTO vt.pessoajuridica (cnpj, razaoSocial, nomeFantasia, cliente, fornecedor, telefone, whatsapp, email) "
-                + "VALUES("+values+");";
+        String sql = "INSERT INTO vt.pessoajuridica (cnpj, razaoSocial, nomeFantasia, cliente, fornecedor, telefone, whatsapp, email)  VALUES(" + values + ");";
         database.exeSQL(sql);
     }
     
@@ -38,23 +37,31 @@ public class InsertsDB {
                 endereco.getNumero() + "', '" + 
                 endereco.getComplemento() + "', '" + 
                 endereco.getDocumento() + "'";
-        String sql = "INSERT INTO vt.enderecopj (cep, uf, cidade, bairro, logradouro, numero, complemento, cep) "
-                + "VALUES("+values+");";
+        String sql = "INSERT INTO vt.enderecopj (cep, uf, cidade, bairro, logradouro, numero, complemento, cep) VALUES(" + values + ");";
         database.exeSQL(sql);
     }
     
     public static void insertVenda(Database database, Venda venda){
         String values = "";
-        /*values = "'" + .getCep() + "', '" +
-                 + "', '" +
-                 + "', '" +
-                 + "', '" + 
-                 + "', '" +
-                 + "', '" + 
-                 + "', '" + 
-                 + "'";*/
-        String sql = "INSERT INTO vt.venda (codigo, dataderealizacao, previsaodeentrega, valortotal, metododepagamento, prazodepagamento, cnpjcliente) "
-                + "VALUES("+values+");";
+        values = "'" + venda.getCodigo()+ "', '" +
+                venda.getDataDeRealizacao() + "', '" +
+                venda.getPrevisaoDeEntrega() + "', '" +
+                venda.getMetodoDePagamento() + "', '" +
+                venda.getPrazoPagamento() + "', '" + 
+                venda.getCnpjCliente() + "'";
+        String sql = "INSERT INTO vt.venda (codigo, dataderealizacao, previsaodeentrega, metododepagamento, prazodepagamento, cnpjcliente) VALUES(" + values + ");";
+        database.exeSQL(sql);
+    }
+    
+    public static void insertProduto(Database database, Produto produto){
+        String values = "";
+        values = "'" + produto.getCodigo() + "', '" +
+                produto.getNome() + "', '" +
+                produto.getDescricao() + "', '" +
+                produto.getModelo() + "', '" +
+                produto.getCor() + "', '" + 
+                produto.getValorUnitario() + "'";
+        String sql = "INSERT INTO vt.produto (codigo, nome, descricao, modelo, cor, valorUnitario) VALUES(" + values + ");";
         database.exeSQL(sql);
     }
     

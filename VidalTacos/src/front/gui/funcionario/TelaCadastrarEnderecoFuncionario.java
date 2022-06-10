@@ -312,14 +312,14 @@ public class TelaCadastrarEnderecoFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_tCidadeActionPerformed
 
     private void bSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSalvarActionPerformed
-        this.cep = this.tCEP.getText();
+        /*this.cep = this.tCEP.getText();
         this.cidade = this.tCidade.getText();
         this.uf = this.tBairro.getText();
         this.logradouro = this.tLogradouro.getText();
         this.bairro = this.tBairro.getText();
         this.numero = this.tNumero.getText();
         this.complemento = this.tComplemento.getText();
-        this.endereco = new Endereco(logradouro, numero, complemento, bairro, cidade, uf, cep);
+        this.endereco = new Endereco(logradouro, numero, complemento, bairro, cidade, uf, cep);*/
     }//GEN-LAST:event_bSalvarActionPerformed
 
     private void bSalvarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bSalvarMouseExited

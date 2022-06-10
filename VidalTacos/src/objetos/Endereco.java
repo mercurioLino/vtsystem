@@ -12,16 +12,16 @@ import java.io.Serializable;
  */
 public class Endereco implements Serializable{
     
-    private String logradouro;
-    private String numero;
-    private String complemento = "";
-    private String bairro;
-    private String cidade;
+    private String cep;
     private String uf;
-    private String cep; 
+    private String cidade;
+    private String bairro;
+    private String logradouro;
+    private int numero;
+    private String complemento = "";
     private String documento;
 
-    public Endereco(String cep, String uf, String cidade, String bairro, String logradouro, String numero, String complemento) {
+    public Endereco(String cep, String uf, String cidade, String bairro, String logradouro, int numero, String complemento) {
         this.logradouro = logradouro;
         this.numero = numero;
         this.complemento = complemento;
@@ -39,11 +39,11 @@ public class Endereco implements Serializable{
         this.logradouro = logradouro;
     }
 
-    public String getNumero() {
+    public int getNumero() {
         return numero;
     }
 
-    public void setNumero(String numero) {
+    public void setNumero(int numero) {
         this.numero = numero;
     }
 

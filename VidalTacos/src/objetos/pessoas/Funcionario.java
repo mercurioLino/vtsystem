@@ -13,18 +13,18 @@ import objetos.Endereco;
  */
 public class Funcionario extends Pessoa implements Serializable{
     
-    private String nome;
     private String cpf;
+    private String nome;
     private String cargo;
     private String dataDeNascimento;
     private String dataDeAdmissao;
     private String dataDeDesligamento;
-    // private List<Ponto> pontos = new ArrayList<>();
+    
 
-    public Funcionario(String nome, String cpf, String cargo, String dataDeNascimento, String dataDeAdmissao, String dataDeDesligamento, String telefone, String whatsapp, String email, Endereco endereco) {
+    public Funcionario(String cpf, String nome, String cargo, String dataDeNascimento, String dataDeAdmissao, String dataDeDesligamento, String telefone, String whatsapp, String email, Endereco endereco) {
         super(telefone, whatsapp, email, endereco);
-        this.nome = nome;
         this.cpf = cpf;
+        this.nome = nome;
         this.cargo = cargo;
         this.dataDeNascimento = dataDeNascimento;
         this.dataDeAdmissao = dataDeAdmissao;

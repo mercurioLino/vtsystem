@@ -14,9 +14,9 @@ public class Despesa implements Serializable{
     
     private String data;
     private String descricao;
-    private String valor;
+    private double valor;
 
-    public Despesa(String data, String descricao, String valor) {
+    public Despesa(String data, String descricao, double valor) {
         this.data = data;
         this.descricao = descricao;
         this.valor = valor;
@@ -38,11 +38,11 @@ public class Despesa implements Serializable{
         this.descricao = descricao;
     }
 
-    public String getValor() {
+    public double getValor() {
         return valor;
     }
 
-    public void setValor(String valor) {
+    public void setValor(double valor) {
         this.valor = valor;
     }
     

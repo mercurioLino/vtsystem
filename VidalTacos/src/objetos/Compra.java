@@ -14,27 +14,51 @@ import objetos.pessoas.PessoaJuridica;
  */
 public class Compra implements Serializable{
     
-    List<MaterialParaCompra> materiais;
-    private double valorTotal;
-    private PessoaJuridica fornecedor;
-    private String dataPedido;
-    private String previsaoEntrega;
+    private String codigo;
+    private String dataDeRealizacao;
+    private String previsaoDeEntrega;
     private String dataDeEntrega;
+    private double valorTotal = 0;
+    private String cnpjFornecedor;
+    private boolean concluida;
 
-    public Compra(List<MaterialParaCompra> materiais, double valorTotal, PessoaJuridica fornecedor, String dataPedido, String previsaoEntrega) {
-        this.materiais = materiais;
-        this.valorTotal = valorTotal;
-        this.fornecedor = fornecedor;
-        this.dataPedido = dataPedido;
-        this.previsaoEntrega = previsaoEntrega;
+    public Compra(String codigo, String dataDeRealizacao, String previsaoDeEntrega, String cnpjFornecedor) {
+        this.codigo = codigo;
+        this.dataDeRealizacao = dataDeRealizacao;
+        this.previsaoDeEntrega = previsaoDeEntrega;
+        this.cnpjFornecedor = cnpjFornecedor;
     }
 
-    public List<MaterialParaCompra> getMateriais() {
-        return materiais;
+    public String getCodigo() {
+        return codigo;
     }
 
-    public void setMateriais(List<MaterialParaCompra> materiais) {
-        this.materiais = materiais;
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getDataDeRealizacao() {
+        return dataDeRealizacao;
+    }
+
+    public void setDataDeRealizacao(String dataDeRealizacao) {
+        this.dataDeRealizacao = dataDeRealizacao;
+    }
+
+    public String getPrevisaoDeEntrega() {
+        return previsaoDeEntrega;
+    }
+
+    public void setPrevisaoDeEntrega(String previsaoDeEntrega) {
+        this.previsaoDeEntrega = previsaoDeEntrega;
+    }
+
+    public String getDataDeEntrega() {
+        return dataDeEntrega;
+    }
+
+    public void setDataDeEntrega(String dataDeEntrega) {
+        this.dataDeEntrega = dataDeEntrega;
     }
 
     public double getValorTotal() {
@@ -45,37 +69,23 @@ public class Compra implements Serializable{
         this.valorTotal = valorTotal;
     }
 
-    public PessoaJuridica getFornecedor() {
-        return fornecedor;
+    public String getCnpjFornecedor() {
+        return cnpjFornecedor;
     }
 
-    public void setFornecedor(PessoaJuridica fornecedor) {
-        this.fornecedor = fornecedor;
+    public void setCnpjFornecedor(String cnpjFornecedor) {
+        this.cnpjFornecedor = cnpjFornecedor;
     }
 
-    public String getDataPedido() {
-        return dataPedido;
+    public boolean isConcluida() {
+        return concluida;
     }
 
-    public void setDataPedido(String dataPedido) {
-        this.dataPedido = dataPedido;
+    public void setConcluida(boolean concluida) {
+        this.concluida = concluida;
     }
 
-    public String getPrevisaoEntrega() {
-        return previsaoEntrega;
-    }
-
-    public void setPrevisaoEntrega(String previsaoEntrega) {
-        this.previsaoEntrega = previsaoEntrega;
-    }
-
-    public String getDataDeEntrega() {
-        return dataDeEntrega;
-    }
-
-    public void setDataDeEntrega(String dataDeEntrega) {
-        this.dataDeEntrega = dataDeEntrega;
-    }
+    
     
     
 }
