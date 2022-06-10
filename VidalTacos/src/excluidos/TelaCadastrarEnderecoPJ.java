@@ -345,7 +345,7 @@ public class TelaCadastrarEnderecoPJ extends javax.swing.JFrame{
     }//GEN-LAST:event_bSalvarMouseExited
 
     private void bSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSalvarActionPerformed
-        this.cep = this.tCEP.getText();
+        /*this.cep = this.tCEP.getText();
         this.cidade = this.tCidade.getText();
         this.uf = this.tUF.getText();
         this.logradouro = this.tLogradouro.getText();
@@ -358,7 +358,7 @@ public class TelaCadastrarEnderecoPJ extends javax.swing.JFrame{
         } else if(this.telaAltPJ != null){
             telaAltPJ.setEndereco(this.endereco);
         }
-        this.dispose();
+        this.dispose();*/
     }//GEN-LAST:event_bSalvarActionPerformed
 
     private void bVoltarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bVoltarMouseEntered
