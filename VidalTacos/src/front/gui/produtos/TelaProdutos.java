@@ -5,6 +5,7 @@
  */
 package front.gui.produtos;
 
+import database.Database;
 import java.awt.Cursor;
 
 /**
@@ -12,12 +13,15 @@ import java.awt.Cursor;
  * @author MIGUELCESARPENHAGOME
  */
 public class TelaProdutos extends javax.swing.JFrame {
-
+    
+    Database database;
+    
     /**
      * Creates new form TelaRelatorioVendas
      */
-    public TelaProdutos() {
+    public TelaProdutos(Database database) {
         initComponents();
+        this.database = database;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
     }
@@ -302,7 +306,7 @@ public class TelaProdutos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInserirActionPerformed
-        new TelaCadastrarProduto();
+        new TelaCadastrarProduto(database);
     }//GEN-LAST:event_bInserirActionPerformed
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked

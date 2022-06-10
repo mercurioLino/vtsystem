@@ -5,6 +5,7 @@
  */
 package front.gui;
 
+import database.Database;
 import java.awt.Cursor;
 
 /**
@@ -12,12 +13,13 @@ import java.awt.Cursor;
  * @author MIGUELCESARPENHAGOME
  */
 public class TelaConfirmacao extends javax.swing.JFrame {
-
+    Database database;
     /**
      * Creates new form TelaConfirmacao
      */
-    public TelaConfirmacao() {
+    public TelaConfirmacao(Database database) {
         initComponents();
+        this.database = database;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
     }

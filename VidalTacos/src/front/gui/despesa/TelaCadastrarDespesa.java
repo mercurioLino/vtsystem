@@ -5,6 +5,7 @@
  */
 package front.gui.despesa;
 
+import database.Database;
 import front.gui.TelaConfirmacao;
 import java.awt.Cursor;
 
@@ -13,12 +14,15 @@ import java.awt.Cursor;
  * @author MIGUELCESARPENHAGOME
  */
 public class TelaCadastrarDespesa extends javax.swing.JFrame {
-
+    
+    Database database;
+    
     /**
      * Creates new form TelaCadastrarDespesa
      */
-    public TelaCadastrarDespesa() {
+    public TelaCadastrarDespesa(Database database) {
         initComponents();
+        this.database = database;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
         this.setFocusableWindowState(true);

@@ -4,18 +4,20 @@
  * and open the template in the editor.
  */
 package front.gui.funcionario;
+import database.Database;
 import java.awt.Cursor;
 /**
  *
  * @author MIGUELCESARPENHAGOME
  */
 public class TelaCadastrarFuncionario extends javax.swing.JFrame {
-
+     Database database;
     /**
      * Creates new form TelaCadastrarPedido
      */
-    public TelaCadastrarFuncionario() {
+    public TelaCadastrarFuncionario(Database database) {
         initComponents();
+        this.database = database;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
         this.setFocusableWindowState(true);
@@ -332,7 +334,7 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_bEndereçoMouseExited
 
     private void bEndereçoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEndereçoActionPerformed
-        new TelaCadastrarEnderecoFuncionario();
+        new TelaCadastrarEnderecoFuncionario(database);
     }//GEN-LAST:event_bEndereçoActionPerformed
 
     private void bNomeFantasiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bNomeFantasiaActionPerformed

@@ -198,7 +198,7 @@ public class TelaExcluirPessoaJuridica extends javax.swing.JFrame {
     }//GEN-LAST:event_bExcluirPessoaJuridicaMouseExited
 
     private void bExcluirPessoaJuridicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bExcluirPessoaJuridicaActionPerformed
-        new TelaConfirmacao();
+        //new TelaConfirmacao(database);
     }//GEN-LAST:event_bExcluirPessoaJuridicaActionPerformed
 
 

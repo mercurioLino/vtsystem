@@ -5,6 +5,7 @@
  */
 package front.gui.funcionario;
 
+import database.Database;
 import front.gui.*;
 import front.gui.pj.TelaCadastrarPJ;
 import java.awt.Cursor;
@@ -24,9 +25,12 @@ public class TelaCadastrarEnderecoFuncionario extends javax.swing.JFrame {
     private String numero;
     private String complemento;
     private Endereco endereco;
+    
+    Database database;
             
-    public TelaCadastrarEnderecoFuncionario() {
+    public TelaCadastrarEnderecoFuncionario(Database database) {
         initComponents();
+        this.database = database;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
         this.setFocusableWindowState(true);

@@ -5,6 +5,7 @@
  */
 package front.gui.compra;
 
+import database.Database;
 import java.awt.Cursor;
 
 /**
@@ -12,12 +13,15 @@ import java.awt.Cursor;
  * @author MIGUELCESARPENHAGOME
  */
 public class TelaCompras extends javax.swing.JFrame {
-
+    
+    Database database; 
+    
     /**
      * Creates new form TelaRelatorioVendas
      */
-    public TelaCompras() {
+    public TelaCompras(Database database) {
         initComponents();
+        this.database = database;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
         this.setFocusableWindowState(true);
@@ -285,7 +289,7 @@ public class TelaCompras extends javax.swing.JFrame {
     }//GEN-LAST:event_cFornecedorActionPerformed
 
     private void bInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInserirActionPerformed
-        new TelaCadastrarCompra();
+        new TelaCadastrarCompra(database);
     }//GEN-LAST:event_bInserirActionPerformed
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked

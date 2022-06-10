@@ -5,6 +5,7 @@
  */
 package front.gui.produtos;
 
+import database.Database;
 import java.awt.Cursor;
 
 /**
@@ -13,11 +14,14 @@ import java.awt.Cursor;
  */
 public class TelaCadastrarProduto extends javax.swing.JFrame {
 
+    Database database;
+    
     /**
      * Creates new form TelaCadastrarProduto
      */
-    public TelaCadastrarProduto() {
+    public TelaCadastrarProduto(Database database) {
         initComponents();
+        this.database = database;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
     }

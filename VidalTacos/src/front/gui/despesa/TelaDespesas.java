@@ -5,6 +5,7 @@
  */
 package front.gui.despesa;
 
+import database.Database;
 import java.awt.Cursor;
 
 /**
@@ -12,12 +13,15 @@ import java.awt.Cursor;
  * @author MIGUELCESARPENHAGOME
  */
 public class TelaDespesas extends javax.swing.JFrame {
-
+    
+    Database database;
+    
     /**
      * Creates new form TelaRelatorioVendas
      */
-    public TelaDespesas() {
+    public TelaDespesas(Database database) {
         initComponents();
+        this.database = database;
         this.setVisible(true);
         this.setFocusableWindowState(true);
         this.setAlwaysOnTop(true);
@@ -254,7 +258,7 @@ public class TelaDespesas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInserirActionPerformed
-        new TelaCadastrarDespesa();
+        new TelaCadastrarDespesa(database);
     }//GEN-LAST:event_bInserirActionPerformed
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked

@@ -5,6 +5,7 @@
  */
 package front.gui.funcionario;
 
+import database.Database;
 import java.awt.Cursor;
 
 /**
@@ -12,12 +13,15 @@ import java.awt.Cursor;
  * @author MIGUELCESARPENHAGOME
  */
 public class TelaFuncionarios extends javax.swing.JFrame {
-
+    
+    Database database;
+    
     /**
      * Creates new form TelaRelatorioVendas
      */
-    public TelaFuncionarios() {
+    public TelaFuncionarios(Database database) {
         initComponents();
+        this.database = database;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
         this.setFocusableWindowState(true);
@@ -298,7 +302,7 @@ public class TelaFuncionarios extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInserirActionPerformed
-        new TelaCadastrarFuncionario();
+        new TelaCadastrarFuncionario(database);
     }//GEN-LAST:event_bInserirActionPerformed
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked

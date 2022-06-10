@@ -444,7 +444,7 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_bFuncionariosMouseExited
 
     private void bFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bFuncionariosActionPerformed
-        new TelaFuncionarios();
+        new TelaFuncionarios(database);
     }//GEN-LAST:event_bFuncionariosActionPerformed
 
     private void bDespesasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bDespesasMouseEntered
@@ -456,7 +456,7 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_bDespesasMouseExited
 
     private void bDespesasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDespesasActionPerformed
-        new TelaDespesas();
+        new TelaDespesas(database);
     }//GEN-LAST:event_bDespesasActionPerformed
 
     private void bVendasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bVendasMouseEntered
@@ -488,7 +488,7 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_bProdutosMouseExited
 
     private void bProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bProdutosActionPerformed
-        new TelaProdutos(); 
+        new TelaProdutos(database); 
     }//GEN-LAST:event_bProdutosActionPerformed
 
     private void bComprasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bComprasMouseEntered
@@ -500,7 +500,7 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_bComprasMouseExited
 
     private void bComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bComprasActionPerformed
-        new TelaCompras();
+        new TelaCompras(database);
     }//GEN-LAST:event_bComprasActionPerformed
 
 
