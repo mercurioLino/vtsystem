@@ -7,6 +7,9 @@ package front.gui.compra;
 
 import database.Database;
 import java.awt.Cursor;
+import java.sql.ResultSet;
+import java.util.Vector;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -27,6 +30,25 @@ public class TelaCompras extends javax.swing.JFrame {
         this.setFocusableWindowState(true);
         this.setAlwaysOnTop(true);
         this.setEnabled(true);
+        atualizaTabela();
+    }
+    
+    public void atualizaTabela(){
+        DefaultTableModel model = (DefaultTableModel)this.tCompras.getModel();
+        model.setRowCount(0);
+        ResultSet rs = database.exeSearchSQL("SELECT * FROM vt.compra");
+        try{
+            while(rs.next()){
+                Vector row = new Vector();
+                row.add(rs.getString("dataDeRealizacao"));
+                row.add(rs.getString("cnpjFornecedor"));
+                row.add(rs.getString("valorTotal"));
+                row.add(rs.getString("concluida"));
+                model.addRow(row);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -52,7 +74,7 @@ public class TelaCompras extends javax.swing.JFrame {
         lFornecedor = new javax.swing.JLabel();
         cFornecedor = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tCompras = new javax.swing.JTable();
         jDateInicial = new com.toedter.calendar.JDateChooser();
         jDateFinal = new com.toedter.calendar.JDateChooser();
         jPanel3 = new javax.swing.JPanel();
@@ -131,7 +153,7 @@ public class TelaCompras extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tCompras.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -147,21 +169,21 @@ public class TelaCompras extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.setGridColor(new java.awt.Color(233, 239, 192));
-        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+        tCompras.setGridColor(new java.awt.Color(233, 239, 192));
+        tCompras.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jTable1MouseEntered(evt);
+                tComprasMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jTable1MouseExited(evt);
+                tComprasMouseExited(evt);
             }
         });
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
-            jTable1.getColumnModel().getColumn(1).setResizable(false);
-            jTable1.getColumnModel().getColumn(2).setResizable(false);
-            jTable1.getColumnModel().getColumn(3).setResizable(false);
+        jScrollPane1.setViewportView(tCompras);
+        if (tCompras.getColumnModel().getColumnCount() > 0) {
+            tCompras.getColumnModel().getColumn(0).setResizable(false);
+            tCompras.getColumnModel().getColumn(1).setResizable(false);
+            tCompras.getColumnModel().getColumn(2).setResizable(false);
+            tCompras.getColumnModel().getColumn(3).setResizable(false);
         }
 
         jDateInicial.setBackground(new java.awt.Color(131, 189, 117));
@@ -304,13 +326,13 @@ public class TelaCompras extends javax.swing.JFrame {
         this.setCursor(Cursor.DEFAULT_CURSOR);
     }//GEN-LAST:event_jLabel2MouseExited
 
-    private void jTable1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseExited
+    private void tComprasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tComprasMouseExited
         this.setCursor(Cursor.DEFAULT_CURSOR);
-    }//GEN-LAST:event_jTable1MouseExited
+    }//GEN-LAST:event_tComprasMouseExited
 
-    private void jTable1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseEntered
+    private void tComprasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tComprasMouseEntered
         this.setCursor(Cursor.HAND_CURSOR);
-    }//GEN-LAST:event_jTable1MouseEntered
+    }//GEN-LAST:event_tComprasMouseEntered
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -327,12 +349,12 @@ public class TelaCompras extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lAte;
     private javax.swing.JLabel lFornecedor;
     private javax.swing.JLabel lPeriodo;
     private javax.swing.JLabel lRelatorioCompras;
     private javax.swing.JRadioButton rPedidosEmEspera;
     private javax.swing.JRadioButton rPedidosRecebidos;
+    private javax.swing.JTable tCompras;
     // End of variables declaration//GEN-END:variables
 }

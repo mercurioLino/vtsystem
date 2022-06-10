@@ -7,6 +7,9 @@ package front.gui.venda;
 
 import database.Database;
 import java.awt.Cursor;
+import java.sql.ResultSet;
+import java.util.Vector;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -21,8 +24,28 @@ public class TelaVendas extends javax.swing.JFrame {
         this.database = database;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
+        atualizaTabela();
     }
-
+    
+    public void atualizaTabela(){
+        DefaultTableModel model = (DefaultTableModel)this.tVendas.getModel();
+        model.setRowCount(0);
+        ResultSet rs = database.exeSearchSQL("SELECT * FROM vt.venda");
+        try{
+            while(rs.next()){
+                Vector row = new Vector();
+                row.add(rs.getString("codigo"));
+                row.add(rs.getString("cnpjCliente"));
+                row.add(rs.getString("dataDeRealizacao"));
+                row.add(rs.getString("valorTotal"));
+                row.add(rs.getString("metodoDePagamento"));
+                row.add(rs.getBoolean("concluido"));
+                model.addRow(row);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -85,7 +108,7 @@ public class TelaVendas extends javax.swing.JFrame {
                 .addComponent(jLabel5)
                 .addGap(143, 143, 143)
                 .addComponent(lCadastrarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(222, Short.MAX_VALUE))
+                .addContainerGap(342, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -136,11 +159,11 @@ public class TelaVendas extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Codigo", "Produto", "Cliente", "Data", "Valor", "Método", "Status"
+                "Codigo", "Cliente", "Data de Realização", "Valor", "Método de Pagamento", "Status"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -163,7 +186,6 @@ public class TelaVendas extends javax.swing.JFrame {
             tVendas.getColumnModel().getColumn(3).setResizable(false);
             tVendas.getColumnModel().getColumn(4).setResizable(false);
             tVendas.getColumnModel().getColumn(5).setResizable(false);
-            tVendas.getColumnModel().getColumn(6).setResizable(false);
         }
 
         lPeriodo1.setText("Período");
@@ -181,30 +203,34 @@ public class TelaVendas extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(lPeriodo1))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lCliente)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jDataFinal, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addComponent(lPeriodo1))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(lCliente)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lAte1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jDataInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jDataFinal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(lAte1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jDataInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(cCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(rPedidosEncerrados)
+                            .addComponent(rPedidosEmAberto))
+                        .addGap(35, 35, 35)
+                        .addComponent(bBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(cCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rPedidosEncerrados)
-                    .addComponent(rPedidosEmAberto))
-                .addGap(35, 35, 35)
-                .addComponent(bBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 706, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addComponent(jScrollPane1)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

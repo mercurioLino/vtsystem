@@ -193,6 +193,9 @@ public class TelaInicial extends javax.swing.JFrame {
         bPessoaJuridica.setToolTipText("");
         bPessoaJuridica.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bPessoaJuridica.setFocusPainted(false);
+        bPessoaJuridica.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bPessoaJuridica.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        bPessoaJuridica.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         bPessoaJuridica.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 bPessoaJuridicaMouseEntered(evt);
@@ -213,6 +216,9 @@ public class TelaInicial extends javax.swing.JFrame {
         bFuncionarios.setText("Funcionários");
         bFuncionarios.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bFuncionarios.setFocusPainted(false);
+        bFuncionarios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bFuncionarios.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        bFuncionarios.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         bFuncionarios.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 bFuncionariosMouseEntered(evt);
@@ -233,6 +239,9 @@ public class TelaInicial extends javax.swing.JFrame {
         bDespesas.setText("Despesas");
         bDespesas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bDespesas.setFocusPainted(false);
+        bDespesas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bDespesas.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        bDespesas.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         bDespesas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 bDespesasMouseEntered(evt);
@@ -254,6 +263,9 @@ public class TelaInicial extends javax.swing.JFrame {
         bVendas.setToolTipText("");
         bVendas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bVendas.setFocusPainted(false);
+        bVendas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bVendas.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        bVendas.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         bVendas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 bVendasMouseEntered(evt);
@@ -297,6 +309,9 @@ public class TelaInicial extends javax.swing.JFrame {
         bProdutos.setText("Produtos");
         bProdutos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bProdutos.setFocusPainted(false);
+        bProdutos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bProdutos.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        bProdutos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         bProdutos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 bProdutosMouseEntered(evt);
@@ -317,6 +332,9 @@ public class TelaInicial extends javax.swing.JFrame {
         bCompras.setText("Compras");
         bCompras.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bCompras.setFocusPainted(false);
+        bCompras.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bCompras.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        bCompras.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         bCompras.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 bComprasMouseEntered(evt);
@@ -371,7 +389,7 @@ public class TelaInicial extends javax.swing.JFrame {
                     .addComponent(bVendas, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bPessoaJuridica, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bCompras, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -386,7 +404,7 @@ public class TelaInicial extends javax.swing.JFrame {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(bVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

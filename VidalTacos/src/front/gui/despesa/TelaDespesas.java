@@ -7,6 +7,9 @@ package front.gui.despesa;
 
 import database.Database;
 import java.awt.Cursor;
+import java.sql.ResultSet;
+import java.util.Vector;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -25,6 +28,24 @@ public class TelaDespesas extends javax.swing.JFrame {
         this.setVisible(true);
         this.setFocusableWindowState(true);
         this.setAlwaysOnTop(true);
+        atualizaTabela();
+    }
+    
+    public void atualizaTabela(){
+        DefaultTableModel model = (DefaultTableModel)this.tDespesas.getModel();
+        model.setRowCount(0);
+        ResultSet rs = database.exeSearchSQL("SELECT * FROM vt.funcionario");
+        try{
+            while(rs.next()){
+                Vector row = new Vector();
+                row.add(rs.getString("data"));
+                row.add(rs.getString("descricao"));
+                row.add(rs.getString("valor"));
+                model.addRow(row);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -44,7 +65,7 @@ public class TelaDespesas extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         bBuscar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tVendas = new javax.swing.JTable();
+        tDespesas = new javax.swing.JTable();
         lPeriodo1 = new javax.swing.JLabel();
         jDataFinal = new com.toedter.calendar.JDateChooser();
         lAte1 = new javax.swing.JLabel();
@@ -108,7 +129,7 @@ public class TelaDespesas extends javax.swing.JFrame {
             }
         });
 
-        tVendas.setModel(new javax.swing.table.DefaultTableModel(
+        tDespesas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -124,19 +145,19 @@ public class TelaDespesas extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tVendas.addMouseListener(new java.awt.event.MouseAdapter() {
+        tDespesas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                tVendasMouseEntered(evt);
+                tDespesasMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                tVendasMouseExited(evt);
+                tDespesasMouseExited(evt);
             }
         });
-        jScrollPane1.setViewportView(tVendas);
-        if (tVendas.getColumnModel().getColumnCount() > 0) {
-            tVendas.getColumnModel().getColumn(0).setResizable(false);
-            tVendas.getColumnModel().getColumn(1).setResizable(false);
-            tVendas.getColumnModel().getColumn(2).setResizable(false);
+        jScrollPane1.setViewportView(tDespesas);
+        if (tDespesas.getColumnModel().getColumnCount() > 0) {
+            tDespesas.getColumnModel().getColumn(0).setResizable(false);
+            tDespesas.getColumnModel().getColumn(1).setResizable(false);
+            tDespesas.getColumnModel().getColumn(2).setResizable(false);
         }
 
         lPeriodo1.setText("Período");
@@ -297,13 +318,13 @@ public class TelaDespesas extends javax.swing.JFrame {
         this.setCursor(Cursor.HAND_CURSOR);
     }//GEN-LAST:event_bInserirMouseEntered
 
-    private void tVendasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tVendasMouseEntered
+    private void tDespesasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tDespesasMouseEntered
         this.setCursor(Cursor.HAND_CURSOR);
-    }//GEN-LAST:event_tVendasMouseEntered
+    }//GEN-LAST:event_tDespesasMouseEntered
 
-    private void tVendasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tVendasMouseExited
+    private void tDespesasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tDespesasMouseExited
         this.setCursor(Cursor.DEFAULT_CURSOR);
-    }//GEN-LAST:event_tVendasMouseExited
+    }//GEN-LAST:event_tDespesasMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -322,6 +343,6 @@ public class TelaDespesas extends javax.swing.JFrame {
     private javax.swing.JLabel lAte1;
     private javax.swing.JLabel lCadastrarPedido;
     private javax.swing.JLabel lPeriodo1;
-    private javax.swing.JTable tVendas;
+    private javax.swing.JTable tDespesas;
     // End of variables declaration//GEN-END:variables
 }

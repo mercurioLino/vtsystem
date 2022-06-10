@@ -7,6 +7,9 @@ package front.gui.funcionario;
 
 import database.Database;
 import java.awt.Cursor;
+import java.sql.ResultSet;
+import java.util.Vector;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -26,6 +29,27 @@ public class TelaFuncionarios extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setFocusableWindowState(true);
         this.setAlwaysOnTop(true);
+        atualizaTabela();
+    }
+    
+    public void atualizaTabela(){
+        DefaultTableModel model = (DefaultTableModel)this.tFuncionarios.getModel();
+        model.setRowCount(0);
+        ResultSet rs = database.exeSearchSQL("SELECT * FROM vt.funcionario");
+        try{
+            while(rs.next()){
+                Vector row = new Vector();
+                row.add(rs.getString("cpf"));
+                row.add(rs.getString("cargo"));
+                row.add(rs.getString("dataDeAdmissao"));
+                row.add(rs.getString("telefone"));
+                row.add(rs.getString("whatsapp"));
+                row.add(rs.getBoolean("email"));
+                model.addRow(row);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -167,11 +191,11 @@ public class TelaFuncionarios extends javax.swing.JFrame {
 
             },
             new String [] {
-                "CPF", "Cargo", "Salário", "Data de Admissão", "Telefone", "E-mail", "WhatsApp", "Endereço"
+                "CPF", "Cargo", "Data de Admissão", "Telefone", "WhatsApp", "E-mail"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -195,8 +219,6 @@ public class TelaFuncionarios extends javax.swing.JFrame {
             tFuncionarios.getColumnModel().getColumn(3).setResizable(false);
             tFuncionarios.getColumnModel().getColumn(4).setResizable(false);
             tFuncionarios.getColumnModel().getColumn(5).setResizable(false);
-            tFuncionarios.getColumnModel().getColumn(6).setResizable(false);
-            tFuncionarios.getColumnModel().getColumn(7).setResizable(false);
         }
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
@@ -236,7 +258,7 @@ public class TelaFuncionarios extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(lCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(20, 20, 20)
-                        .addComponent(jtfCpf, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE))
+                        .addComponent(jtfCpf, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(lCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
