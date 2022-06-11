@@ -42,10 +42,13 @@ public class TelaAcesso extends javax.swing.JFrame {
         jPasswordField1 = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(400, 410));
         setMinimumSize(new java.awt.Dimension(400, 410));
+        setModalExclusionType(null);
         setUndecorated(true);
         setResizable(false);
         setSize(new java.awt.Dimension(400, 410));
+        setType(java.awt.Window.Type.POPUP);
 
         jPanel1.setBackground(new java.awt.Color(78, 148, 79));
 
@@ -60,7 +63,7 @@ public class TelaAcesso extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(lLoginAcesso, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -71,6 +74,7 @@ public class TelaAcesso extends javax.swing.JFrame {
         );
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setMaximumSize(new java.awt.Dimension(500, 500));
 
         bEntrar.setBackground(new java.awt.Color(78, 148, 79));
         bEntrar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -158,42 +162,29 @@ public class TelaAcesso extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        setSize(new java.awt.Dimension(408, 316));
+        setSize(new java.awt.Dimension(390, 294));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
 
     private void bSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSairActionPerformed
         System.exit(0);
     }//GEN-LAST:event_bSairActionPerformed
-
-    private void bEntrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bEntrarMouseEntered
-        //bEntrar.setBackground(new Color(235, 235, 235));
-        //bEntrar.setForeground(new Color(58, 65, 84));
-        this.setCursor(Cursor.HAND_CURSOR);
-    }//GEN-LAST:event_bEntrarMouseEntered
-
-    private void bSairMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bSairMouseEntered
-        //bEntrar.setBackground(new Color(235, 235, 235));
-        //bSair.setForeground(new Color(217, 81, 51));
-        this.setCursor(Cursor.HAND_CURSOR);
-    }//GEN-LAST:event_bSairMouseEntered
-
-    private void bEntrarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bEntrarMouseExited
-        //bEntrar.setBackground(new Color(58, 65, 84));
-        //bSair.setForeground(Color.WHITE);
-        this.setCursor(Cursor.DEFAULT_CURSOR);
-    }//GEN-LAST:event_bEntrarMouseExited
 
     private void bSairMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bSairMouseExited
         //bEntrar.setBackground(new Color(217, 81, 51));
@@ -201,14 +192,28 @@ public class TelaAcesso extends javax.swing.JFrame {
         this.setCursor(Cursor.DEFAULT_CURSOR);
     }//GEN-LAST:event_bSairMouseExited
 
+    private void bSairMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bSairMouseEntered
+        //bEntrar.setBackground(new Color(235, 235, 235));
+        //bSair.setForeground(new Color(217, 81, 51));
+        this.setCursor(Cursor.HAND_CURSOR);
+    }//GEN-LAST:event_bSairMouseEntered
+
     private void bEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEntrarActionPerformed
         new TelaInicial(this.database);
         this.setVisible(false);
     }//GEN-LAST:event_bEntrarActionPerformed
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    private void bEntrarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bEntrarMouseExited
+        //bEntrar.setBackground(new Color(58, 65, 84));
+        //bSair.setForeground(Color.WHITE);
+        this.setCursor(Cursor.DEFAULT_CURSOR);
+    }//GEN-LAST:event_bEntrarMouseExited
+
+    private void bEntrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bEntrarMouseEntered
+        //bEntrar.setBackground(new Color(235, 235, 235));
+        //bEntrar.setForeground(new Color(58, 65, 84));
+        this.setCursor(Cursor.HAND_CURSOR);
+    }//GEN-LAST:event_bEntrarMouseEntered
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bEntrar;

@@ -23,9 +23,9 @@ public class Database {
         try{
             Class.forName("org.postgresql.Driver");
             conexao = DriverManager.getConnection(url, usuario, senha);
-            System.out.println("Conexao Realizada!!!!");
+            
         } catch (Exception e){
-            System.out.println("num foi");
+            e.printStackTrace();
         }
     }
 
