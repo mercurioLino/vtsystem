@@ -68,6 +68,7 @@ public class TelaConfirmacao extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Confirmação");
 
         jPanel2.setBackground(new java.awt.Color(78, 148, 79));
 
