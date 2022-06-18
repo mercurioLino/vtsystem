@@ -8,7 +8,6 @@ package excluidos;
 import acoes.RetornaBoxSelected;
 import acoes.RetornaTextoTextField;
 import front.gui.TelaConfirmacao;
-import front.gui.pj.TelaEnderecoPessoa;
 import front.gui.pj.TelaPJ;
 import objetos.Endereco;
 import objetos.VidalTacos;
@@ -40,7 +39,6 @@ public class TelaAlterarPJaaa extends javax.swing.JFrame{
         this.pj = pj; 
         this.setVisible(true);
         this.setLocationRelativeTo(null);
-        this.setAlwaysOnTop(rootPaneCheckingEnabled);
     }
     
     public void setEndereco(Endereco endereco){

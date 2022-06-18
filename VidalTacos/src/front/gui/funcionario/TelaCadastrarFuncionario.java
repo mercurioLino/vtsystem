@@ -25,7 +25,6 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
         this.tabela = tabela;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
-        this.setFocusableWindowState(true);
     }
     
     @SuppressWarnings("unchecked")

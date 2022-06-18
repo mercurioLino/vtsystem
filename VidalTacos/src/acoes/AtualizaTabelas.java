@@ -68,7 +68,7 @@ public class AtualizaTabelas {
                 row.add(rs.getString("descricao"));
                 row.add(rs.getString("modelo"));
                 row.add(rs.getString("cor"));
-                row.add(rs.getBoolean("valorUnitario"));
+                row.add(rs.getDouble("valorUnitario"));
                 model.addRow(row);
             }
         }catch (Exception e){

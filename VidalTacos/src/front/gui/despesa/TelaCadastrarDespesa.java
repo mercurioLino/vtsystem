@@ -8,6 +8,7 @@ package front.gui.despesa;
 import database.Database;
 import front.gui.TelaConfirmacao;
 import java.awt.Cursor;
+import objetos.Despesa;
 
 /**
  *
@@ -16,17 +17,16 @@ import java.awt.Cursor;
 public class TelaCadastrarDespesa extends javax.swing.JFrame {
     
     Database database;
-    
+    javax.swing.JTable tabela;
     /**
      * Creates new form TelaCadastrarDespesa
      */
-    public TelaCadastrarDespesa(Database database) {
+    public TelaCadastrarDespesa(Database database, javax.swing.JTable tabela) {
         initComponents();
         this.database = database;
+        this.tabela = tabela;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
-        this.setFocusableWindowState(true);
-        this.setAlwaysOnTop(true);
     }
 
     /**
@@ -43,12 +43,12 @@ public class TelaCadastrarDespesa extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         lValor = new javax.swing.JLabel();
-        tData6 = new javax.swing.JTextField();
+        tValor = new javax.swing.JTextField();
         lData = new javax.swing.JLabel();
         lDescricao1 = new javax.swing.JLabel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jData = new com.toedter.calendar.JDateChooser();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        tDescricao = new javax.swing.JTextArea();
         bCadastrarPedido1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -104,11 +104,11 @@ public class TelaCadastrarDespesa extends javax.swing.JFrame {
         lValor.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lValor.setText("Valor");
 
-        tData6.setActionCommand("<Not Set>");
-        tData6.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        tData6.addActionListener(new java.awt.event.ActionListener() {
+        tValor.setActionCommand("<Not Set>");
+        tValor.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        tValor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tData6ActionPerformed(evt);
+                tValorActionPerformed(evt);
             }
         });
 
@@ -118,13 +118,13 @@ public class TelaCadastrarDespesa extends javax.swing.JFrame {
         lDescricao1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lDescricao1.setText("Descrição");
 
-        jDateChooser1.setDateFormatString("dd'/'MM'/'y");
+        jData.setDateFormatString("dd'/'MM'/'y");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setLineWrap(true);
-        jTextArea1.setRows(5);
-        jTextArea1.setWrapStyleWord(true);
-        jScrollPane2.setViewportView(jTextArea1);
+        tDescricao.setColumns(20);
+        tDescricao.setLineWrap(true);
+        tDescricao.setRows(5);
+        tDescricao.setWrapStyleWord(true);
+        jScrollPane2.setViewportView(tDescricao);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -138,8 +138,8 @@ public class TelaCadastrarDespesa extends javax.swing.JFrame {
                     .addComponent(lValor, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tData6, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tValor, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jData, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(137, Short.MAX_VALUE))
         );
@@ -149,7 +149,7 @@ public class TelaCadastrarDespesa extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lData, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jData, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -159,7 +159,7 @@ public class TelaCadastrarDespesa extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lValor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tData6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tValor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37))
         );
 
@@ -218,12 +218,17 @@ public class TelaCadastrarDespesa extends javax.swing.JFrame {
     }//GEN-LAST:event_bCadastrarPedido1MouseExited
 
     private void bCadastrarPedido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCadastrarPedido1ActionPerformed
-
+        Despesa despesa = new Despesa(
+                this.jData.getDate().toString(),
+                this.tDescricao.getText(),
+                Double.parseDouble(this.tValor.getText())
+        );
+        new TelaConfirmacao(this.database, this.tabela, this, despesa);
     }//GEN-LAST:event_bCadastrarPedido1ActionPerformed
 
-    private void tData6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tData6ActionPerformed
+    private void tValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tValorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tData6ActionPerformed
+    }//GEN-LAST:event_tValorActionPerformed
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         this.dispose();
@@ -240,16 +245,16 @@ public class TelaCadastrarDespesa extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bCadastrarPedido1;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
+    private com.toedter.calendar.JDateChooser jData;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lCadastrarPedido;
     private javax.swing.JLabel lData;
     private javax.swing.JLabel lDescricao1;
     private javax.swing.JLabel lValor;
-    private javax.swing.JTextField tData6;
+    private javax.swing.JTextArea tDescricao;
+    private javax.swing.JTextField tValor;
     // End of variables declaration//GEN-END:variables
 }

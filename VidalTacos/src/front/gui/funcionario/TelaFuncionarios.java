@@ -22,7 +22,6 @@ public class TelaFuncionarios extends javax.swing.JFrame {
         this.database = database;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
-        this.setFocusableWindowState(true);
         atualizaTabelaFuncionario(this.database, this.tFuncionarios);
     }
 

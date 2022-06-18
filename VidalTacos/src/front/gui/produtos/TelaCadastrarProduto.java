@@ -6,7 +6,10 @@
 package front.gui.produtos;
 
 import database.Database;
+import static acoes.RetornaTextoTextField.retornaTextoTextField;
+import front.gui.TelaConfirmacao;
 import java.awt.Cursor;
+import objetos.Produto;
 
 /**
  *
@@ -15,13 +18,14 @@ import java.awt.Cursor;
 public class TelaCadastrarProduto extends javax.swing.JFrame {
 
     Database database;
-    
+    javax.swing.JTable tabela;
     /**
      * Creates new form TelaCadastrarProduto
      */
-    public TelaCadastrarProduto(Database database) {
+    public TelaCadastrarProduto(Database database, javax.swing.JTable tabela) {
         initComponents();
         this.database = database;
+        this.tabela = tabela;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
     }
@@ -46,7 +50,7 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
         lTacoImg2 = new javax.swing.JLabel();
         bCarregarTacoImg2 = new javax.swing.JButton();
         bEntrar = new javax.swing.JButton();
-        tNome1 = new javax.swing.JTextField();
+        tDescricao = new javax.swing.JTextField();
         tModelo = new javax.swing.JTextField();
         tCor = new javax.swing.JTextField();
         tNome = new javax.swing.JTextField();
@@ -182,9 +186,9 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
             }
         });
 
-        tNome1.addActionListener(new java.awt.event.ActionListener() {
+        tDescricao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tNome1ActionPerformed(evt);
+                tDescricaoActionPerformed(evt);
             }
         });
 
@@ -246,7 +250,7 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
                                     .addComponent(lModelo))
                                 .addGap(39, 39, 39)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(tNome1)
+                                    .addComponent(tDescricao)
                                     .addComponent(tModelo)
                                     .addComponent(tNome)))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
@@ -277,7 +281,7 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
                                 .addComponent(lNome)
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(tNome1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lDescricao))))
                         .addGap(10, 10, 10)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -344,7 +348,15 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
     }//GEN-LAST:event_tCodigoActionPerformed
 
     private void bEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEntrarActionPerformed
-        
+        Produto produto = new Produto(
+                this.tCodigo.getText(),
+                retornaTextoTextField(this.tNome),
+                retornaTextoTextField(this.tDescricao),
+                retornaTextoTextField(this.tModelo),
+                retornaTextoTextField(this.tCor),
+                Double.parseDouble(this.tValorUnitario.getText())
+        );
+        new TelaConfirmacao(this.database, this.tabela, this, produto);
     }//GEN-LAST:event_bEntrarActionPerformed
 
     private void bEntrarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bEntrarMouseExited
@@ -359,9 +371,9 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
         this.setCursor(Cursor.HAND_CURSOR);
     }//GEN-LAST:event_bEntrarMouseEntered
 
-    private void tNome1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tNome1ActionPerformed
+    private void tDescricaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tDescricaoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tNome1ActionPerformed
+    }//GEN-LAST:event_tDescricaoActionPerformed
 
     private void tModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tModeloActionPerformed
         // TODO add your handling code here:
@@ -410,9 +422,9 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
     private javax.swing.JLabel lValorUnitario;
     private javax.swing.JTextField tCodigo;
     private javax.swing.JTextField tCor;
+    private javax.swing.JTextField tDescricao;
     private javax.swing.JTextField tModelo;
     private javax.swing.JTextField tNome;
-    private javax.swing.JTextField tNome1;
     private javax.swing.JTextField tValorUnitario;
     // End of variables declaration//GEN-END:variables
 }

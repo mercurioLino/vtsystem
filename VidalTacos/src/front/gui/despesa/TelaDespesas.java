@@ -24,7 +24,6 @@ public class TelaDespesas extends javax.swing.JFrame {
         initComponents();
         this.database = database;
         this.setVisible(true);
-        this.setFocusableWindowState(true);
         atualizaTabelaDespesa(this.database, this.tDespesas);
     }
 
@@ -257,7 +256,7 @@ public class TelaDespesas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInserirActionPerformed
-        new TelaCadastrarDespesa(database);
+        new TelaCadastrarDespesa(database, this.tDespesas);
     }//GEN-LAST:event_bInserirActionPerformed
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked

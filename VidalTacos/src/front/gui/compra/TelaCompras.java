@@ -5,12 +5,10 @@
  */
 package front.gui.compra;
 
+import static acoes.AtualizaCheckBox.atualizaCheckBoxFornecedor;
 import static acoes.AtualizaTabelas.atualizaTabelaCompra;
 import database.Database;
 import java.awt.Cursor;
-import java.sql.ResultSet;
-import java.util.Vector;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -28,7 +26,7 @@ public class TelaCompras extends javax.swing.JFrame {
         this.database = database;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
-        this.setFocusableWindowState(true);
+        atualizaCheckBoxFornecedor(this.database, this.cFornecedor);
         atualizaTabelaCompra(this.database, this.tCompras);
     }
     
@@ -293,7 +291,7 @@ public class TelaCompras extends javax.swing.JFrame {
     }//GEN-LAST:event_cFornecedorActionPerformed
 
     private void bInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInserirActionPerformed
-        new TelaCadastrarCompra(database);
+        new TelaCadastrarCompra(database, this.tCompras);
     }//GEN-LAST:event_bInserirActionPerformed
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked

@@ -5,6 +5,7 @@
  */
 package front.gui.venda;
 
+import static acoes.AtualizaCheckBox.atualizaCheckBoxCliente;
 import static acoes.AtualizaTabelas.atualizaTabelaVenda;
 import database.Database;
 import java.awt.Cursor;
@@ -23,6 +24,7 @@ public class TelaVendas extends javax.swing.JFrame {
         this.setVisible(true);
         this.setLocationRelativeTo(null);
         atualizaTabelaVenda(this.database, this.tVendas);
+        atualizaCheckBoxCliente(this.database, this.cbCliente);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -43,7 +45,7 @@ public class TelaVendas extends javax.swing.JFrame {
         rPedidosEncerrados = new javax.swing.JRadioButton();
         bBuscar = new javax.swing.JButton();
         lCliente = new javax.swing.JLabel();
-        cCliente = new javax.swing.JComboBox<>();
+        cbCliente = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         tVendas = new javax.swing.JTable();
         lPeriodo1 = new javax.swing.JLabel();
@@ -119,17 +121,17 @@ public class TelaVendas extends javax.swing.JFrame {
 
         lCliente.setText("Cliente");
 
-        cCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+        cbCliente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                cClienteMouseEntered(evt);
+                cbClienteMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                cClienteMouseExited(evt);
+                cbClienteMouseExited(evt);
             }
         });
-        cCliente.addActionListener(new java.awt.event.ActionListener() {
+        cbCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cClienteActionPerformed(evt);
+                cbClienteActionPerformed(evt);
             }
         });
 
@@ -195,7 +197,7 @@ public class TelaVendas extends javax.swing.JFrame {
                         .addComponent(lAte1)
                         .addGap(18, 18, 18)
                         .addComponent(jDataInicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(cCliente, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(cbCliente, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(12, 12, 12)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(rPedidosEncerrados)
@@ -231,7 +233,7 @@ public class TelaVendas extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lCliente)
-                            .addComponent(cCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(rPedidosEncerrados))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -312,12 +314,12 @@ public class TelaVendas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInserirActionPerformed
-        new TelaCadastrarVenda(database);
+        new TelaCadastrarVenda(database, this.tVendas);
     }//GEN-LAST:event_bInserirActionPerformed
 
-    private void cClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cClienteActionPerformed
+    private void cbClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbClienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cClienteActionPerformed
+    }//GEN-LAST:event_cbClienteActionPerformed
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         this.dispose();
@@ -331,9 +333,9 @@ public class TelaVendas extends javax.swing.JFrame {
         this.setCursor(Cursor.DEFAULT_CURSOR);
     }//GEN-LAST:event_jLabel5MouseExited
 
-    private void cClienteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cClienteMouseExited
+    private void cbClienteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbClienteMouseExited
         this.setCursor(Cursor.DEFAULT_CURSOR);
-    }//GEN-LAST:event_cClienteMouseExited
+    }//GEN-LAST:event_cbClienteMouseExited
 
     private void bBuscarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bBuscarMouseExited
         this.setCursor(Cursor.DEFAULT_CURSOR);
@@ -359,9 +361,9 @@ public class TelaVendas extends javax.swing.JFrame {
         this.setCursor(Cursor.HAND_CURSOR);
     }//GEN-LAST:event_bBuscarMouseEntered
 
-    private void cClienteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cClienteMouseEntered
+    private void cbClienteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbClienteMouseEntered
         this.setCursor(Cursor.HAND_CURSOR);
-    }//GEN-LAST:event_cClienteMouseEntered
+    }//GEN-LAST:event_cbClienteMouseEntered
 
     private void tVendasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tVendasMouseExited
         this.setCursor(Cursor.DEFAULT_CURSOR);
@@ -378,7 +380,7 @@ public class TelaVendas extends javax.swing.JFrame {
     private javax.swing.JButton bInserir;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
-    private javax.swing.JComboBox<String> cCliente;
+    private javax.swing.JComboBox<String> cbCliente;
     private com.toedter.calendar.JDateChooser jDataFinal;
     private com.toedter.calendar.JDateChooser jDataInicial;
     private javax.swing.JLabel jLabel5;

@@ -133,7 +133,7 @@
                                   </Group>
                                   <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="tNome1" max="32767" attributes="0"/>
+                                      <Component id="tDescricao" max="32767" attributes="0"/>
                                       <Component id="tModelo" max="32767" attributes="0"/>
                                       <Component id="tNome" max="32767" attributes="0"/>
                                   </Group>
@@ -175,7 +175,7 @@
                                   <Component id="lNome" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="tNome1" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="tDescricao" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                                       <Component id="lDescricao" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -322,9 +322,9 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bEntrarActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="tNome1">
+        <Component class="javax.swing.JTextField" name="tDescricao">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tNome1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tDescricaoActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="tModelo">

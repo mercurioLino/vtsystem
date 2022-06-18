@@ -6,6 +6,8 @@
 
 package front.gui.compra;
 
+import static acoes.AtualizaCheckBox.atualizaCheckBoxFornecedor;
+import static acoes.AtualizaCheckBox.atualizaCheckBoxProduto;
 import database.Database;
 import java.awt.Cursor;
 import java.sql.ResultSet;
@@ -17,19 +19,22 @@ import java.util.Vector;
 public class TelaCadastrarCompra extends javax.swing.JFrame {
     
     Database database;
+    javax.swing.JTable tabela;
     
     /** Creates new form TelaCadastrarCompra */
-    public TelaCadastrarCompra(Database database) {
+    public TelaCadastrarCompra(Database database, javax.swing.JTable tabela) {
         initComponents();
         this.database = database;
+        this.tabela = tabela;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
-        this.setFocusableWindowState(true);
+        atualizaCheckBoxFornecedor(this.database, this.cbFornecedor);
+        atualizaCheckBoxProduto(this.database, this.cbProduto);
     }
     
     public void atualizaProdutos(){
-        ResultSet rs = database.exeSearchSQL("SELECT * FROM vt.produto");
-         Vector data = new Vector();
+        ResultSet rs = database.exeSearchSQL("SELECT nome FROM vt.produto");
+        Vector data = new Vector();
         try{
             while(rs.next()){
                 data.add(rs.getString("nome"));
@@ -55,7 +60,7 @@ public class TelaCadastrarCompra extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         lFornecedor = new javax.swing.JLabel();
-        cFornecedor = new javax.swing.JComboBox<>();
+        cbFornecedor = new javax.swing.JComboBox<>();
         lData = new javax.swing.JLabel();
         bEndereço2 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
@@ -126,17 +131,17 @@ public class TelaCadastrarCompra extends javax.swing.JFrame {
 
         lFornecedor.setText("Fornecedor");
 
-        cFornecedor.addMouseListener(new java.awt.event.MouseAdapter() {
+        cbFornecedor.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                cFornecedorMouseEntered(evt);
+                cbFornecedorMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                cFornecedorMouseExited(evt);
+                cbFornecedorMouseExited(evt);
             }
         });
-        cFornecedor.addActionListener(new java.awt.event.ActionListener() {
+        cbFornecedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cFornecedorActionPerformed(evt);
+                cbFornecedorActionPerformed(evt);
             }
         });
 
@@ -362,7 +367,7 @@ public class TelaCadastrarCompra extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(cFornecedor, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(cbFornecedor, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addComponent(bEndereço2)
                         .addGap(38, 38, 38))
@@ -383,7 +388,7 @@ public class TelaCadastrarCompra extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lFornecedor)
-                            .addComponent(cFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(bEndereço2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -448,7 +453,7 @@ public class TelaCadastrarCompra extends javax.swing.JFrame {
     }//GEN-LAST:event_jQuantidadeAncestorRemoved
 
     private void bEndereço3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEndereço3ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_bEndereço3ActionPerformed
 
     private void bEndereço3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bEndereço3MouseExited
@@ -479,24 +484,24 @@ public class TelaCadastrarCompra extends javax.swing.JFrame {
         this.setCursor(Cursor.HAND_CURSOR);
     }//GEN-LAST:event_bEndereço2MouseEntered
 
-    private void cFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cFornecedorActionPerformed
+    private void cbFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbFornecedorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cFornecedorActionPerformed
+    }//GEN-LAST:event_cbFornecedorActionPerformed
 
-    private void cFornecedorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cFornecedorMouseExited
+    private void cbFornecedorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbFornecedorMouseExited
         this.setCursor(Cursor.DEFAULT_CURSOR);
-    }//GEN-LAST:event_cFornecedorMouseExited
+    }//GEN-LAST:event_cbFornecedorMouseExited
 
-    private void cFornecedorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cFornecedorMouseEntered
+    private void cbFornecedorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbFornecedorMouseEntered
         this.setCursor(Cursor.HAND_CURSOR);
-    }//GEN-LAST:event_cFornecedorMouseEntered
+    }//GEN-LAST:event_cbFornecedorMouseEntered
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bCadastrarCompra;
     private javax.swing.JButton bEndereço2;
     private javax.swing.JButton bEndereço3;
-    private javax.swing.JComboBox<String> cFornecedor;
+    private javax.swing.JComboBox<String> cbFornecedor;
     private javax.swing.JComboBox<String> cbProduto;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
