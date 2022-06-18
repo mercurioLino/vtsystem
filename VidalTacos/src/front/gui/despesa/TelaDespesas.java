@@ -5,11 +5,9 @@
  */
 package front.gui.despesa;
 
+import static acoes.AtualizaTabelas.atualizaTabelaDespesa;
 import database.Database;
 import java.awt.Cursor;
-import java.sql.ResultSet;
-import java.util.Vector;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -27,25 +25,7 @@ public class TelaDespesas extends javax.swing.JFrame {
         this.database = database;
         this.setVisible(true);
         this.setFocusableWindowState(true);
-        this.setAlwaysOnTop(true);
-        atualizaTabela();
-    }
-    
-    public void atualizaTabela(){
-        DefaultTableModel model = (DefaultTableModel)this.tDespesas.getModel();
-        model.setRowCount(0);
-        ResultSet rs = database.exeSearchSQL("SELECT * FROM vt.funcionario");
-        try{
-            while(rs.next()){
-                Vector row = new Vector();
-                row.add(rs.getString("data"));
-                row.add(rs.getString("descricao"));
-                row.add(rs.getString("valor"));
-                model.addRow(row);
-            }
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+        atualizaTabelaDespesa(this.database, this.tDespesas);
     }
 
     /**
@@ -59,13 +39,13 @@ public class TelaDespesas extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tDespesas = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         lCadastrarPedido = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         bBuscar = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tDespesas = new javax.swing.JTable();
         lPeriodo1 = new javax.swing.JLabel();
         jDataFinal = new com.toedter.calendar.JDateChooser();
         lAte1 = new javax.swing.JLabel();
@@ -73,6 +53,37 @@ public class TelaDespesas extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         bGerarPDF = new javax.swing.JButton();
         bInserir = new javax.swing.JButton();
+
+        tDespesas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Data", "Descrição", "Valor"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tDespesas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                tDespesasMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                tDespesasMouseExited(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tDespesas);
+        if (tDespesas.getColumnModel().getColumnCount() > 0) {
+            tDespesas.getColumnModel().getColumn(0).setResizable(false);
+            tDespesas.getColumnModel().getColumn(1).setResizable(false);
+            tDespesas.getColumnModel().getColumn(2).setResizable(false);
+        }
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Despesas");
@@ -130,37 +141,6 @@ public class TelaDespesas extends javax.swing.JFrame {
             }
         });
 
-        tDespesas.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Data", "Descrição", "Valor"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tDespesas.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                tDespesasMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                tDespesasMouseExited(evt);
-            }
-        });
-        jScrollPane1.setViewportView(tDespesas);
-        if (tDespesas.getColumnModel().getColumnCount() > 0) {
-            tDespesas.getColumnModel().getColumn(0).setResizable(false);
-            tDespesas.getColumnModel().getColumn(1).setResizable(false);
-            tDespesas.getColumnModel().getColumn(2).setResizable(false);
-        }
-
         lPeriodo1.setText("Período");
 
         jDataFinal.setDateFormatString("dd'/'MM'/'y");
@@ -185,7 +165,6 @@ public class TelaDespesas extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addComponent(bBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 843, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -200,9 +179,7 @@ public class TelaDespesas extends javax.swing.JFrame {
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lPeriodo1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jDataInicial, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33))
+                .addGap(466, 466, 466))
         );
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));

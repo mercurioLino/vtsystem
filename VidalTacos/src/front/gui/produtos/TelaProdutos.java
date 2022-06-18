@@ -5,11 +5,9 @@
  */
 package front.gui.produtos;
 
+import static acoes.AtualizaTabelas.atualizaTabelaProduto;
 import database.Database;
 import java.awt.Cursor;
-import java.sql.ResultSet;
-import java.util.Vector;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -27,27 +25,7 @@ public class TelaProdutos extends javax.swing.JFrame {
         this.database = database;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
-        atualizaTabela();
-    }
-    
-    public void atualizaTabela(){
-        DefaultTableModel model = (DefaultTableModel)this.tProdutos.getModel();
-        model.setRowCount(0);
-        ResultSet rs = database.exeSearchSQL("SELECT * FROM vt.produto");
-        try{
-            while(rs.next()){
-                Vector row = new Vector();
-                row.add(rs.getString("codigo"));
-                row.add(rs.getString("nome"));
-                row.add(rs.getString("descricao"));
-                row.add(rs.getString("modelo"));
-                row.add(rs.getString("cor"));
-                row.add(rs.getBoolean("valorUnitario"));
-                model.addRow(row);
-            }
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+        atualizaTabelaProduto(this.database, this.tProdutos);
     }
 
     /**

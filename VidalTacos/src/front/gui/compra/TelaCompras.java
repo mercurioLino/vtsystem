@@ -5,6 +5,7 @@
  */
 package front.gui.compra;
 
+import static acoes.AtualizaTabelas.atualizaTabelaCompra;
 import database.Database;
 import java.awt.Cursor;
 import java.sql.ResultSet;
@@ -28,29 +29,9 @@ public class TelaCompras extends javax.swing.JFrame {
         this.setVisible(true);
         this.setLocationRelativeTo(null);
         this.setFocusableWindowState(true);
-        this.setAlwaysOnTop(true);
-        this.setEnabled(true);
-        atualizaTabela();
+        atualizaTabelaCompra(this.database, this.tCompras);
     }
     
-    public void atualizaTabela(){
-        DefaultTableModel model = (DefaultTableModel)this.tCompras.getModel();
-        model.setRowCount(0);
-        ResultSet rs = database.exeSearchSQL("SELECT * FROM vt.compra");
-        try{
-            while(rs.next()){
-                Vector row = new Vector();
-                row.add(rs.getString("dataDeRealizacao"));
-                row.add(rs.getString("cnpjFornecedor"));
-                row.add(rs.getString("valorTotal"));
-                row.add(rs.getString("concluida"));
-                model.addRow(row);
-            }
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

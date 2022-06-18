@@ -5,11 +5,9 @@
  */
 package front.gui.pj;
 
+import static acoes.AtualizaTabelas.atualizaTabelaPJ;
 import database.Database;
 import java.awt.Cursor;
-import java.util.Vector;
-import javax.swing.table.DefaultTableModel;
-import java.sql.ResultSet;
 
 /**
  *
@@ -24,28 +22,7 @@ public class TelaPJ extends javax.swing.JFrame {
         this.database = database;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
-        atualizaTabela();
-    }
-   
-    public void atualizaTabela(){
-        DefaultTableModel model = (DefaultTableModel)this.tClientes.getModel();
-        model.setRowCount(0);
-        ResultSet rs = database.exeSearchSQL("SELECT * FROM vt.pessoajuridica");
-        try{
-            while(rs.next()){
-                Vector row = new Vector();
-                row.add(rs.getString("cnpj"));
-                row.add(rs.getString("razaosocial"));
-                row.add(rs.getString("telefone"));
-                row.add(rs.getString("email"));
-                row.add(rs.getString("whatsapp"));
-                row.add(rs.getBoolean("cliente"));
-                row.add(rs.getBoolean("fornecedor"));
-                model.addRow(row);
-            }
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+        atualizaTabelaPJ(this.database, this.tPJ);
     }
     
     @SuppressWarnings("unchecked")
@@ -63,7 +40,7 @@ public class TelaPJ extends javax.swing.JFrame {
         bGerarPDF = new javax.swing.JButton();
         bInserir = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tClientes = new javax.swing.JTable();
+        tPJ = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         bBuscar = new javax.swing.JButton();
         lCnpj = new java.awt.Label();
@@ -194,8 +171,8 @@ public class TelaPJ extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        tClientes.setAutoCreateRowSorter(true);
-        tClientes.setModel(new javax.swing.table.DefaultTableModel(
+        tPJ.setAutoCreateRowSorter(true);
+        tPJ.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -218,31 +195,31 @@ public class TelaPJ extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tClientes.getTableHeader().setReorderingAllowed(false);
-        tClientes.addAncestorListener(new javax.swing.event.AncestorListener() {
+        tPJ.getTableHeader().setReorderingAllowed(false);
+        tPJ.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                tClientesAncestorAdded(evt);
+                tPJAncestorAdded(evt);
             }
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-        tClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+        tPJ.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tClientesMouseClicked(evt);
+                tPJMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                tClientesMouseEntered(evt);
+                tPJMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                tClientesMouseExited(evt);
+                tPJMouseExited(evt);
             }
         });
-        jScrollPane1.setViewportView(tClientes);
-        if (tClientes.getColumnModel().getColumnCount() > 0) {
-            tClientes.getColumnModel().getColumn(2).setResizable(false);
-            tClientes.getColumnModel().getColumn(3).setResizable(false);
+        jScrollPane1.setViewportView(tPJ);
+        if (tPJ.getColumnModel().getColumnCount() > 0) {
+            tPJ.getColumnModel().getColumn(2).setResizable(false);
+            tPJ.getColumnModel().getColumn(3).setResizable(false);
         }
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -341,21 +318,21 @@ public class TelaPJ extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInserirActionPerformed
-        new TelaCadastrarPJ(database, this);
+        new TelaCadastrarPJ(database, this.tPJ);
         //atualizaTabela();
     }//GEN-LAST:event_bInserirActionPerformed
 
-    private void tClientesAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tClientesAncestorAdded
+    private void tPJAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tPJAncestorAdded
         // TODO add your handling code here:
-    }//GEN-LAST:event_tClientesAncestorAdded
+    }//GEN-LAST:event_tPJAncestorAdded
 
-    private void tClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tClientesMouseClicked
+    private void tPJMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tPJMouseClicked
         /*int index = this.tClientes.getSelectedRow();
         TableModel model = this.tClientes.getModel();
         String cnpj = model.getValueAt(index, 0).toString();
         PessoaJuridica pj = buscarCNPJ(vidalTacos, cnpj);
         new TelaAlterarPJ(vidalTacos, pj, this);*/
-    }//GEN-LAST:event_tClientesMouseClicked
+    }//GEN-LAST:event_tPJMouseClicked
 
     private void jrbClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbClientesActionPerformed
         // TODO add your handling code here:
@@ -397,13 +374,13 @@ public class TelaPJ extends javax.swing.JFrame {
         this.setCursor(Cursor.HAND_CURSOR);
     }//GEN-LAST:event_bBuscarMouseEntered
 
-    private void tClientesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tClientesMouseEntered
+    private void tPJMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tPJMouseEntered
         this.setCursor(Cursor.HAND_CURSOR);
-    }//GEN-LAST:event_tClientesMouseEntered
+    }//GEN-LAST:event_tPJMouseEntered
 
-    private void tClientesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tClientesMouseExited
+    private void tPJMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tPJMouseExited
         this.setCursor(Cursor.DEFAULT_CURSOR);
-    }//GEN-LAST:event_tClientesMouseExited
+    }//GEN-LAST:event_tPJMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -426,6 +403,6 @@ public class TelaPJ extends javax.swing.JFrame {
     private javax.swing.JLabel lCadastrarPedido;
     private java.awt.Label lCnpj;
     private java.awt.Label lRazaoSocial;
-    private javax.swing.JTable tClientes;
+    private javax.swing.JTable tPJ;
     // End of variables declaration//GEN-END:variables
 }

@@ -7,7 +7,6 @@ package front.gui.funcionario;
 import static acoes.RetornaTextoTextField.retornaTextoTextField;
 import database.Database;
 import front.gui.TelaConfirmacao;
-import front.gui.pj.TelaEnderecoPessoa;
 import java.awt.Cursor;
 import objetos.Endereco;
 import objetos.pessoas.Funcionario;
@@ -17,20 +16,16 @@ import objetos.pessoas.Funcionario;
  */
 public class TelaCadastrarFuncionario extends javax.swing.JFrame {
     
-    Endereco endereco;
     Database database;
-    TelaFuncionarios telaFunc;
-    public TelaCadastrarFuncionario(Database database, TelaFuncionarios telaFunc) {
+    javax.swing.JTable tabela;
+    
+    public TelaCadastrarFuncionario(Database database, javax.swing.JTable tabela) {
         initComponents();
         this.database = database;
-        this.telaFunc = telaFunc;
+        this.tabela = tabela;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
         this.setFocusableWindowState(true);
-    }
-
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
     }
     
     @SuppressWarnings("unchecked")
@@ -73,6 +68,8 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
         lSalario6 = new javax.swing.JLabel();
         tLogradouro = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        cUF = new javax.swing.JComboBox<>();
+        lCEP2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Funcionário");
@@ -257,6 +254,19 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
 
         jLabel1.setText("Endereço:");
 
+        cUF.setBackground(new java.awt.Color(131, 189, 117));
+        cUF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SP", "MS", "GO", "RJ" }));
+        cUF.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cUFMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cUFMouseExited(evt);
+            }
+        });
+
+        lCEP2.setText("UF");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -317,10 +327,15 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
                                     .addComponent(tTelefone)
                                     .addComponent(tEmail)
                                     .addComponent(tWhatsapp)))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(tDataDeNascimento)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jDataDeNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addComponent(lCEP2)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(cUF, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addComponent(tDataDeNascimento)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jDataDeNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(29, 29, 29))))
         );
         jPanel2Layout.setVerticalGroup(
@@ -368,9 +383,13 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(tCEP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(tCEP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lCEP2)
+                            .addComponent(cUF, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(tBairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -446,7 +465,16 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_bCadastrarFuncionarioMouseExited
 
     private void bCadastrarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCadastrarFuncionarioActionPerformed
-        this.endereco.setDocumento(this.tCPF.getText());
+        Endereco endereco = new Endereco(
+                this.tCEP.getText(), 
+                this.cUF.getSelectedItem().toString(), 
+                this.tCidade.getText(),
+                this.tBairro.getText(),
+                this.tLogradouro.getText(),
+                Integer.parseInt(this.tNumero.getText()),
+                retornaTextoTextField(this.tComplemento)
+        );
+        endereco.setDocumento(this.tCPF.getText());
         Funcionario funcionario = new Funcionario(
                 this.tCPF.getText(),
                 this.tNome.getText(),
@@ -456,9 +484,9 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
                 retornaTextoTextField(this.tTelefone),
                 retornaTextoTextField(this.tWhatsapp),
                 retornaTextoTextField(this.tEmail),
-                this.endereco
+                endereco
         );
-        new TelaConfirmacao(database, this.telaFunc, this, funcionario);
+        new TelaConfirmacao(this.database, tabela, this, funcionario);
     }//GEN-LAST:event_bCadastrarFuncionarioActionPerformed
 
     private void tSalarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tSalarioActionPerformed
@@ -505,16 +533,26 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tLogradouroActionPerformed
 
+    private void cUFMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cUFMouseEntered
+        this.setCursor(Cursor.HAND_CURSOR);
+    }//GEN-LAST:event_cUFMouseEntered
+
+    private void cUFMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cUFMouseExited
+        this.setCursor(Cursor.DEFAULT_CURSOR);
+    }//GEN-LAST:event_cUFMouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bCadastrarFuncionario;
     private javax.swing.JLabel bWhatsapp;
+    private javax.swing.JComboBox<String> cUF;
     private com.toedter.calendar.JDateChooser jDataAdmissao;
     private com.toedter.calendar.JDateChooser jDataDeNascimento;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lCEP2;
     private javax.swing.JLabel lCNPJ;
     private javax.swing.JLabel lCadastrarPedido;
     private javax.swing.JLabel lCliente4;

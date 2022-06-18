@@ -5,11 +5,9 @@
  */
 package front.gui.funcionario;
 
+import static acoes.AtualizaTabelas.atualizaTabelaFuncionario;
 import database.Database;
 import java.awt.Cursor;
-import java.sql.ResultSet;
-import java.util.Vector;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -19,36 +17,13 @@ public class TelaFuncionarios extends javax.swing.JFrame {
     
     Database database;
     
-    /**
-     * Creates new form TelaRelatorioVendas
-     */
     public TelaFuncionarios(Database database) {
         initComponents();
         this.database = database;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
         this.setFocusableWindowState(true);
-        atualizaTabela();
-    }
-    
-    public void atualizaTabela(){
-        DefaultTableModel model = (DefaultTableModel)this.tFuncionarios.getModel();
-        model.setRowCount(0);
-        ResultSet rs = database.exeSearchSQL("SELECT * FROM vt.funcionario");
-        try{
-            while(rs.next()){
-                Vector row = new Vector();
-                row.add(rs.getString("cpf"));
-                row.add(rs.getString("cargo"));
-                row.add(rs.getString("dataDeAdmissao"));
-                row.add(rs.getString("telefone"));
-                row.add(rs.getString("whatsapp"));
-                row.add(rs.getString("email"));
-                model.addRow(row);
-            }
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+        atualizaTabelaFuncionario(this.database, this.tFuncionarios);
     }
 
     /**
@@ -324,7 +299,7 @@ public class TelaFuncionarios extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInserirActionPerformed
-        new TelaCadastrarFuncionario(this.database, this);
+        new TelaCadastrarFuncionario(this.database, this.tFuncionarios);
     }//GEN-LAST:event_bInserirActionPerformed
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked

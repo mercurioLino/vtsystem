@@ -5,11 +5,9 @@
  */
 package front.gui.venda;
 
+import static acoes.AtualizaTabelas.atualizaTabelaVenda;
 import database.Database;
 import java.awt.Cursor;
-import java.sql.ResultSet;
-import java.util.Vector;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -24,27 +22,7 @@ public class TelaVendas extends javax.swing.JFrame {
         this.database = database;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
-        atualizaTabela();
-    }
-    
-    public void atualizaTabela(){
-        DefaultTableModel model = (DefaultTableModel)this.tVendas.getModel();
-        model.setRowCount(0);
-        ResultSet rs = database.exeSearchSQL("SELECT * FROM vt.venda");
-        try{
-            while(rs.next()){
-                Vector row = new Vector();
-                row.add(rs.getString("codigo"));
-                row.add(rs.getString("cnpjCliente"));
-                row.add(rs.getString("dataDeRealizacao"));
-                row.add(rs.getString("valorTotal"));
-                row.add(rs.getString("metodoDePagamento"));
-                row.add(rs.getBoolean("concluido"));
-                model.addRow(row);
-            }
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+        atualizaTabelaVenda(this.database, this.tVendas);
     }
     /**
      * This method is called from within the constructor to initialize the form.

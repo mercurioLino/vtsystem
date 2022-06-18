@@ -5,13 +5,19 @@
  */
 package front.gui;
 
+import static acoes.AtualizaTabelas.atualizaTabelaCompra;
+import static acoes.AtualizaTabelas.atualizaTabelaDespesa;
+import static acoes.AtualizaTabelas.atualizaTabelaFuncionario;
+import static acoes.AtualizaTabelas.atualizaTabelaPJ;
+import static acoes.AtualizaTabelas.atualizaTabelaProduto;
+import static acoes.AtualizaTabelas.atualizaTabelaVenda;
 import database.Database;
 import static database.InsertsDB.*;
-import front.gui.funcionario.TelaCadastrarFuncionario;
-import front.gui.funcionario.TelaFuncionarios;
-import front.gui.pj.TelaCadastrarPJ;
-import front.gui.pj.TelaPJ;
 import java.awt.Cursor;
+import objetos.Compra;
+import objetos.Despesa;
+import objetos.Produto;
+import objetos.Venda;
 import objetos.pessoas.Funcionario;
 import objetos.pessoas.PessoaJuridica;
 
@@ -23,34 +29,83 @@ public class TelaConfirmacao extends javax.swing.JFrame {
     
     Database database;
     
-    TelaPJ telapj;
-    TelaCadastrarPJ telaCadPJ = null;
     PessoaJuridica pj;
-    
-    TelaFuncionarios telaFunc;
-    TelaCadastrarFuncionario telaCadFunc = null;
     Funcionario funcionario;
+    Compra compra;
+    Venda venda;
+    Produto produto;
+    Despesa despesa;
+        
+    javax.swing.JTable tabela;
+    javax.swing.JFrame telaCadastro;
     
-    public TelaConfirmacao(Database database, TelaPJ telapj, TelaCadastrarPJ telaCadPJ, PessoaJuridica pj) {
+    public TelaConfirmacao(Database database, javax.swing.JTable tabela, javax.swing.JFrame telaCadastro, PessoaJuridica pj) {
         initComponents();
         this.database = database;
         
-        this.telapj = telapj;
-        this.telaCadPJ = telaCadPJ;
+        this.tabela = tabela;
+        this.telaCadastro = telaCadastro;
         this.pj = pj;
         
         this.setVisible(true);
         this.setLocationRelativeTo(null);
     }
     
-    // LEONARDO DO FUTURO: Implementar método construtor genérico e método de armazenamento genérico
-    public TelaConfirmacao(Database database, TelaFuncionarios telaFunc, TelaCadastrarFuncionario telaCadFunc, Funcionario funcionario) {
+    public TelaConfirmacao(Database database, javax.swing.JTable tabela, javax.swing.JFrame telaCadastro, Funcionario funcionario) {
         initComponents();
         this.database = database;
         
-        this.telaFunc = telaFunc;
-        this.telaCadFunc = telaCadFunc;
+        this.tabela = tabela;
+        this.telaCadastro = telaCadastro;
         this.funcionario = funcionario;
+        
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);
+    }
+    
+    public TelaConfirmacao(Database database, javax.swing.JTable tabela, javax.swing.JFrame telaCadastro, Compra compra) {
+        initComponents();
+        this.database = database;
+        
+        this.tabela = tabela;
+        this.telaCadastro = telaCadastro;
+        this.compra = compra;
+        
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);
+    }
+    
+    public TelaConfirmacao(Database database, javax.swing.JTable tabela, javax.swing.JFrame telaCadastro, Venda venda) {
+        initComponents();
+        this.database = database;
+        
+        this.tabela = tabela;
+        this.telaCadastro = telaCadastro;
+        this.venda = venda;
+        
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);
+    }
+    
+    public TelaConfirmacao(Database database, javax.swing.JTable tabela, javax.swing.JFrame telaCadastro, Produto produto) {
+        initComponents();
+        this.database = database;
+        
+        this.tabela = tabela;
+        this.telaCadastro = telaCadastro;
+        this.produto = produto;
+        
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);
+    }
+    
+    public TelaConfirmacao(Database database, javax.swing.JTable tabela, javax.swing.JFrame telaCadastro, Despesa despesa) {
+        initComponents();
+        this.database = database;
+        
+        this.tabela = tabela;
+        this.telaCadastro = telaCadastro;
+        this.despesa = despesa;
         
         this.setVisible(true);
         this.setLocationRelativeTo(null);
@@ -203,17 +258,29 @@ public class TelaConfirmacao extends javax.swing.JFrame {
     }//GEN-LAST:event_bSimMouseExited
 
     private void bSimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSimActionPerformed
-        if(telaCadPJ != null){
-            insertPJ(this.database, pj);
-            insertEnderecoPJ(this.database, pj.getEndereco());
-            telapj.atualizaTabela();
-        } else if(telaCadFunc != null){
-            insertFuncionario(this.database, funcionario);
-            insertEnderecoFuncionario(this.database, funcionario.getEndereco());
-            telaFunc.atualizaTabela();
-        }
+        if(this.telaCadastro.getClass().getTypeName().matches("front.gui.pj.TelaCadastrarPJ")){
+            insertPJ(this.database, this.pj);
+            insertEnderecoPJ(this.database, this.pj.getEndereco());
+            atualizaTabelaPJ(this.database, this.tabela);
+        } else if(this.telaCadastro.getClass().getTypeName().matches("front.gui.funcionario.TelaCadastrarFuncionario")){
+            insertFuncionario(this.database, this.funcionario);
+            insertEnderecoPJ(this.database, this.funcionario.getEndereco());
+            atualizaTabelaFuncionario(this.database, this.tabela);
+        } else if(this.telaCadastro.getClass().getTypeName().matches("front.gui.produtos.TelaCadastrarProduto")){
+            insertProduto(this.database, this.produto);
+            atualizaTabelaProduto(this.database, this.tabela);
+        } else if(this.telaCadastro.getClass().getTypeName().matches("front.gui.despesa.TelaCadastrarDespesa")){
+            insertDespesa(this.database, this.despesa);
+            atualizaTabelaDespesa(this.database, this.tabela);
+        } else if(this.telaCadastro.getClass().getTypeName().matches("front.gui.compra.TelaCadastrarCompra")){
+            insertCompra(this.database, this.compra);
+            atualizaTabelaCompra(this.database, this.tabela);
+        } else if(this.telaCadastro.getClass().getTypeName().matches("front.gui.venda.TelaCadastrarVenda")){
+            insertVenda(this.database, this.venda);
+            atualizaTabelaVenda(this.database, this.tabela);
+        } 
         
-        telaCadPJ.dispose();
+        this.telaCadastro.dispose();
         this.dispose();
     }//GEN-LAST:event_bSimActionPerformed
 

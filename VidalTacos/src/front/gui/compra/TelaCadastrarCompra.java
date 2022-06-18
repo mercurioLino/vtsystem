@@ -7,10 +7,8 @@
 package front.gui.compra;
 
 import database.Database;
-import front.gui.TelaConfirmacao;
 import java.awt.Cursor;
-import javax.swing.JOptionPane;
-
+import java.sql.ResultSet;
 /**
  *
  * @author MIGUELCESARPENHAGOME
@@ -26,7 +24,10 @@ public class TelaCadastrarCompra extends javax.swing.JFrame {
         this.setVisible(true);
         this.setLocationRelativeTo(null);
         this.setFocusableWindowState(true);
-        this.setAlwaysOnTop(true);
+    }
+    
+    public void atualizaProdutos(){
+        ResultSet rs = database.exeSearchSQL("SELECT nome FROM vt.produto");
     }
 
     /** This method is called from within the constructor to
