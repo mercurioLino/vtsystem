@@ -15,18 +15,18 @@ import java.awt.Cursor;
  *
  * @author MIGUELCESARPENHAGOME
  */
-public class TelaCadastrarVenda extends javax.swing.JFrame {
+public class TelaAlterarVenda extends javax.swing.JFrame {
 
     Database database;
     javax.swing.JTable tabela;
     
-    public TelaCadastrarVenda(Database database, javax.swing.JTable tabela) {
+    public TelaAlterarVenda(Database database, javax.swing.JTable tabela) {
         initComponents();
         this.database = database;
         this.tabela = tabela;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
-        atualizaCheckBoxProduto(this.database, this.cbProduto);
+        atualizaCheckBoxProduto(this.database, this.cbStatusVenda);
         atualizaCheckBoxCliente(this.database, this.cbCliente);
     }
 
@@ -54,9 +54,8 @@ public class TelaCadastrarVenda extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        cbProduto = new javax.swing.JComboBox<>();
-        bEndereço3 = new javax.swing.JButton();
         bEndereço4 = new javax.swing.JButton();
+        cbProduto1 = new javax.swing.JComboBox<>();
         bMetodoPagamento = new javax.swing.JTextField();
         lData6 = new javax.swing.JLabel();
         tData6 = new javax.swing.JTextField();
@@ -65,9 +64,13 @@ public class TelaCadastrarVenda extends javax.swing.JFrame {
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jDateChooser2 = new com.toedter.calendar.JDateChooser();
         bCadastrarVenda = new javax.swing.JButton();
+        cbStatusVenda = new javax.swing.JComboBox<>();
+        lData4 = new javax.swing.JLabel();
+        jDataEntrega = new com.toedter.calendar.JDateChooser();
+        lData5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Cadastro de Venda");
+        setTitle("Venda");
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(78, 148, 79));
@@ -75,7 +78,7 @@ public class TelaCadastrarVenda extends javax.swing.JFrame {
         lCadastrarPedido.setBackground(new java.awt.Color(255, 255, 255));
         lCadastrarPedido.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lCadastrarPedido.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lCadastrarPedido.setText("VENDA");
+        lCadastrarPedido.setText("Alterar Venda");
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/front/imgs/back-icon.png"))); // NOI18N
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -97,8 +100,8 @@ public class TelaCadastrarVenda extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addComponent(jLabel5)
-                .addGap(309, 309, 309)
-                .addComponent(lCadastrarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(319, 319, 319)
+                .addComponent(lCadastrarPedido)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -223,13 +226,6 @@ public class TelaCadastrarVenda extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        bEndereço3.setBackground(new java.awt.Color(131, 189, 117));
-        bEndereço3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        bEndereço3.setText("+");
-        bEndereço3.setBorderPainted(false);
-        bEndereço3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        bEndereço3.setFocusPainted(false);
-
         bEndereço4.setBackground(new java.awt.Color(131, 189, 117));
         bEndereço4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         bEndereço4.setText("+");
@@ -246,10 +242,10 @@ public class TelaCadastrarVenda extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addComponent(jQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lData2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cbProduto, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(cbProduto1, javax.swing.GroupLayout.PREFERRED_SIZE, 667, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lData2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lData3)
@@ -259,7 +255,7 @@ public class TelaCadastrarVenda extends javax.swing.JFrame {
                                 .addComponent(bEndereço4)))
                         .addGap(34, 34, 34))
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 923, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 934, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel3Layout.createSequentialGroup()
@@ -271,11 +267,6 @@ public class TelaCadastrarVenda extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jLabel1)
                     .addGap(0, 0, Short.MAX_VALUE)))
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(bEndereço3)
-                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -286,14 +277,14 @@ public class TelaCadastrarVenda extends javax.swing.JFrame {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lData3)
                             .addComponent(lData2))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 32, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addGap(0, 18, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cbProduto)
                             .addComponent(tData3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bEndereço4))))
+                            .addComponent(bEndereço4)
+                            .addComponent(cbProduto1))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -308,11 +299,6 @@ public class TelaCadastrarVenda extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jLabel1)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(bEndereço3)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
@@ -344,7 +330,7 @@ public class TelaCadastrarVenda extends javax.swing.JFrame {
 
         bCadastrarVenda.setBackground(new java.awt.Color(78, 148, 79));
         bCadastrarVenda.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        bCadastrarVenda.setText("Cadastrar");
+        bCadastrarVenda.setText("Gravar");
         bCadastrarVenda.setBorderPainted(false);
         bCadastrarVenda.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bCadastrarVenda.setFocusPainted(false);
@@ -361,6 +347,12 @@ public class TelaCadastrarVenda extends javax.swing.JFrame {
                 bCadastrarVendaActionPerformed(evt);
             }
         });
+
+        lData4.setText("Status");
+
+        jDataEntrega.setDateFormatString("dd'/'MM'/'y");
+
+        lData5.setText("Data da Entrega");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -382,7 +374,14 @@ public class TelaCadastrarVenda extends javax.swing.JFrame {
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(jDateChooser1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
                                     .addComponent(jDateChooser2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(0, 0, Short.MAX_VALUE))
+                                .addGap(66, 66, 66)
+                                .addComponent(lData5)
+                                .addGap(18, 18, 18)
+                                .addComponent(jDataEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lData4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cbStatusVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(cbCliente, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -409,14 +408,22 @@ public class TelaCadastrarVenda extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lFornecedor)
                             .addComponent(cbCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lData)
-                            .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lPrevisaoEntrega)
-                            .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jDataEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(lData)
+                                            .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(lPrevisaoEntrega)
+                                            .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(lData5, javax.swing.GroupLayout.Alignment.TRAILING)))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lCodigo)
@@ -428,7 +435,9 @@ public class TelaCadastrarVenda extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lData6)
-                            .addComponent(tData6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(tData6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbStatusVenda)
+                            .addComponent(lData4))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -514,11 +523,12 @@ public class TelaCadastrarVenda extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bCadastrarVenda;
-    private javax.swing.JButton bEndereço3;
     private javax.swing.JButton bEndereço4;
     private javax.swing.JTextField bMetodoPagamento;
     private javax.swing.JComboBox<String> cbCliente;
-    private javax.swing.JComboBox<String> cbProduto;
+    private javax.swing.JComboBox<String> cbProduto1;
+    private javax.swing.JComboBox<String> cbStatusVenda;
+    private com.toedter.calendar.JDateChooser jDataEntrega;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabel1;
@@ -536,6 +546,8 @@ public class TelaCadastrarVenda extends javax.swing.JFrame {
     private javax.swing.JLabel lData1;
     private javax.swing.JLabel lData2;
     private javax.swing.JLabel lData3;
+    private javax.swing.JLabel lData4;
+    private javax.swing.JLabel lData5;
     private javax.swing.JLabel lData6;
     private javax.swing.JLabel lFornecedor;
     private javax.swing.JLabel lMetodoPagamento;
