@@ -51,7 +51,6 @@ public class TelaAlterarVenda extends javax.swing.JFrame {
         lData3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tItensCompra = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         bEndereço4 = new javax.swing.JButton();
@@ -201,9 +200,6 @@ public class TelaAlterarVenda extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tItensCompra);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setText("Valor Total: R$ 00,00");
-
         jPanel5.setBackground(new java.awt.Color(233, 239, 192));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -262,11 +258,6 @@ public class TelaAlterarVenda extends javax.swing.JFrame {
                     .addContainerGap()
                     .addComponent(lData1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(821, Short.MAX_VALUE)))
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel1)
-                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -295,11 +286,6 @@ public class TelaAlterarVenda extends javax.swing.JFrame {
                     .addContainerGap()
                     .addComponent(lData1)
                     .addContainerGap(385, Short.MAX_VALUE)))
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel1)
-                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         bMetodoPagamento.addActionListener(new java.awt.event.ActionListener() {
@@ -531,7 +517,6 @@ public class TelaAlterarVenda extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser jDataEntrega;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private com.toedter.calendar.JDateChooser jDateChooser2;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;

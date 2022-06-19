@@ -3,16 +3,27 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Github/vtsystem/VidalTacos/src/acoes/AtualizaTabelas.java</file>
-            <file>file:/C:/Github/vtsystem/VidalTacos/src/front/gui/produtos/TelaProdutos.java</file>
-            <file>file:/C:/Github/vtsystem/VidalTacos/src/Main.java</file>
-            <file>file:/C:/Github/vtsystem/VidalTacos/src/front/gui/compra/TelaCompras.java</file>
-            <file>file:/C:/Github/vtsystem/VidalTacos/src/front/gui/pj/TelaCadastrarPJ.java</file>
-            <file>file:/C:/Github/vtsystem/VidalTacos/src/front/gui/TelaConfirmacao.java</file>
-            <file>file:/C:/Github/vtsystem/VidalTacos/src/front/gui/funcionario/TelaCadastrarFuncionario.java</file>
-            <file>file:/C:/Github/vtsystem/VidalTacos/src/front/gui/funcionario/TelaFuncionarios.java</file>
-            <file>file:/C:/Github/vtsystem/VidalTacos/src/front/gui/despesa/TelaDespesas.java</file>
-            <file>file:/C:/Github/vtsystem/VidalTacos/src/front/gui/TelaConfirmacaoEncerramento.java</file>
+            <file>file:/C:/Users/Eduardo/Documents/GitHub/vtsystem/VidalTacos/src/front/gui/pj/TelaCadastrarPJ.java</file>
+            <file>file:/C:/Users/Eduardo/Documents/GitHub/vtsystem/VidalTacos/src/front/gui/produtos/TelaCadastrarProduto.java</file>
+            <file>file:/C:/Users/Eduardo/Documents/GitHub/vtsystem/VidalTacos/src/front/gui/produtos/TelaAlterarProduto.java</file>
+            <file>file:/C:/Users/Eduardo/Documents/GitHub/vtsystem/VidalTacos/src/front/gui/funcionario/TelaAlterarFuncionario.java</file>
+            <file>file:/C:/Users/Eduardo/Documents/GitHub/vtsystem/VidalTacos/src/front/gui/compra/TelaCompras.java</file>
+            <file>file:/C:/Users/Eduardo/Documents/GitHub/vtsystem/VidalTacos/src/front/gui/venda/TelaAlterarVenda.java</file>
+            <file>file:/C:/Users/Eduardo/Documents/GitHub/vtsystem/VidalTacos/src/front/gui/TelaConfirmacaoEncerramento.java</file>
+            <file>file:/C:/Users/Eduardo/Documents/GitHub/vtsystem/VidalTacos/src/front/gui/pj/TelaPJ.java</file>
+            <file>file:/C:/Users/Eduardo/Documents/GitHub/vtsystem/VidalTacos/src/front/gui/compra/TelaAlterarCompra.java</file>
+            <file>file:/C:/Users/Eduardo/Documents/GitHub/vtsystem/VidalTacos/src/front/gui/TelaInicial.java</file>
+            <file>file:/C:/Users/Eduardo/Documents/GitHub/vtsystem/VidalTacos/src/front/gui/venda/TelaVendas.java</file>
+            <file>file:/C:/Users/Eduardo/Documents/GitHub/vtsystem/VidalTacos/src/front/gui/venda/TelaCadastrarVenda.java</file>
+            <file>file:/C:/Users/Eduardo/Documents/GitHub/vtsystem/VidalTacos/src/Main.java</file>
+            <file>file:/C:/Users/Eduardo/Documents/GitHub/vtsystem/VidalTacos/src/front/gui/TelaConfirmacao.java</file>
+            <file>file:/C:/Users/Eduardo/Documents/GitHub/vtsystem/VidalTacos/src/front/gui/despesa/TelaDespesas.java</file>
+            <file>file:/C:/Users/Eduardo/Documents/GitHub/vtsystem/VidalTacos/src/front/gui/produtos/TelaProdutos.java</file>
+            <file>file:/C:/Users/Eduardo/Documents/GitHub/vtsystem/VidalTacos/src/front/gui/pj/TelaAlterarPJ.java</file>
+            <file>file:/C:/Users/Eduardo/Documents/GitHub/vtsystem/VidalTacos/src/front/gui/funcionario/TelaCadastrarFuncionario.java</file>
+            <file>file:/C:/Users/Eduardo/Documents/GitHub/vtsystem/VidalTacos/src/front/gui/compra/TelaCadastrarCompra.java</file>
+            <file>file:/C:/Users/Eduardo/Documents/GitHub/vtsystem/VidalTacos/src/front/gui/funcionario/TelaFuncionarios.java</file>
+            <file>file:/C:/Users/Eduardo/Documents/GitHub/vtsystem/VidalTacos/src/front/gui/despesa/TelaCadastrarDespesa.java</file>
         </group>
     </open-files>
 </project-private>
