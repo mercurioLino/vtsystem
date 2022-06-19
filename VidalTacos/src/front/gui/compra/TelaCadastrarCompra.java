@@ -248,9 +248,9 @@ public class TelaCadastrarCompra extends javax.swing.JFrame {
         }
 
         jQuantidade.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
                 jQuantidadeAncestorRemoved(evt);
