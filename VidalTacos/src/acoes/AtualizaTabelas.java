@@ -46,9 +46,9 @@ public class AtualizaTabelas {
                 row.add(rs.getString("codigo"));
                 row.add(rs.getString("cnpjCliente"));
                 row.add(rs.getString("dataDeRealizacao"));
-                row.add(rs.getString("valorTotal"));
+                row.add(rs.getDouble("valorTotal"));
                 row.add(rs.getString("metodoDePagamento"));
-                row.add(rs.getBoolean("concluido"));
+                row.add(rs.getBoolean("concluida"));
                 model.addRow(row);
             }
         }catch (Exception e){
@@ -99,13 +99,13 @@ public class AtualizaTabelas {
     public static void atualizaTabelaDespesa(Database database, javax.swing.JTable jTable){
         DefaultTableModel model = (DefaultTableModel)jTable.getModel();
         model.setRowCount(0);
-        ResultSet rs = database.exeSearchSQL("SELECT * FROM vt.funcionario");
+        ResultSet rs = database.exeSearchSQL("SELECT * FROM vt.despesa");
         try{
             while(rs.next()){
                 Vector row = new Vector();
                 row.add(rs.getString("data"));
                 row.add(rs.getString("descricao"));
-                row.add(rs.getString("valor"));
+                row.add(rs.getDouble("valor"));
                 model.addRow(row);
             }
         }catch (Exception e){
@@ -122,7 +122,7 @@ public class AtualizaTabelas {
                 Vector row = new Vector();
                 row.add(rs.getString("dataDeRealizacao"));
                 row.add(rs.getString("cnpjFornecedor"));
-                row.add(rs.getString("valorTotal"));
+                row.add(rs.getDouble("valorTotal"));
                 row.add(rs.getBoolean("concluida"));
                 model.addRow(row);
             }
@@ -130,4 +130,6 @@ public class AtualizaTabelas {
             e.printStackTrace();
         }
     }
+    
+    
 }

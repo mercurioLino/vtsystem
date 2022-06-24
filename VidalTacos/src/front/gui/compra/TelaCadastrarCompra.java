@@ -7,11 +7,17 @@
 package front.gui.compra;
 
 import static acoes.AtualizaCheckBox.atualizaCheckBoxFornecedor;
-import static acoes.AtualizaCheckBox.atualizaCheckBoxProduto;
+import static acoes.Buscas.buscaPJPorRazao;
 import database.Database;
+import front.gui.TelaConfirmacao;
 import java.awt.Cursor;
-import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Vector;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import objetos.Compra;
+import objetos.MateriaisPorCompra;
 /**
  *
  * @author MIGUELCESARPENHAGOME
@@ -29,23 +35,8 @@ public class TelaCadastrarCompra extends javax.swing.JFrame {
         this.setVisible(true);
         this.setLocationRelativeTo(null);
         atualizaCheckBoxFornecedor(this.database, this.cbFornecedor);
-        atualizaCheckBoxProduto(this.database, this.cbProduto);
     }
-    
-    public void atualizaProdutos(){
-        ResultSet rs = database.exeSearchSQL("SELECT nome FROM vt.produto");
-        Vector data = new Vector();
-        try{
-            while(rs.next()){
-                data.add(rs.getString("nome"));
-            }
-            this.cbProduto.setModel(new javax.swing.DefaultComboBoxModel(data));
-        } catch (Exception e){
-            e.printStackTrace();
-        }
-            
-    }
-
+     
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -62,21 +53,24 @@ public class TelaCadastrarCompra extends javax.swing.JFrame {
         lFornecedor = new javax.swing.JLabel();
         cbFornecedor = new javax.swing.JComboBox<>();
         lData = new javax.swing.JLabel();
-        bEndereço2 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         lData2 = new javax.swing.JLabel();
         lData1 = new javax.swing.JLabel();
         lData3 = new javax.swing.JLabel();
-        tData3 = new javax.swing.JTextField();
-        bEndereço3 = new javax.swing.JButton();
+        tValor = new javax.swing.JTextField();
+        bCadMaterial = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tItensCompra = new javax.swing.JTable();
         jQuantidade = new javax.swing.JSpinner();
-        cbProduto = new javax.swing.JComboBox<>();
+        tMaterial = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         bCadastrarCompra = new javax.swing.JButton();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        dDataRealizacao = new com.toedter.calendar.JDateChooser();
+        jLabel3 = new javax.swing.JLabel();
+        tCodigo = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        dDataPrevisao = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Compra");
@@ -145,95 +139,61 @@ public class TelaCadastrarCompra extends javax.swing.JFrame {
             }
         });
 
-        lData.setText("Data");
-
-        bEndereço2.setBackground(new java.awt.Color(131, 189, 117));
-        bEndereço2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        bEndereço2.setText("+ Fornecedor");
-        bEndereço2.setBorderPainted(false);
-        bEndereço2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        bEndereço2.setFocusPainted(false);
-        bEndereço2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                bEndereço2MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                bEndereço2MouseExited(evt);
-            }
-        });
-        bEndereço2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bEndereço2ActionPerformed(evt);
-            }
-        });
+        lData.setText("Data de Realização");
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        lData2.setText("Produto");
+        lData2.setText("Material");
 
         lData1.setText("Quantidade");
 
         lData3.setText("Valor Unitário");
 
-        tData3.addActionListener(new java.awt.event.ActionListener() {
+        tValor.setText("0");
+        tValor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tData3ActionPerformed(evt);
+                tValorActionPerformed(evt);
             }
         });
 
-        bEndereço3.setBackground(new java.awt.Color(131, 189, 117));
-        bEndereço3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        bEndereço3.setText("+");
-        bEndereço3.setBorderPainted(false);
-        bEndereço3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        bEndereço3.setFocusPainted(false);
-        bEndereço3.addMouseListener(new java.awt.event.MouseAdapter() {
+        bCadMaterial.setBackground(new java.awt.Color(131, 189, 117));
+        bCadMaterial.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        bCadMaterial.setText("+");
+        bCadMaterial.setBorderPainted(false);
+        bCadMaterial.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        bCadMaterial.setFocusPainted(false);
+        bCadMaterial.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                bEndereço3MouseEntered(evt);
+                bCadMaterialMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                bEndereço3MouseExited(evt);
+                bCadMaterialMouseExited(evt);
             }
         });
-        bEndereço3.addActionListener(new java.awt.event.ActionListener() {
+        bCadMaterial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bEndereço3ActionPerformed(evt);
+                bCadMaterialActionPerformed(evt);
             }
         });
 
         tItensCompra.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Quantidade", "Produto", "Valor Un.", "Total"
+                "Quantidade", "Material", "Valor Unitário", "Total"
             }
         ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Object.class, java.lang.Double.class, java.lang.Double.class
+            };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false
             };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
@@ -247,10 +207,11 @@ public class TelaCadastrarCompra extends javax.swing.JFrame {
             tItensCompra.getColumnModel().getColumn(3).setResizable(false);
         }
 
+        jQuantidade.setValue(1);
         jQuantidade.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
                 jQuantidadeAncestorRemoved(evt);
@@ -264,7 +225,7 @@ public class TelaCadastrarCompra extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 990, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -275,14 +236,14 @@ public class TelaCadastrarCompra extends javax.swing.JFrame {
                                 .addComponent(lData2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(91, 91, 91))
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(cbProduto, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(18, 18, 18)))
+                                .addComponent(tMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, 703, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lData3)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(tData3, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tValor, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                                .addComponent(bEndereço3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(bCadMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(11, 11, 11))))
         );
         jPanel3Layout.setVerticalGroup(
@@ -294,12 +255,11 @@ public class TelaCadastrarCompra extends javax.swing.JFrame {
                     .addComponent(lData1)
                     .addComponent(lData3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(tData3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(bEndereço3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jQuantidade, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE))
-                    .addComponent(cbProduto))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tValor, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bCadMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jQuantidade, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
+                    .addComponent(tMaterial))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -348,7 +308,13 @@ public class TelaCadastrarCompra extends javax.swing.JFrame {
             }
         });
 
-        jDateChooser1.setDateFormatString("dd'/'MM'/'y");
+        dDataRealizacao.setDateFormatString("dd'/'MM'/'y");
+
+        jLabel3.setText("Código");
+
+        jLabel4.setText("Previsão de Entrega");
+
+        dDataPrevisao.setDateFormatString("dd'/'MM'/'y");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -358,24 +324,30 @@ public class TelaCadastrarCompra extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lData)
-                            .addComponent(lFornecedor))
-                        .addGap(28, 28, 28)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(cbFornecedor, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addComponent(bEndereço2)
-                        .addGap(38, 38, 38))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap())))
+                        .addContainerGap())
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lFornecedor)
+                            .addComponent(jLabel3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cbFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 629, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(46, 46, 46)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(lData)
+                                .addGap(18, 18, 18)
+                                .addComponent(dDataRealizacao, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(dDataPrevisao, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(22, 22, 22))))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(bCadastrarCompra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -385,15 +357,19 @@ public class TelaCadastrarCompra extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lFornecedor)
-                            .addComponent(cbFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bEndereço2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(lData, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lFornecedor)
+                        .addComponent(cbFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lData, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dDataRealizacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel3)
+                        .addComponent(tCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel4))
+                    .addComponent(dDataPrevisao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -437,7 +413,35 @@ public class TelaCadastrarCompra extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel2MouseExited
 
     private void bCadastrarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCadastrarCompraActionPerformed
-        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel)tItensCompra.getModel();
+        if(this.tCodigo.getText().isEmpty() || 
+                this.dDataRealizacao.getDate().toString().isEmpty() ||  
+                this.dDataPrevisao.getDate().toString().isEmpty() ||  
+                this.cbFornecedor.getSelectedItem().toString().isEmpty() ||
+                model.getRowCount() == 0){
+            JOptionPane.showMessageDialog(null, "Erro de Preenchimento:" + "Campos não preenchidos", "VTSystem", 2);
+            
+        } else{
+            Compra compra = new Compra(
+                    this.tCodigo.getText(),
+                    this.dDataRealizacao.getDate().toString(),
+                    this.dDataPrevisao.getDate().toString(),
+                    buscaPJPorRazao(this.database, this.cbFornecedor.getSelectedItem().toString()).getCnpj()
+            );
+            
+            List<MateriaisPorCompra> materiaisPorCompra = new ArrayList<>();
+            for(int i = 0; i < model.getRowCount(); i++){
+                MateriaisPorCompra mpc = new MateriaisPorCompra(
+                    model.getValueAt(i, 1).toString(),
+                    Integer.parseInt(model.getValueAt(i, 0).toString()),
+                    this.tCodigo.getText()
+                );
+                compra.setValorTotal(compra.getValorTotal() + Double.parseDouble(model.getValueAt(i, 3).toString()));
+                materiaisPorCompra.add(mpc);
+            }
+            System.out.println(compra.getValorTotal());
+            new TelaConfirmacao(this.database, this.tabela, this, compra, materiaisPorCompra);
+        }
     }//GEN-LAST:event_bCadastrarCompraActionPerformed
 
     private void bCadastrarCompraMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bCadastrarCompraMouseExited
@@ -452,37 +456,31 @@ public class TelaCadastrarCompra extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jQuantidadeAncestorRemoved
 
-    private void bEndereço3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEndereço3ActionPerformed
-        
-    }//GEN-LAST:event_bEndereço3ActionPerformed
+    private void bCadMaterialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCadMaterialActionPerformed
+        if(this.jQuantidade.getValue().toString().isEmpty() || this.tMaterial.getText().isEmpty() || this.tValor.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Erro de Preenchimento: " + "Preencha todos os campos", "VTSystem", 2);
+        } else{
+            DefaultTableModel model = (DefaultTableModel)tItensCompra.getModel();
+            Vector row = new Vector();
+            row.add(this.jQuantidade.getValue().toString());
+            row.add(this.tMaterial.getText());
+            row.add(this.tValor.getText());
+            row.add(Integer.parseInt(this.jQuantidade.getValue().toString()) * Double.parseDouble(this.tValor.getText()));
+            model.addRow(row);
+        }
+    }//GEN-LAST:event_bCadMaterialActionPerformed
 
-    private void bEndereço3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bEndereço3MouseExited
+    private void bCadMaterialMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bCadMaterialMouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_bEndereço3MouseExited
+    }//GEN-LAST:event_bCadMaterialMouseExited
 
-    private void bEndereço3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bEndereço3MouseEntered
+    private void bCadMaterialMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bCadMaterialMouseEntered
         this.setCursor(Cursor.HAND_CURSOR);
-    }//GEN-LAST:event_bEndereço3MouseEntered
+    }//GEN-LAST:event_bCadMaterialMouseEntered
 
-    private void tData3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tData3ActionPerformed
+    private void tValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tValorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tData3ActionPerformed
-
-    private void bEndereço2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEndereço2ActionPerformed
-
-    }//GEN-LAST:event_bEndereço2ActionPerformed
-
-    private void bEndereço2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bEndereço2MouseExited
-        //bEntrar.setBackground(new Color(58, 65, 84));
-        //bSair.setForeground(Color.WHITE);
-        this.setCursor(Cursor.DEFAULT_CURSOR);
-    }//GEN-LAST:event_bEndereço2MouseExited
-
-    private void bEndereço2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bEndereço2MouseEntered
-        //bEntrar.setBackground(new Color(235, 235, 235));
-        //bEntrar.setForeground(new Color(58, 65, 84));
-        this.setCursor(Cursor.HAND_CURSOR);
-    }//GEN-LAST:event_bEndereço2MouseEntered
+    }//GEN-LAST:event_tValorActionPerformed
 
     private void cbFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbFornecedorActionPerformed
         // TODO add your handling code here:
@@ -498,14 +496,15 @@ public class TelaCadastrarCompra extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bCadMaterial;
     private javax.swing.JButton bCadastrarCompra;
-    private javax.swing.JButton bEndereço2;
-    private javax.swing.JButton bEndereço3;
     private javax.swing.JComboBox<String> cbFornecedor;
-    private javax.swing.JComboBox<String> cbProduto;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
+    private com.toedter.calendar.JDateChooser dDataPrevisao;
+    private com.toedter.calendar.JDateChooser dDataRealizacao;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -518,8 +517,10 @@ public class TelaCadastrarCompra extends javax.swing.JFrame {
     private javax.swing.JLabel lData2;
     private javax.swing.JLabel lData3;
     private javax.swing.JLabel lFornecedor;
-    private javax.swing.JTextField tData3;
+    private javax.swing.JTextField tCodigo;
     private javax.swing.JTable tItensCompra;
+    private javax.swing.JTextField tMaterial;
+    private javax.swing.JTextField tValor;
     // End of variables declaration//GEN-END:variables
 
 }

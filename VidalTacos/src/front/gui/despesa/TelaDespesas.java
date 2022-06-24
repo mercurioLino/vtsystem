@@ -24,7 +24,7 @@ public class TelaDespesas extends javax.swing.JFrame {
         initComponents();
         this.database = database;
         this.setVisible(true);
-        atualizaTabelaDespesa(this.database, this.tDespesas);
+        atualizaTabelaDespesa(this.database, this.tDespesas1);
     }
 
     /**
@@ -50,7 +50,7 @@ public class TelaDespesas extends javax.swing.JFrame {
         lAte1 = new javax.swing.JLabel();
         jDataInicial = new com.toedter.calendar.JDateChooser();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tDespesas1 = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         bGerarPDF = new javax.swing.JButton();
         bInserir = new javax.swing.JButton();
@@ -151,12 +151,9 @@ public class TelaDespesas extends javax.swing.JFrame {
 
         jDataInicial.setDateFormatString("dd'/'MM'/'y");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tDespesas1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
                 "Data", "Descrição", "Valor"
@@ -170,11 +167,11 @@ public class TelaDespesas extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
-            jTable1.getColumnModel().getColumn(1).setResizable(false);
-            jTable1.getColumnModel().getColumn(2).setResizable(false);
+        jScrollPane2.setViewportView(tDespesas1);
+        if (tDespesas1.getColumnModel().getColumnCount() > 0) {
+            tDespesas1.getColumnModel().getColumn(0).setResizable(false);
+            tDespesas1.getColumnModel().getColumn(1).setResizable(false);
+            tDespesas1.getColumnModel().getColumn(2).setResizable(false);
         }
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -310,7 +307,7 @@ public class TelaDespesas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInserirActionPerformed
-        new TelaCadastrarDespesa(database, this.tDespesas);
+        new TelaCadastrarDespesa(database, this.tDespesas1);
     }//GEN-LAST:event_bInserirActionPerformed
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
@@ -385,10 +382,10 @@ public class TelaDespesas extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lAte1;
     private javax.swing.JLabel lCadastrarPedido;
     private javax.swing.JLabel lPeriodo1;
     private javax.swing.JTable tDespesas;
+    private javax.swing.JTable tDespesas1;
     // End of variables declaration//GEN-END:variables
 }

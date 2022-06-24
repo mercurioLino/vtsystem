@@ -48,8 +48,9 @@ public class InsertsDB {
                 venda.getPrevisaoDeEntrega() + "', '" +
                 venda.getMetodoDePagamento() + "', '" +
                 venda.getPrazoPagamento() + "', '" + 
+                venda.getValorTotal() + "', '" + 
                 venda.getCnpjCliente() + "'";
-        String sql = "INSERT INTO vt.venda (codigo, dataderealizacao, previsaodeentrega, metododepagamento, prazodepagamento, cnpjcliente) VALUES(" + values + ");";
+        String sql = "INSERT INTO vt.venda (codigo, dataderealizacao, previsaodeentrega, metododepagamento, prazodepagamento, valortotal, cnpjcliente) VALUES(" + values + ");";
         database.exeSQL(sql);
     }
     
@@ -107,8 +108,9 @@ public class InsertsDB {
         values = "'" + compra.getCodigo() + "', '" +
                 compra.getDataDeRealizacao() + "', '" +
                 compra.getPrevisaoDeEntrega() + "', '" +
+                compra.getValorTotal() + "', '" +
                 compra.getCnpjFornecedor() + "'";
-        String sql = "INSERT INTO vt.compra (codigo, dataderealizacao, previsaodeentrega, cnpjfornecedor) VALUES(" + values + ");";
+        String sql = "INSERT INTO vt.compra (codigo, dataderealizacao, previsaodeentrega, valortotal, cnpjfornecedor) VALUES(" + values + ");";
         database.exeSQL(sql);
     }
     

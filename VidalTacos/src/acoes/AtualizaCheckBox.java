@@ -17,6 +17,7 @@ public class AtualizaCheckBox {
     public static void atualizaCheckBoxProduto(Database database, javax.swing.JComboBox<String> comboBox){
         ResultSet rs = database.exeSearchSQL("SELECT * FROM vt.produto");
         Vector data = new Vector();
+        data.add("");
         try{
             while(rs.next()){
                 data.add(rs.getString("nome"));
@@ -30,6 +31,7 @@ public class AtualizaCheckBox {
     public static void atualizaCheckBoxCliente(Database database, javax.swing.JComboBox<String> comboBox){
         ResultSet rs = database.exeSearchSQL("SELECT * FROM vt.pessoajuridica WHERE cliente = true");
         Vector data = new Vector();
+        data.add("");
         try{
             while(rs.next()){
                 data.add(rs.getString("razaoSocial"));
@@ -43,6 +45,7 @@ public class AtualizaCheckBox {
     public static void atualizaCheckBoxFornecedor(Database database, javax.swing.JComboBox<String> comboBox){
         ResultSet rs = database.exeSearchSQL("SELECT * FROM vt.pessoajuridica WHERE fornecedor = true");
         Vector data = new Vector();
+        data.add("");
         try{
             while(rs.next()){
                 data.add(rs.getString("razaoSocial"));

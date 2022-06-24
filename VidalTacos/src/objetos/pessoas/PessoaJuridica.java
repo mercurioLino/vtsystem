@@ -27,7 +27,7 @@ public class PessoaJuridica extends Pessoa implements Serializable{
         this.cliente = cliente;
         this.fornecedor = fornecedor;
     }
-    
+        
     public String getNomeFantasia() {
         return nomeFantasia;
     }

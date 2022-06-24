@@ -20,6 +20,16 @@ public class Produto implements Serializable{
     private double valorUnitario;
     private boolean producao;
 
+    public Produto(String codigo, String nome, String descricao, String modelo, String cor, double valorUnitario, boolean producao) {
+        this.codigo = codigo;
+        this.nome = nome;
+        this.descricao = descricao;
+        this.modelo = modelo;
+        this.cor = cor;
+        this.valorUnitario = valorUnitario;
+        this.producao = producao;
+    }
+    
     public Produto(String codigo, String nome, String descricao, String modelo, String cor, double valorUnitario) {
         this.codigo = codigo;
         this.nome = nome;

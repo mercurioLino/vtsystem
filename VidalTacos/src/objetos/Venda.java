@@ -30,10 +30,17 @@ public class Venda implements Serializable{
         this.codigo = codigo;
         this.dataDeRealizacao = dataDeRealizacao;
         this.previsaoDeEntrega = previsaoDeEntrega;
-        this.dataDeEntrega = dataDeEntrega;
         this.metodoDePagamento = metodoDePagamento;
         this.prazoPagamento = prazoPagamento;
-        this.concluido = concluido;
+        this.cnpjCliente = cnpjCliente;
+    }
+    
+    public Venda(String codigo, String dataDeRealizacao, String previsaoDeEntrega, String metodoDePagamento, String prazoPagamento, String cnpjCliente) {
+        this.codigo = codigo;
+        this.dataDeRealizacao = dataDeRealizacao;
+        this.previsaoDeEntrega = previsaoDeEntrega;
+        this.metodoDePagamento = metodoDePagamento;
+        this.prazoPagamento = prazoPagamento;
         this.cnpjCliente = cnpjCliente;
     }
 

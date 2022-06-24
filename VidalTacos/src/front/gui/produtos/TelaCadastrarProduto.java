@@ -9,6 +9,7 @@ import database.Database;
 import static acoes.RetornaTextoTextField.retornaTextoTextField;
 import front.gui.TelaConfirmacao;
 import java.awt.Cursor;
+import javax.swing.JOptionPane;
 import objetos.Produto;
 
 /**
@@ -348,15 +349,19 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
     }//GEN-LAST:event_tCodigoActionPerformed
 
     private void bEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEntrarActionPerformed
-        Produto produto = new Produto(
-                this.tCodigo.getText(),
-                retornaTextoTextField(this.tNome),
-                retornaTextoTextField(this.tDescricao),
-                retornaTextoTextField(this.tModelo),
-                retornaTextoTextField(this.tCor),
-                Double.parseDouble(this.tValorUnitario.getText())
-        );
-        new TelaConfirmacao(this.database, this.tabela, this, produto);
+        if(this.tCodigo.getText().length() != 5){
+            JOptionPane.showMessageDialog(null, "Erro de Preenchimento: " + "O código deve conter apenas 5 caracteres", "VTSystem", 2);
+        } else{
+            Produto produto = new Produto(
+                    this.tCodigo.getText(),
+                    retornaTextoTextField(this.tNome),
+                    retornaTextoTextField(this.tDescricao),
+                    retornaTextoTextField(this.tModelo),
+                    retornaTextoTextField(this.tCor),
+                    Double.parseDouble(this.tValorUnitario.getText())
+            );
+            new TelaConfirmacao(this.database, this.tabela, this, produto);
+        }
     }//GEN-LAST:event_bEntrarActionPerformed
 
     private void bEntrarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bEntrarMouseExited

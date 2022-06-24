@@ -14,9 +14,12 @@ import static acoes.AtualizaTabelas.atualizaTabelaVenda;
 import database.Database;
 import static database.InsertsDB.*;
 import java.awt.Cursor;
+import java.util.List;
 import objetos.Compra;
 import objetos.Despesa;
+import objetos.MateriaisPorCompra;
 import objetos.Produto;
+import objetos.ProdutosPorVenda;
 import objetos.Venda;
 import objetos.pessoas.Funcionario;
 import objetos.pessoas.PessoaJuridica;
@@ -35,6 +38,8 @@ public class TelaConfirmacao extends javax.swing.JFrame {
     Venda venda;
     Produto produto;
     Despesa despesa;
+    List<ProdutosPorVenda> ppv;
+    List<MateriaisPorCompra> mpc;
         
     javax.swing.JTable tabela;
     javax.swing.JFrame telaCadastro;
@@ -63,25 +68,27 @@ public class TelaConfirmacao extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
     
-    public TelaConfirmacao(Database database, javax.swing.JTable tabela, javax.swing.JFrame telaCadastro, Compra compra) {
+    public TelaConfirmacao(Database database, javax.swing.JTable tabela, javax.swing.JFrame telaCadastro, Compra compra, List<MateriaisPorCompra> mpc) {
         initComponents();
         this.database = database;
         
         this.tabela = tabela;
         this.telaCadastro = telaCadastro;
         this.compra = compra;
+        this.mpc = mpc;
         
         this.setVisible(true);
         this.setLocationRelativeTo(null);
     }
     
-    public TelaConfirmacao(Database database, javax.swing.JTable tabela, javax.swing.JFrame telaCadastro, Venda venda) {
+    public TelaConfirmacao(Database database, javax.swing.JTable tabela, javax.swing.JFrame telaCadastro, Venda venda, List<ProdutosPorVenda> ppv) {
         initComponents();
         this.database = database;
         
         this.tabela = tabela;
         this.telaCadastro = telaCadastro;
         this.venda = venda;
+        this.ppv = ppv;
         
         this.setVisible(true);
         this.setLocationRelativeTo(null);
@@ -258,28 +265,38 @@ public class TelaConfirmacao extends javax.swing.JFrame {
     }//GEN-LAST:event_bSimMouseExited
 
     private void bSimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSimActionPerformed
-        if(this.telaCadastro.getClass().getTypeName().matches("front.gui.pj.TelaCadastrarPJ")){
-            insertPJ(this.database, this.pj);
-            insertEnderecoPJ(this.database, this.pj.getEndereco());
-            atualizaTabelaPJ(this.database, this.tabela);
-        } else if(this.telaCadastro.getClass().getTypeName().matches("front.gui.funcionario.TelaCadastrarFuncionario")){
-            insertFuncionario(this.database, this.funcionario);
-            insertEnderecoPJ(this.database, this.funcionario.getEndereco());
-            atualizaTabelaFuncionario(this.database, this.tabela);
-        } else if(this.telaCadastro.getClass().getTypeName().matches("front.gui.produtos.TelaCadastrarProduto")){
-            insertProduto(this.database, this.produto);
-            atualizaTabelaProduto(this.database, this.tabela);
-        } else if(this.telaCadastro.getClass().getTypeName().matches("front.gui.despesa.TelaCadastrarDespesa")){
-            insertDespesa(this.database, this.despesa);
-            atualizaTabelaDespesa(this.database, this.tabela);
-        } else if(this.telaCadastro.getClass().getTypeName().matches("front.gui.compra.TelaCadastrarCompra")){
-            insertCompra(this.database, this.compra);
-            atualizaTabelaCompra(this.database, this.tabela);
-        } else if(this.telaCadastro.getClass().getTypeName().matches("front.gui.venda.TelaCadastrarVenda")){
-            insertVenda(this.database, this.venda);
-            atualizaTabelaVenda(this.database, this.tabela);
-        } 
-        
+        try{
+            if(this.telaCadastro.getClass().getTypeName().matches("front.gui.pj.TelaCadastrarPJ")){
+                insertPJ(this.database, this.pj);
+                insertEnderecoPJ(this.database, this.pj.getEndereco());
+                atualizaTabelaPJ(this.database, this.tabela);
+            } else if(this.telaCadastro.getClass().getTypeName().matches("front.gui.funcionario.TelaCadastrarFuncionario")){
+                insertFuncionario(this.database, this.funcionario);
+                insertEnderecoPJ(this.database, this.funcionario.getEndereco());
+                atualizaTabelaFuncionario(this.database, this.tabela);
+            } else if(this.telaCadastro.getClass().getTypeName().matches("front.gui.produtos.TelaCadastrarProduto")){
+                insertProduto(this.database, this.produto);
+                atualizaTabelaProduto(this.database, this.tabela);
+            } else if(this.telaCadastro.getClass().getTypeName().matches("front.gui.despesa.TelaCadastrarDespesa")){
+                insertDespesa(this.database, this.despesa);
+                atualizaTabelaDespesa(this.database, this.tabela);
+            } else if(this.telaCadastro.getClass().getTypeName().matches("front.gui.compra.TelaCadastrarCompra")){
+                insertCompra(this.database, this.compra);
+                atualizaTabelaCompra(this.database, this.tabela);
+                for(int i = 0; i < this.mpc.size(); i++){
+                    insertMateriaisPorCompra(this.database, this.mpc.get(i));
+                }
+            } else if(this.telaCadastro.getClass().getTypeName().matches("front.gui.venda.TelaCadastrarVenda")){
+                insertVenda(this.database, this.venda);
+                for(int i = 0; i < this.ppv.size(); i++){
+                    insertProdutosPorVenda(this.database, this.ppv.get(i));
+                }
+                atualizaTabelaVenda(this.database, this.tabela);
+            }
+        }catch(Exception e){
+                e.printStackTrace();
+        }
+
         this.telaCadastro.dispose();
         this.dispose();
     }//GEN-LAST:event_bSimActionPerformed
