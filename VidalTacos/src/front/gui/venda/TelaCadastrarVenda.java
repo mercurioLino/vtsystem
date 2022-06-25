@@ -467,15 +467,16 @@ public class TelaCadastrarVenda extends javax.swing.JFrame {
     private void bCadastrarVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCadastrarVendaActionPerformed
         DefaultTableModel model = (DefaultTableModel)tItensVenda.getModel();
         if(this.tCodigo.getText().isEmpty() || 
-                this.dRealizacao.getDate().toString().isEmpty() || 
-                this.dPrevisao.getDate().toString().isEmpty() || 
+                this.dRealizacao == null || 
+                this.dPrevisao == null || 
                 this.tMetodoPagamento.getText().isEmpty() || 
-                this.dPrazo.getDate().toString().isEmpty() ||
+                this.dPrazo == null ||
                 this.cbCliente.getSelectedItem().toString().isEmpty() ||
                 model.getRowCount() == 0){
-            JOptionPane.showMessageDialog(null, "Erro de Preenchimento:" + "Campos não preenchidos", "VTSystem", 2);
-            
-        } else{
+            JOptionPane.showMessageDialog(null, "Erro de Preenchimento: " + "Campos não preenchidos", "VTSystem", 2);
+        } else if(this.tCodigo.getText().length() != 5){
+            JOptionPane.showMessageDialog(null, "Erro de Preenchimento: " + "O campo CÓDIGO deve conter exatamente 5 dígitos", "VTSystem", 2);
+        }else{
             Venda venda = new Venda(
                 this.tCodigo.getText(),
                 this.dRealizacao.getDate().toString(),
