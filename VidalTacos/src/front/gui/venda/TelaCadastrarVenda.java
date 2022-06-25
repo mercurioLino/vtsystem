@@ -17,6 +17,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 import javax.swing.JOptionPane;
+import javax.swing.SpinnerModel;
+import javax.swing.SpinnerNumberModel;
 import javax.swing.table.DefaultTableModel;
 import objetos.ProdutosPorVenda;
 import objetos.Venda;
@@ -38,6 +40,12 @@ public class TelaCadastrarVenda extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         atualizaCheckBoxProduto(this.database, this.cbProduto);
         atualizaCheckBoxCliente(this.database, this.cbCliente);
+        int min = 0;
+        int max = 100000000;
+        int step = 1;
+        int initValue = 0;
+        SpinnerModel model = new SpinnerNumberModel(initValue, min, max, step);
+        this.jQuantidade.setModel(model);
     }
 
     @SuppressWarnings("unchecked")
@@ -120,7 +128,6 @@ public class TelaCadastrarVenda extends javax.swing.JFrame {
 
         lFornecedor.setText("Cliente");
 
-        cbCliente.setBackground(new java.awt.Color(131, 189, 117));
         cbCliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
         cbCliente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -187,6 +194,7 @@ public class TelaCadastrarVenda extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tItensVenda.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tItensVenda);
         if (tItensVenda.getColumnModel().getColumnCount() > 0) {
             tItensVenda.getColumnModel().getColumn(0).setResizable(false);

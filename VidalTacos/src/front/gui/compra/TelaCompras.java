@@ -157,6 +157,7 @@ public class TelaCompras extends javax.swing.JFrame {
             }
         });
         tCompras.setGridColor(new java.awt.Color(233, 239, 192));
+        tCompras.getTableHeader().setReorderingAllowed(false);
         tCompras.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 tComprasMouseEntered(evt);

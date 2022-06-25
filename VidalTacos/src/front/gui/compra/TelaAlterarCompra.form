@@ -129,7 +129,7 @@
                           <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="jDateChooser1" min="-2" pref="115" max="-2" attributes="0"/>
+                                  <Component id="jData" min="-2" pref="115" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="lFornecedor1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -173,7 +173,7 @@
                                   <Component id="cbStatusCompra" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="lFornecedor1" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jDateChooser1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jData" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Component id="lData" min="-2" pref="22" max="-2" attributes="0"/>
@@ -389,13 +389,16 @@
                       </TableColumnModel>
                     </Property>
                     <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
-                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                      <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
                     </Property>
                   </Properties>
                 </Component>
               </SubComponents>
             </Container>
             <Component class="javax.swing.JSpinner" name="jQuantidade">
+              <Properties>
+                <Property name="requestFocusEnabled" type="boolean" value="false"/>
+              </Properties>
               <Events>
                 <EventHandler event="ancestorRemoved" listener="javax.swing.event.AncestorListener" parameters="javax.swing.event.AncestorEvent" handler="jQuantidadeAncestorRemoved"/>
               </Events>
@@ -467,7 +470,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bCadastrarCompraActionPerformed"/>
           </Events>
         </Component>
-        <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
+        <Component class="com.toedter.calendar.JDateChooser" name="jData">
           <Properties>
             <Property name="dateFormatString" type="java.lang.String" value="dd&apos;/&apos;MM&apos;/&apos;y"/>
           </Properties>

@@ -28,7 +28,11 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="jPanel1" max="32767" attributes="0"/>
-          <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel2" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -141,30 +145,25 @@
                                       <Component id="tCEP" alignment="1" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Group type="102" attributes="0">
+                              <Component id="lSalario3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lSalario4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lSalario2" min="-2" max="-2" attributes="0"/>
+                              <Component id="lSalario1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lSalario6" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="lSalario" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lCNPJ" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lNomeFantasia" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lNome" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="tNome" pref="411" max="32767" attributes="0"/>
-                                              <Component id="tCargo" max="32767" attributes="0"/>
-                                              <Component id="tCPF" max="32767" attributes="0"/>
-                                              <Component id="tSalario" alignment="1" max="32767" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Component id="lSalario3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lSalario4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lSalario2" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lSalario1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lSalario6" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lSalario" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lCNPJ" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lNomeFantasia" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lNome" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="tNome" max="32767" attributes="0"/>
+                                      <Component id="tCargo" max="32767" attributes="0"/>
+                                      <Component id="tCPF" max="32767" attributes="0"/>
+                                      <Component id="tSalario" alignment="0" min="-2" pref="475" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
@@ -174,14 +173,14 @@
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="jDataDeDesligamento" min="-2" pref="129" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="lCEP2" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="cUF" max="32767" attributes="0"/>
-                              </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="lCEP2" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="cUF" min="-2" pref="129" max="-2" attributes="0"/>
+                                      </Group>
                                       <Group type="102" alignment="1" attributes="0">
                                           <Component id="tDataDeNascimento" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
@@ -274,8 +273,10 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="tCidade" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="lCEP2" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="cUF" alignment="0" min="-2" pref="29" max="-2" attributes="0"/>
+                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                  <Component id="cUF" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                                  <Component id="lCEP2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="tBairro" min="-2" max="-2" attributes="0"/>
@@ -308,7 +309,7 @@
                           <EmptySpace pref="24" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="10" max="32767" attributes="0"/>
+                  <EmptySpace pref="26" max="32767" attributes="0"/>
                   <Component id="bCadastrarFuncionario" min="-2" pref="50" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -488,9 +489,6 @@
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Endere&#xe7;o:"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JComboBox" name="cUF">
           <Properties>

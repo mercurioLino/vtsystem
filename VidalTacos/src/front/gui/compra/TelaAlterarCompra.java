@@ -76,7 +76,7 @@ public class TelaAlterarCompra extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         bCadastrarCompra = new javax.swing.JButton();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jData = new com.toedter.calendar.JDateChooser();
         cbStatusCompra = new javax.swing.JComboBox<>();
         lFornecedor1 = new javax.swing.JLabel();
 
@@ -241,6 +241,7 @@ public class TelaAlterarCompra extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tItensCompra.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tItensCompra);
         if (tItensCompra.getColumnModel().getColumnCount() > 0) {
             tItensCompra.getColumnModel().getColumn(0).setResizable(false);
@@ -249,6 +250,7 @@ public class TelaAlterarCompra extends javax.swing.JFrame {
             tItensCompra.getColumnModel().getColumn(3).setResizable(false);
         }
 
+        jQuantidade.setRequestFocusEnabled(false);
         jQuantidade.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
             }
@@ -350,7 +352,7 @@ public class TelaAlterarCompra extends javax.swing.JFrame {
             }
         });
 
-        jDateChooser1.setDateFormatString("dd'/'MM'/'y");
+        jData.setDateFormatString("dd'/'MM'/'y");
 
         cbStatusCompra.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -383,7 +385,7 @@ public class TelaAlterarCompra extends javax.swing.JFrame {
                         .addGap(28, 28, 28)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jData, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(lFornecedor1)
                                 .addGap(18, 18, 18)
@@ -416,7 +418,7 @@ public class TelaAlterarCompra extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(cbStatusCompra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(lFornecedor1))
-                            .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(lData, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -475,6 +477,7 @@ public class TelaAlterarCompra extends javax.swing.JFrame {
 
     private void jQuantidadeAncestorRemoved(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jQuantidadeAncestorRemoved
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_jQuantidadeAncestorRemoved
 
     private void bEndereço3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEndereço3ActionPerformed
@@ -541,7 +544,7 @@ public class TelaAlterarCompra extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbFornecedor;
     private javax.swing.JComboBox<String> cbProduto;
     private javax.swing.JComboBox<String> cbStatusCompra;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
+    private com.toedter.calendar.JDateChooser jData;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

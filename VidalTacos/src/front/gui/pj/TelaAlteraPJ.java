@@ -16,12 +16,12 @@ import objetos.pessoas.PessoaJuridica;
  *
  * @author MIGUELCESARPENHAGOME
  */
-public class TelaCadastrarPJ extends javax.swing.JFrame {
+public class TelaAlteraPJ extends javax.swing.JFrame {
     
     Database database;
     javax.swing.JTable tabela;
     
-    public TelaCadastrarPJ(Database database, javax.swing.JTable tabela) {
+    public TelaAlteraPJ(Database database, javax.swing.JTable tabela) {
         initComponents();
         this.database = database;
         this.tabela = tabela;

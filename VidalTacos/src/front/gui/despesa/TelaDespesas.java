@@ -54,7 +54,6 @@ public class TelaDespesas extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         bGerarPDF = new javax.swing.JButton();
         bInserir = new javax.swing.JButton();
-        bExcluirDespesa = new javax.swing.JButton();
 
         tDespesas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -167,6 +166,15 @@ public class TelaDespesas extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tDespesas1.getTableHeader().setReorderingAllowed(false);
+        tDespesas1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                tDespesas1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                tDespesas1MouseExited(evt);
+            }
+        });
         jScrollPane2.setViewportView(tDespesas1);
         if (tDespesas1.getColumnModel().getColumnCount() > 0) {
             tDespesas1.getColumnModel().getColumn(0).setResizable(false);
@@ -243,23 +251,6 @@ public class TelaDespesas extends javax.swing.JFrame {
             }
         });
 
-        bExcluirDespesa.setBackground(new java.awt.Color(78, 148, 79));
-        bExcluirDespesa.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        bExcluirDespesa.setText("Excluir Despesa");
-        bExcluirDespesa.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                bExcluirDespesaMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                bExcluirDespesaMouseExited(evt);
-            }
-        });
-        bExcluirDespesa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bExcluirDespesaActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -268,8 +259,6 @@ public class TelaDespesas extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(bGerarPDF, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(bExcluirDespesa)
-                .addGap(98, 98, 98)
                 .addComponent(bInserir)
                 .addContainerGap())
         );
@@ -279,8 +268,7 @@ public class TelaDespesas extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bGerarPDF, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bInserir, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bExcluirDespesa, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(bInserir, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -354,22 +342,17 @@ public class TelaDespesas extends javax.swing.JFrame {
         this.setCursor(Cursor.DEFAULT_CURSOR);
     }//GEN-LAST:event_tDespesasMouseExited
 
-    private void bExcluirDespesaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bExcluirDespesaMouseEntered
+    private void tDespesas1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tDespesas1MouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_bExcluirDespesaMouseEntered
+    }//GEN-LAST:event_tDespesas1MouseEntered
 
-    private void bExcluirDespesaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bExcluirDespesaMouseExited
+    private void tDespesas1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tDespesas1MouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_bExcluirDespesaMouseExited
-
-    private void bExcluirDespesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bExcluirDespesaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bExcluirDespesaActionPerformed
+    }//GEN-LAST:event_tDespesas1MouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bBuscar;
-    private javax.swing.JButton bExcluirDespesa;
     private javax.swing.JButton bGerarPDF;
     private javax.swing.JButton bInserir;
     private javax.swing.ButtonGroup buttonGroup1;

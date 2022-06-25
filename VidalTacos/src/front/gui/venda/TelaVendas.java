@@ -158,6 +158,7 @@ public class TelaVendas extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tVendas.getTableHeader().setReorderingAllowed(false);
         tVendas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 tVendasMouseEntered(evt);

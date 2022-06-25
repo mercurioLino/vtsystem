@@ -194,6 +194,7 @@ public class TelaProdutos extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tProdutos.getTableHeader().setReorderingAllowed(false);
         tProdutos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 tProdutosMouseEntered(evt);

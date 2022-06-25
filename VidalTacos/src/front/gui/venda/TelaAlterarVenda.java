@@ -10,6 +10,9 @@ import static acoes.AtualizaCheckBox.atualizaCheckBoxCliente;
 import static acoes.AtualizaCheckBox.atualizaCheckBoxProduto;
 import database.Database;
 import java.awt.Cursor;
+import javax.swing.JSpinner;
+import javax.swing.SpinnerModel;
+import javax.swing.SpinnerNumberModel;
 
 /**
  *
@@ -28,6 +31,12 @@ public class TelaAlterarVenda extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         atualizaCheckBoxProduto(this.database, this.cbStatusVenda);
         atualizaCheckBoxCliente(this.database, this.cbCliente);
+        int min = 0;
+        int max = 100000000;
+        int step = 1;
+        int initValue = 0;
+        SpinnerModel model = new SpinnerNumberModel(initValue, min, max, step);
+        this.jQuantidade.setModel(model);
     }
 
     @SuppressWarnings("unchecked")
@@ -198,6 +207,7 @@ public class TelaAlterarVenda extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tItensCompra.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tItensCompra);
 
         jPanel5.setBackground(new java.awt.Color(233, 239, 192));
